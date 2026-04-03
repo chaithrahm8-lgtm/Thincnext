@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThincNext</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+     <!-- script of counter -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+     <!--  style strength cards -->
+    <style type="text/tailwindcss">
+    @theme {
+            --color-brand-blue: #1c8cc1;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-slide-up {
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-500 { animation-delay: 500ms; }
+
+        
+   .strength-card {
+  @apply font-black text-slate-950 tracking-tight flex items-center;
+  height: 90px;
+  opacity: 0.4;
+  transition: all 0.4s ease;
+}
+
+  @keyframes step-slide {
+    0%, 15%   { transform: translateY(0); }
+    20%, 35%  { transform: translateY(-90px); }
+    40%, 55%  { transform: translateY(-180px); }
+    60%, 75%  { transform: translateY(-270px); }
+    80%, 95%  { transform: translateY(-360px); }
+    100%      { transform: translateY(-450px); }
+  }
+.animate-step-slide {
+  animation: step-slide 12s infinite cubic-bezier(0.85, 0, 0.15, 1) reverse;
+}
+  
+    </style>
+
+
+    <style type="text/tailwindcss">
+    @theme {
+        /* Smooth Shake */
+        --color-brand-light: #2496cd;
+        --color-brand-base: #1c8cc1;
+        --color-brand-dark: #0892d0;
+        --font-sans: 'Inter', sans-serif;
+
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-2px, 2px) rotate(-1deg); }
+            75% { transform: translate(2px, 2px) rotate(1deg); }
+        }
+        --animate-shake: shake 0.15s;
+
+        /* Fixed Shine - Smooth Sweep */
+        @keyframes shine {
+            0% { transform: translateX(-150%) skewX(-200deg); }
+            100% { transform: translateX(350%) skewX(-400deg); }
+        }
+        --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+        /* Multi-color Morphing */
+        @keyframes colorFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        --animate-color-flow: colorFlow 6s ease infinite;
+    }
+
+    /* Standard utility for clipped text background */
+    .gradient-text {
+        background-image: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
+        background-size: 300% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+</style>
+    <style type="text/tailwindcss">
+        @theme {
+            /* Smooth Shake */
+            --color-brand-light: #2496cd;
+            --color-brand-base: #1c8cc1;
+            --color-brand-dark: #0892d0;
+            --font-sans: 'Inter', sans-serif;
+
+            @keyframes shake {
+                0%, 100% { transform: translate(0, 0) rotate(0deg); }
+                25% { transform: translate(1px, -1px) rotate(1deg); }
+                50% { transform: translate(-2px, 2px) rotate(-1deg); }
+                75% { transform: translate(2px, 2px) rotate(1deg); }
+            }
+            --animate-shake: shake 0.15s;
+
+            /* Fixed Shine - Smooth Sweep */
+            @keyframes shine {
+                0% { transform: translateX(-150%) skewX(-200deg); }
+                100% { transform: translateX(350%) skewX(-400deg); }
+            }
+            --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+            /* Multi-color Morphing */
+            @keyframes colorFlow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            --animate-color-flow: colorFlow 6s ease infinite;
+        }
+    </style>
+     <style type="text/tailwindcss">
+    @theme {
+            --color-brand-blue: #1c8cc1;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-slide-up {
+            opacity: 0;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-500 { animation-delay: 500ms; }
+
+        
+   .strength-card {
+  @apply font-black text-slate-950 tracking-tight flex items-center;
+  height: 90px;
+  opacity: 0.4;
+  transition: all 0.4s ease;
+}
+
+  @keyframes step-slide {
+    0%, 15%   { transform: translateY(0); }
+    20%, 35%  { transform: translateY(-90px); }
+    40%, 55%  { transform: translateY(-180px); }
+    60%, 75%  { transform: translateY(-270px); }
+    80%, 95%  { transform: translateY(-360px); }
+    100%      { transform: translateY(-450px); }
+  }
+.animate-step-slide {
+  animation: step-slide 12s infinite cubic-bezier(0.85, 0, 0.15, 1) reverse;
+}
+  
+    </style> 
+</head>
+
+<body class="text-slate-900 bg-white">
+
+    <header class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-100/50 to-transparent animate-shine"></div>
+        </div>
+
+        <a href="/" class="relative z-10 flex items-center p-0">
+            <img src="./img/thincnext logo.png" alt="Logo" class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
+        </a>
+
+        <nav class="relative z-10">
+            <ul class="flex space-x-6 text-xs md:text-sm font-bold">
+                <li><a href="#" class="hover:text-blue-500 transition-colors">Home</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition-colors">About</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition-colors">Services</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition-colors">Career</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4">
+        <div class="text-center mt-32">
+            <div data-aos="fade-left" data-aos-duration="1000">
+                <h1 id="box" class="text-6xl font-bold leading-tight tracking-tight">
+                    <span class="gradient-text animate-color-flow block">
+                        Driving Digital Transformation
+                    </span>
+                    <span class="font-light text-4xl block mt-1 text-gray-500">
+                        Through Full-Stack Technology Solutions
+                    </span>
+                </h1>
+            </div>
+
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <p class="text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed mt-10">
+                    Software Development <span class="text-blue-400">|</span> Web Applications <span class="text-purple-400">|</span> Mobile <span class="text-pink-400">|</span> AI <span class="text-blue-400">|</span> Cybersecurity
+                </p>
+            </div>
+
+            <div data-aos="flip-right" data-aos-delay="400" data-aos-duration="1000" class="mt-12">
+                <button class="relative group border-2 border-blue-500 bg-transparent text-blue-500 hover:text-white font-bold py-3 px-6 rounded-3xl shadow-[0_0_15px_rgba(37,99,235,0.2)] hover:bg-blue-500 hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden mb-20">
+                    <span class="relative z-10">View Products</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <div class="mb-12">    
+        <div class="bg-white py-6 shadow-sm marquee-container overflow-hidden">
+            <div id="smooth-marquee" class="marquee-content flex items-center text-xl font-semibold text-slate-600 uppercase tracking-tighter">
+                <div class="flex gap-12 px-6 items-center whitespace-nowrap">
+                    <span>Software Development</span> <span class="text-blue-500 text-2xl">|</span>
+                    <span>Web Applications</span> <span class="text-blue-500 text-2xl">|</span>
+                    <span>Mobile Apps</span> <span class="text-blue-500 text-2xl">|</span>
+                    <span>Branding</span> <span class="text-blue-500 text-2xl">|</span>
+                    <span>Cybersecurity</span> <span class="text-blue-500 text-2xl">|</span>
+                </div>
+                <div class="flex gap-12 px-6 items-center whitespace-nowrap">
+                    <span>Design for Startups</span> <span class="text-blue-500 text-2xl">|</span>
+                    <span>eCommerce</span> <span class="text-blue-500 text-2xl">|</span>
+                    <span>ERP</span> <span class="text-blue-500 text-2xl">|</span>
+                    <span>SEO</span> <span class="text-blue-500 text-2xl">|</span>
+                    <span>Social Media Marketing</span> <span class="text-blue-500 text-2xl">|</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- .... -->
+     <!-- philosophy -->
+<section class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16">
+  <div class="lg:sticky lg:top-32 h-fit flex flex-col items-start text-left space-y-8">
+    <div class="space-y-4">
+      <h2 class="text-5xl tracking-tight uppercase leading-none text-gray-900 font-sans: 'Inter', sans-serif;">
+        Our <br /> <span class="text-gray-400">Philosophy</span>
+      </h2>
+      <div class="h-1.5 w-20 bg-gray-400"></div>
+    </div>
+
+    <p class="text-gray-500 text-lg leading-relaxed max-w-md text-justify">
+      Before we get creative or put a digital solution in place, we take the time to fully understand your brand,
+      project & the people its intended for. We’ll make sure focus is directed in the right areas & ensure a winning
+      strategy, a design that speaks to your audience & code that is fast, secure & clean.
+    </p>
+
+    <button class="group flex items-center gap-3 font-bold uppercase tracking-widest text-sm text-gray-700 hover:text-gray-900 transition-colors">
+      Learn More
+      <span class="group-hover:translate-x-2 transition-transform">→</span>
+    </button>
+  </div>
+
+  <div class="space-y-12 pb-60">
+
+    <div class="sticky top-24 bg-gray-200 rounded-[40px] p-10 min-h-[420px] shadow-xl border border-gray-200 flex flex-col justify-between group transition-all duration-500">
+      <div>
+        <div class="flex justify-between items-start">
+          <div class="bg-white p-4 rounded-2xl shadow-sm">
+            <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+            </svg>
+          </div>
+          <span class="text-6xl font-black text-gray-900/10">01</span>
+        </div>
+        <h3 class="text-2xl font-bold uppercase mt-8 mb-4 tracking-wider text-gray-900">Discover</h3>
+        <p class="text-gray-600 text-base leading-relaxed font-medium">
+          By carrying out deep analysis & research, we get under the hood of your brand & empathise to understand truly with audience.
+        </p>
+      </div>
+      <a href="#" class="text-xs font-bold uppercase tracking-widest text-gray-500 underline underline-offset-8 decoration-2 hover:text-gray-900 transition-colors">Approach Details</a>
+    </div>
+
+    <div class="sticky top-32 bg-gray-300 rounded-[40px] p-10 min-h-[420px] shadow-xl border border-gray-300 flex flex-col justify-between group transition-all duration-500">
+      <div>
+        <div class="flex justify-between items-start">
+          <div class="bg-white p-4 rounded-2xl shadow-sm">
+            <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.375M9 18h3.375m2.25-13.5h1.125a2.25 2.25 0 012.25 2.25v13.5a2.25 2.25 0 01-2.25 2.25H6.75a2.25 2.25 0 01-2.25-2.25V6.75a2.25 2.25 0 012.25-2.25h1.125m.75 0h7.5m-7.5 0v-1.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125V3.75m-7.5 0c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v1.125"></path>
+            </svg>
+          </div>
+          <span class="text-6xl font-black text-gray-900/10">02</span>
+        </div>
+        <h3 class="text-2xl font-bold uppercase mt-8 mb-4 tracking-wider text-gray-800">Plan</h3>
+        <p class="text-gray-600 text-base leading-relaxed font-medium">
+          Collaboratively, we’ll put a digital strategy in place along with clear project objectives during discovery sessions & workshops.
+        </p>
+      </div>
+      <a href="#" class="text-xs font-bold uppercase tracking-widest text-gray-500 underline underline-offset-8 decoration-2 hover:text-gray-900 transition-colors">Approach Details</a>
+    </div>
+
+    <div class="sticky top-40 bg-gray-400 rounded-[40px] p-10 min-h-[420px] shadow-xl border border-gray-400 flex flex-col justify-between group transition-all duration-500">
+      <div>
+        <div class="flex justify-between items-start">
+          <div class="bg-white p-4 rounded-2xl shadow-sm">
+            <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a6.01 6.01 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"></path>
+            </svg>
+          </div>
+          <span class="text-6xl font-black text-gray-900/10">03</span>
+        </div>
+        <h3 class="text-2xl font-bold uppercase mt-8 mb-4 tracking-wider text-gray-800">Create</h3>
+        <p class="text-gray-700 text-base leading-relaxed font-semibold">
+          Our design & development teams will bring all ideas to life in browser for an experience your audience will love.
+        </p>
+      </div>
+      <a href="#" class="text-xs font-bold uppercase tracking-widest text-gray-600 underline underline-offset-8 decoration-2 hover:text-gray-900 transition-colors">Approach Details</a>
+    </div>
+
+  </div>
+
+ 
+</section>
+
+<!-- counter -->
+  <div class="lg:col-span-2 flex justify-center gap-30 pl-4 border-l border-gray-100">
+                <div class="counter-box">
+                    <div class="text-6xl font-light text-gray-500 mb-1"><span class="counter-val" data-target="12">0</span>+</div>
+                    <div class="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase">Years of Exp</div>
+                </div>
+                <div class="counter-box">
+                    <div class="text-6xl font-light text-brand-dark mb-1"><span class="counter-val" data-target="250">0</span>+</div>
+                    <div class="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase">Total Clients</div>
+                </div>
+                <div class="counter-box">
+                    <div class="text-6xl font-light text-brand-dark mb-1"><span class="counter-val" data-target="450">0</span>+</div>
+                    <div class="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase">Projects Done</div>
+                </div>
+            </div>
+
+
+  <!-- strength -->
+
+  <section class="max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-10 overflow-hidden bg-white ">
+
+    <div class="w-full lg:w-1/2 space-y-12">
+      <div class="space-y-4">
+
+        <h2 class="text-5xl md:text-6xl font-light text-slate-400 leading-tight">
+          Our <span class="font-sans: 'Inter', sans-serif; text-slate-900 uppercase tracking-tighter">Strength</span>
+        </h2>
+      </div>
+
+      <div class="relative h-90 overflow-hidden flex items-center border-l-4 border-blue-200 pl-5">
+        <div class="animate-step-slide flex flex-col">
+          <h3 class="strength-card text-3xl">Creative Design</h3>
+          <h3 class="strength-card text-3xl">Retina Ready</h3>
+          <h3 class="strength-card text-3xl">Solution Oriented</h3>
+          <h3 class="strength-card text-3xl">Easy To Use</h3>
+          <h3 class="strength-card text-3xl">Budget Friendly</h3>
+          <h3 class="strength-card text-3xl">Creative Design</h3>
+        </div>
+      </div>
+
+      <p class="text-slate-900 text-xl max-w-md">
+        We deliver digital excellence by focusing on core capabilities.
+      </p>
+    </div>
+    <!-- .. -->
+
+
+
+<!-- strength img -->
+    <div class="w-full lg:w-1/2 relative h-[550px] group overflow-hidden rounded-[40px] shadow-2xl border border-slate-100">
+  <img 
+    src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" 
+    alt="Corporate Strategy Center" 
+    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+  />
+
+  <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+
+  <div class="absolute bottom-6 left-6 right-6 p-6 backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl shadow-xl">
+    <div class="flex items-center gap-4">
+      <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div>
+        <p class="text-white font-semibold text-base leading-tight">Industry Standards</p>
+        <p class="text-blue-100 text-[10px] tracking-[0.2em] uppercase mt-1 font-bold">Thincnext Certified</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+   <section class="services-section">
+    <div class="header-container">
+      <h1>Services Expertise In.</h1>
+      <p>A Quality Experience Team With 8 Years Experience</p>
+    </div>
+
+    <div class="workspace-grid">
+      <div class="image-side" data-aos="fade-right">
+        <div class="img-wrapper">
+          <img id="main-img" src="https://picsum.photos/id/1/800/500" alt="Preview">
+          <div class="read-more-overlay">read more</div>
+        </div>
+      </div>
+
+      <div class="content-side">
+        <div class="feature-item" data-aos="flip-up" data-img="https://picsum.photos/id/1/800/500">
+          <h3>DESIGN FOR STARTUPS</h3>
+          <div class="feature-details">
+            <p>We're all about creating long-term relationships. We host and maintain our own solutions & offer on-going
+              analysis.</p>
+            <a href="#" class="blue-link">read more</a>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-up" data-aos-duration="3000"
+          data-img="https://picsum.photos/id/2/800/500">
+          <h3>WEB TECHNOLOGY</h3>
+          <div class="feature-details">
+            <p>We develop scalable websites & applications that work. We have the skills to turn ideas into reality.</p>
+            <a href="#" class="blue-link">read more</a>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-up" data-aos-duration="3000"
+          data-img="https://picsum.photos/id/3/800/500">
+          <h3>APPS DEVELOPMENT</h3>
+          <div class="feature-details">
+            <p>Our discovery is designed to get under the hood of your brand & empathise with your audience.</p>
+            <a href="#" class="blue-link">read more</a>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-up" data-aos-duration="3000"
+          data-img="https://picsum.photos/id/4/800/500">
+          <h3>CYBER SECURITY</h3>
+          <div class="feature-details">
+            <p>Digital world has various types of vulnerabilities. We provide top-tier security for your data.</p>
+            <a href="#" class="blue-link">read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--Testimonials-->
+    <section class="bg-white mb-20">
+
+      <p class="text-center text-6xl text-black font-bold pt-20" data-aos="fade-up"  data-aos-duration="1500">What People Say About Us</p>
+      <p class="text-center mt-10 text-gray-500 font-semibold" data-aos="fade-up"  data-aos-duration="1500">Discover what our satisfied customers have to say</p>
+      <p class="text-center text-gray-500 pb-10 font-semibold" data-aos="fade-up"  data-aos-duration="1500">about their experiences with our product/services.</p>
+
+    <!--Swiper-->
+    <div class="swiper testimonial py-20"  data-aos="fade-up"  data-aos-duration="1500">
+      <div class="swiper-wrapper pb-10 ">
+         <div class="swiper-slide">
+          <div
+            class="border border-gray-300 hover:border-gray-400 shadow-xl rounded-2xl shadow-md p-6 max-w-xl w-full bg-white"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+          >
+            <div
+              class="flex gap-1 text-yellow-500 mb-4"
+            >
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+            </div>
+
+            <p
+              class="text-gray-700 text-sm leading-relaxed font-semibold mb-6"
+            >
+              The yoga studio has helped me find inner peace and improve my
+              physical health. I highly recommend it.
+            </p>
+
+            <div
+              class="flex items-center gap-3"
+            >
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="user"
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h4
+                  class="font-semibold text-gray-800 text-sm" 
+                >
+                  James Davidson
+                </h4>
+                <p class="text-xs text-gray-500">
+                  CEO, TheStudyHub
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div
+            class="border border-gray-300 hover:border-gray-400 shadow-xl rounded-2xl shadow-md p-6 max-w-xl w-full bg-white"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+          >
+            <div
+              class="flex gap-1 text-yellow-500 mb-4"
+            >
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+            </div>
+
+            <p
+              class="text-gray-700 text-sm leading-relaxed font-semibold mb-6"
+            >
+              The yoga studio has helped me find inner peace and improve my
+              physical health. I highly recommend it.
+            </p>
+
+            <div
+              class="flex items-center gap-3"
+            >
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="user"
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h4
+                  class="font-semibold text-gray-800 text-sm" 
+                >
+                  James Davidson
+                </h4>
+                <p class="text-xs text-gray-500">
+                  CEO, TheStudyHub
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div
+            class="border border-gray-300 shadow-xl hover:border-gray-400 rounded-2xl shadow-md p-6 max-w-xl w-full bg-white"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+          >
+            <div
+              class="flex gap-1 text-yellow-500 mb-4"
+            >
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+            </div>
+
+            <p
+              class="text-gray-700 text-sm leading-relaxed font-semibold mb-6"
+            >
+              The yoga studio has helped me find inner peace and improve my
+              physical health. I highly recommend it.
+            </p>
+
+            <div
+              class="flex items-center gap-3"
+            >
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="user"
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h4
+                  class="font-semibold text-gray-800 text-sm" 
+                >
+                  James Davidson
+                </h4>
+                <p class="text-xs text-gray-500">
+                  CEO, TheStudyHub
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div class="swiper-slide">
+          <div
+            class="border border-gray-300 shadow-xl hover:border-gray-400 rounded-2xl shadow-md p-6 max-w-xl w-full bg-white"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+          >
+            <div
+              class="flex gap-1 text-yellow-500 mb-4"
+            >
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+            </div>
+
+            <p
+              class="text-gray-700 text-sm leading-relaxed font-semibold mb-6"
+            >
+              The yoga studio has helped me find inner peace and improve my
+              physical health. I highly recommend it.
+            </p>
+
+            <div
+              class="flex items-center gap-3"
+            >
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="user"
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h4
+                  class="font-semibold text-gray-800 text-sm" 
+                >
+                  James Davidson
+                </h4>
+                <p class="text-xs text-gray-500">
+                  CEO, TheStudyHub
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div class="swiper-slide">
+          <div
+            class="border border-gray-300 shadow-xl rounded-2xl hover:border-gray-400 shadow-md p-6 max-w-xl w-full bg-white"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+          >
+            <div
+              class="flex gap-1 text-yellow-500 mb-4"
+            >
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+            </div>
+
+            <p class="text-gray-700 text-sm leading-relaxed mb-6">
+              The yoga studio has helped me find inner peace and improve my
+              physical health. I highly recommend it.
+            </p>
+
+            <div
+              class="flex items-center gap-3"
+            >
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="user"
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h4
+                  class="font-semibold text-gray-800 text-sm" 
+                >
+                  James Davidson
+                </h4>
+                <p class="text-xs text-gray-500">
+                  CEO, TheStudyHub
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <div class="swiper-slide">
+          <div
+            class="border border-gray-300 shadow-xl rounded-2xl hover:border-gray-400 shadow-md p-6 max-w-xl w-full bg-white"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+          >
+            <div
+              class="flex gap-1 text-yellow-500 mb-4"
+            >
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+              <i data-lucide="star" class="w-5 h-5 fill-yellow-500"></i>
+            </div>
+
+            <p
+              class="text-gray-700 text-sm leading-relaxed font-semibold mb-6"
+            >
+              The yoga studio has helped me find inner peace and improve my
+              physical health. I highly recommend it.
+            </p>
+
+            <div
+              class="flex items-center gap-3"
+            >
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="user"
+                class="w-10 h-10 rounded-full"
+              />
+              <div>
+                <h4
+                  class="font-semibold text-gray-800 text-sm" 
+                >
+                  James Davidson
+                </h4>
+                <p class="text-xs text-gray-500">
+                  CEO, TheStudyHub
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    
+
+    
+    </section>
+
+   <!--footer-->
+    
+
+<footer class="bg-gray-100 text-gray-1000 px-8 py-16 border-t border-gray-200">
+
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+      <div>
+        <h3 class="text-gray-900 font-semibold mb-4">Company</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">Home</a></li>
+          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">About</a></li>
+          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">Services</a></li>
+          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">Career</a></li>
+          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="text-left md:text-center">
+        <h3 class="text-gray-900 font-semibold mb-4">Support</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-blue-600 transition">Terms & Conditions</a></li>
+          <li><a href="#" class="hover:text-blue-600 transition">Policies</a></li>
+          <li><a href="#" class="hover:text-blue-600 transition">Email</a></li>
+          <li><a href="#" class="hover:text-blue-600 transition">Address</a></li>
+        </ul>
+      </div>
+
+      <div class="text-left md:text-right">
+        <h3 class="text-gray-900 font-semibold mb-4">Follow Us</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-blue-600 transition">Instagram</a></li>
+          <li><a href="#" class="hover:text-blue-600 transition">YouTube</a></li>
+          <li><a href="#" class="hover:text-blue-600 transition">LinkedIn</a></li>
+          <li><a href="#" class="hover:text-blue-600 transition">Facebook</a></li>
+        </ul>
+      </div>
+
+            </div>
+
+    <div class="my-12 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+
+    <div class="text-center">
+
+      <h1 class="text-5xl md:text-6xl font-extrabold tracking-widest 
+      bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-700 
+      bg-clip-text text-transparent
+      animate-pulse hover:scale-110 transition duration-300 drop-shadow-md">
+        THINCNEXT
+      </h1>
+
+      <p class="text-gray-500 text-sm mt-4 hover:text-blue-600 transition">
+        © 2026 THINCNEXT. All rights reserved.
+      </p>
+
+    </div>
+
+  </div>
+</footer> 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter-val');
+
+    const animateCounter = (el) => {
+        const targetValue = parseInt(el.getAttribute('data-target'));
+
+        // Use GSAP to animate the number smoothly
+        gsap.to(el, {
+            innerText: targetValue,
+            duration: 2.5, // Time in seconds
+            snap: { innerText: 1 }, // Forces whole numbers
+            ease: "power2.out", // Starts fast, ends slow for a pro feel
+            onUpdate: function() {
+                // Ensures the DOM updates with the current value
+                el.innerHTML = Math.ceil(this.targets()[0].innerText);
+            }
+        });
+    };
+
+    // Observer to trigger when visible
+    const observerOptions = {
+        threshold: 0.7 // Trigger when 70% of the counter is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target); // Stop watching once animated
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => observer.observe(counter));
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        const locomotiveScroll = new LocomotiveScroll();
+        lucide.createIcons();
+        AOS.init();
+    </script>
+   
+    <script src="./script.js"></script>
+   <script src="./swiper.js"></script>
+
+
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+   
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1000
+        });
+    </script>
+    <script src="script.js"></script>
+ <link href="./css/style.css" rel="stylesheet">
+    <link  href="/main/style.css" rel="stylesheet">
+
+
+
+</body>
+
+</html>
+
+
+
