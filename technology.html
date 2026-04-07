@@ -3,27 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thincnext | Expertise Technologies</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Thincnext</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style type="text/tailwindcss">
-    @theme {
-        /* Fixed Shine - Smooth Sweep */
-        @keyframes shine {
-            0% { transform: translateX(-150%) skewX(-200deg); }
-            100% { transform: translateX(350%) skewX(-400deg); }
-        }
-        --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-
-        /* Multi-color Morphing */
-        @keyframes colorFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        --animate-color-flow: colorFlow 6s ease infinite;
-    }
-</style>
     <style type="text/tailwindcss">
         @theme {
             /* Fixed Shine - Smooth Sweep */
@@ -111,15 +93,15 @@
         }
     </style>
 </head>
-<body class="pt-6 bg-slate-200">
+<body class="pt-6 ">
 
         <header class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative overflow-hidden">
         <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-100/50 to-transparent animate-shine"></div>
+            <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
         </div>
 
         <a href="/" class="relative z-10 flex items-center p-0">
-            <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
+            <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-14 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
         </a>
 
         <nav class="relative z-10">
