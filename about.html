@@ -57,48 +57,69 @@
 
 <body class="bg-white font-sans text-slate-900">
 
+<header class="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-2 md:px-10 bg-white/40 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4">
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-100/50 to-transparent animate-shine"></div>
+    </div>
 
-    <header
-        class="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-2 md:px-10 bg-white/40 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 overflow-hidden">
-        <div class="absolute inset-0 pointer-events-none">
-            <div
-                class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-100/50 to-transparent animate-shine">
-            </div>
-        </div>
+    <a href="/" class="relative z-10 flex items-center p-0">
+        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-10 md:h-10 w-auto object-contain origin-left transition-transform duration-300" />
+    </a>
 
-        <a href="/" class="relative z-10 flex items-center p-0">
-            <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
-                class="h-10 md:h-10 w-auto object-contain origin-left transition-transform duration-300" />
-        </a>
+    <nav class="relative z-10">
+        <ul class="flex space-x-6 text-xs md:text-sm font-bold">
+            <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+            <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
+            
+            <li class="relative">
+                <button id="services-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none ">
+                    Services
+                    <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul id="services-menu" class="absolute left-0 mt-6 w-48 bg-white border border-gray-100 rounded-xl shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                    <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a></li>
+                    <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing</a></li>
+                    <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Readymade</a></li>
+                </ul>
+            </li>
 
-        <nav class="relative z-10">
-            <ul class="flex space-x-6 text-xs md:text-sm font-bold">
-                <li><a href="#" class="hover:text-blue-500 transition-colors">Home</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">About</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">Services</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">Career</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">Offer</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
-            </ul>
+            <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
+
+            <li class="relative">
+                <button id="offer-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none ">
+                    Offer
+                    <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul id="offer-menu" class="absolute left-0 mt-6 w-56 bg-white border border-gray-100 rounded-xl shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                    <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing Offer</a></li>
+                    <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup Offer</a></li>
+                </ul>
+            </li>
+
+            <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <button class="relative z-10 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
+        Book a Domain
+    </button>
+</header>
+
+<section class="relative h-[280px] md:h-[320px] bg-slate-900 flex flex-col items-center justify-center text-white">
+    <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80');"></div>
+    <div class="relative z-10 text-center mt-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">About Us</h1>
+        <nav class="text-sm font-medium">
+            <span class="text-gray-300">Home</span>
+            <span class="mx-2 text-gray-400">//</span>
+            <span>About Us</span>
         </nav>
-    </header>
-
-
-    <section
-        class="relative h-[280px] md:h-[320px] bg-slate-900 flex flex-col items-center justify-center text-white overflow-hidden">
-        <div class="absolute inset-0 opacity-40 bg-cover bg-center"
-            style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80');">
-        </div>
-
-        <div class="relative z-10 text-center mt-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2">About Us</h1>
-            <nav class="text-sm font-medium">
-                <span class="text-gray-300">Home</span>
-                <span class="mx-2 text-gray-400">//</span>
-                <span>About Us</span>
-            </nav>
-        </div>
-    </section>
+    </div>
+</section>
 
 
 
