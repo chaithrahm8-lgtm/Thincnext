@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
@@ -60,20 +61,6 @@
 
     <style type="text/tailwindcss">
     @theme {
-        /* Smooth Shake */
-        --color-brand-light: #2496cd;
-        --color-brand-base: #1c8cc1;
-        --color-brand-dark: #0892d0;
-        --font-sans: 'Inter', sans-serif;
-
-        @keyframes shake {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-2px, 2px) rotate(-1deg); }
-            75% { transform: translate(2px, 2px) rotate(1deg); }
-        }
-        --animate-shake: shake 0.15s;
-
         /* Fixed Shine - Smooth Sweep */
         @keyframes shine {
             0% { transform: translateX(-150%) skewX(-200deg); }
@@ -373,10 +360,18 @@
   </section>
   <!--Service-->
    <section class="services-section">
-    <div class="header-container">
-      <h1>Services Expertise In.</h1>
-      <p>A Quality Experience Team With 8 Years Experience</p>
-    </div>
+<div class="header-container mb-12 text-center md:text-left">
+  <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-8">
+    Services <span class="text-blue-600">Expertise</span> In.
+  </h1>
+  
+  <p class="text-lg text-slate-500 font-medium flex items-center justify-center">
+    A Quality Experience Team With 
+    <span class=" text-blue-700 px-3 py-1 rounded-full text-sm font-bold">
+      8 Years Experience
+    </span>
+  </p>
+</div>
 
     <div class="workspace-grid">
       <div class="image-side" data-aos="fade-right">
