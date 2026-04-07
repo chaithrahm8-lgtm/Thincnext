@@ -37,20 +37,6 @@
 
     <style type="text/tailwindcss">
         @theme {
-        /* Smooth Shake */
-        --color-brand-light: #2496cd;
-        --color-brand-base: #1c8cc1;
-        --color-brand-dark: #0892d0;
-        --font-sans: 'Inter', sans-serif;
-
-        @keyframes shake {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-2px, 2px) rotate(-1deg); }
-            75% { transform: translate(2px, 2px) rotate(1deg); }
-        }
-        --animate-shake: shake 0.15s;
-
         /* Fixed Shine - Smooth Sweep */
         @keyframes shine {
             0% { transform: translateX(-150%) skewX(-200deg); }
@@ -65,15 +51,6 @@
             100% { background-position: 0% 50%; }
         }
         --animate-color-flow: colorFlow 6s ease infinite;
-    }
-
-    /* Standard utility for clipped text background */
-    .gradient-text {
-        background-image: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
-        background-size: 300% auto;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
     }
 </style>
 </head>

@@ -268,3 +268,29 @@ document.querySelector(".marquee2").addEventListener("mouseleave", () => resumeM
 //       prevEl: ".swiper-button-prev",
 //     },
 //   });
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Header Entrance
+    gsap.from(".header-animate", {
+        duration: 1.2,
+        y: -30,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    // Bento Grid Reveal
+    gsap.from(".bento-card", {
+        scrollTrigger: {
+            trigger: ".bento-grid",
+            start: "top 90%",
+            toggleActions: "play none none none"
+        },
+        duration: 0.8,
+        y: 40,
+        opacity: 0,
+        stagger: 0.08,
+        ease: "power2.out",
+        clearProps: "all"
+    });
+});
