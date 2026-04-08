@@ -1,58 +1,72 @@
+// index nav
 document.addEventListener('DOMContentLoaded', () => {
-    // Function to handle the dropdown toggle logic
-    const setupDropdown = (btnId, menuId, arrowId) => {
-        const btn = document.getElementById(btnId);
-        const menu = document.getElementById(menuId);
-        const arrow = document.getElementById(arrowId);
+    // 1. Get Elements for Services
+    const servicesBtn = document.getElementById('services-btn');
+    const servicesMenu = document.getElementById('services-menu');
+    const servicesArrow = document.getElementById('services-arrow');
 
-        if (!btn || !menu) return;
+    // 2. Get Elements for Offer
+    const offerBtn = document.getElementById('offer-btn');
+    const offerMenu = document.getElementById('offer-menu');
+    const offerArrow = document.getElementById('offer-arrow');
 
-        btn.addEventListener('click', (e) => {
-            // Stop click from bubbling up to the document
-            e.stopPropagation();
+    /**
+     * Helper function to toggle a specific menu
+     */
+    function toggleDropdown(menu, arrow, otherMenu, otherArrow) {
+        const isHidden = menu.classList.contains('invisible');
 
-            // Check if this menu is already open
-            const isClosed = menu.classList.contains('invisible');
+        // Close the other menu if it's open
+        if (otherMenu) {
+            closeSpecificMenu(otherMenu, otherArrow);
+        }
 
-            // Close all other dropdowns first
-            closeAllMenus();
+        if (isHidden) {
+            // Show requested menu
+            menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+            menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+            arrow.classList.add('rotate-180');
+        } else {
+            // Hide requested menu
+            closeSpecificMenu(menu, arrow);
+        }
+    }
 
-            // If it was closed, open it now
-            if (isClosed) {
-                menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-                if (arrow) arrow.classList.add('rotate-180');
-            }
-        });
-    };
+    /**
+     * Helper function to close a specific menu
+     */
+    function closeSpecificMenu(menu, arrow) {
+        if (menu && arrow) {
+            menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            arrow.classList.remove('rotate-180');
+        }
+    }
 
-    // Helper function to close all open menus
-    const closeAllMenus = () => {
-        const menus = [
-            { id: 'services-menu', arrow: 'services-arrow' },
-            { id: 'offer-menu', arrow: 'offer-arrow' }
-        ];
+    // --- Event Listeners ---
 
-        menus.forEach(item => {
-            const m = document.getElementById(item.id);
-            const a = document.getElementById(item.arrow);
-            if (m) {
-                m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-                if (a) a.classList.remove('rotate-180');
-            }
-        });
-    };
+    // Click for Services
+    servicesBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(servicesMenu, servicesArrow, offerMenu, offerArrow);
+    });
 
-    // Initialize for both dropdowns
-    setupDropdown('services-btn', 'services-menu', 'services-arrow');
-    setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
+    // Click for Offer
+    offerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(offerMenu, offerArrow, servicesMenu, servicesArrow);
+    });
 
-    // Close menus if clicking anywhere else on the page
-    document.addEventListener('click', closeAllMenus);
+    // Close all menus when clicking anywhere else on the page
+    window.addEventListener('click', () => {
+        closeSpecificMenu(servicesMenu, servicesArrow);
+        closeSpecificMenu(offerMenu, offerArrow);
+    });
 });
+
 // about nav
 
 
-// main.js
 // index script
 window.addEventListener("load", () => {
     const textTrack = document.querySelector("#smooth-marquee");
@@ -74,127 +88,125 @@ window.addEventListener("load", () => {
     }
 });
 // Register GSAP ScrollTrigger
+
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
     {
-        title: 'Cyber Security',
-        description: "The digital world has various types of insecurities. Security is paramount to protect the data linked to our daily applications and infrastructure.",
-        bgImage: '/img/cybersec.jpg'
+        title: 'Design for Startups',
+        description: "We host and maintain our own solutions & offer on-going analysis & ideas sessions plus design retainers to accelerate your growth.",
+        bgImage: 'https://picsum.photos/id/1/800/1200'
     },
     {
         title: 'Web Technology',
         description: "We develop scalable websites & applications that work. Whether it is powerful content management, e-commerce or a killer app.",
-        bgImage: '/img/webdev.jpg'
-    },
-    {
-        title: 'Design for Startups',
-        description: "We host and maintain our own solutions & offer on-going analysis & ideas sessions plus design retainers to accelerate your growth.",
-        bgImage: '/img/startup.jpg'
+        bgImage: 'https://picsum.photos/id/2/800/1200'
     },
     {
         title: 'Apps Development',
         description: "Our discovery processes are designed to get under the hood of your brand & empathise with your audience to build winning mobile solutions.",
-        bgImage: '/img/appdev.jpg'
+        bgImage: 'https://picsum.photos/id/3/800/1200'
+    },
+    {
+        title: 'Cyber Security',
+        description: "The digital world has various types of insecurities. Security is paramount to protect the data linked to our daily applications and infrastructure.",
+        bgImage: 'https://picsum.photos/id/4/800/1200'
     },
     {
         title: 'Digital Marketing',
         description: "Social media marketing has become the greatest source to brand. We offer high-quality SEO, PPC campaigns, and holistic branding strategies.",
-        bgImage: '/img/dm.jpg'
+        bgImage: 'https://picsum.photos/id/5/800/1200'
     }
 ];
 
 const buttonsContainer = document.getElementById('buttons-container');
 const activeIndicator = document.getElementById('active-indicator');
-const serviceTitle = document.getElementById('service-title');
-const serviceDesc = document.getElementById('service-desc');
 const serviceBg = document.getElementById('service-bg');
 
 let activeIndex = 0;
 
 function initServices() {
     services.forEach((service, index) => {
-        const btn = document.createElement('button');
-        // Modern minimalist button styling
-        btn.className = `text-left px-6 py-4 rounded-xl transition-all duration-300 font-medium text-lg relative
-                         ${index === 0 ? 'text-brand-base bg-brand-light/10 font-semibold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`;
-        btn.textContent = service.title;
+        const item = document.createElement('div');
         
-        btn.addEventListener('click', () => {
-            if (activeIndex === index) return; // Don't animate if already active
+        // Vertical line styling from your image
+        item.className = `feature-item group cursor-pointer border-l-[3px] md:border-l-0 pl-10 md:pl-12 py-8 transition-all duration-500 
+                         ${index === 0 ? 'border-blue-600' : 'border-slate-100 hover:border-blue-200'}`;
+        
+        item.innerHTML = `
+            <h3 class="text-2xl md:text-4xl font-bold tracking-[0.15em] text-slate-400 uppercase transition-all duration-300 group-hover:text-slate-800">
+                ${service.title}
+            </h3>
+            <div class="feature-details overflow-hidden transition-all duration-500 max-h-0 opacity-0 mt-4 md:block">
+                <p class="text-slate-500 text-lg leading-relaxed mb-6 max-w-md">${service.description}</p>
+                <a href="#" class="inline-block text-blue-600 font-bold uppercase text-xs tracking-[0.2em] border-b-2 border-transparent hover:border-blue-600 transition-all">read more</a>
+            </div>
+        `;
+        
+        item.addEventListener('click', () => {
+            if (activeIndex === index) return;
             activeIndex = index;
-            updateUI(btn, service);
+            updateUI(item, service, index);
         });
 
-        buttonsContainer.appendChild(btn);
+        buttonsContainer.appendChild(item);
     });
 
-    // Set initial background immediately
+    // Set initial state
     serviceBg.style.backgroundImage = `url('${services[0].bgImage}')`;
-    serviceTitle.textContent = services[0].title;
-    serviceDesc.textContent = services[0].description;
-    
-    // Position the indicator initially
-    setTimeout(() => {
-        const firstBtn = buttonsContainer.children[0];
-        gsap.set(activeIndicator, { y: firstBtn.offsetTop, height: firstBtn.offsetHeight });
-    }, 100);
-
-    initCounters();
+    const firstItem = buttonsContainer.children[1]; // children[0] is the indicator
+    if(window.innerWidth < 768) toggleMobileDetails(0);
 }
 
-function updateUI(clickedBtn, service) {
-    // 1. Move the indicator line smoothly using GSAP
-    gsap.to(activeIndicator, {
-        y: clickedBtn.offsetTop,
-        height: clickedBtn.offsetHeight,
-        duration: 0.5,
-        ease: "power3.out"
-    });
-
-    // 2. Update Button Styles
-    Array.from(buttonsContainer.children).forEach(btn => {
-        btn.className = 'text-left px-6 py-4 rounded-xl transition-all duration-300 font-medium text-lg text-gray-500 hover:text-gray-900 hover:bg-gray-50';
-    });
-    clickedBtn.className = 'text-left px-6 py-4 rounded-xl transition-all duration-300 text-lg text-brand-base bg-brand-light/10 font-semibold';
-
-    // 3. GSAP Animation for Content Swap
-    const tl = gsap.timeline();
-
-    // Fade out text and blur image
-    tl.to([serviceTitle, serviceDesc], { opacity: 0, y: 15, duration: 0.3, stagger: 0.1 })
-      .to(serviceBg, { opacity: 0.5, duration: 0.3 }, "<")
-      .call(() => {
-          // Swap data in the middle of animation
-          serviceTitle.textContent = service.title;
-          serviceDesc.textContent = service.description;
-          serviceBg.style.backgroundImage = `url('${service.bgImage}')`;
-      })
-      // Fade text back in and unblur image
-      .to(serviceBg, { opacity: 1, duration: 0.5 })
-      .to([serviceTitle, serviceDesc], { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: "back.out(1.5)" }, "<");
-}
-
-function initCounters() {
-    const counters = document.querySelectorAll('.counter-val');
-    
-    counters.forEach(counter => {
-        let target = parseInt(counter.getAttribute('data-target'));
-        
-        // GSAP counter animation triggered on scroll
-        gsap.to({ val: 0 }, {
-            val: target,
-            duration: 2.5,
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: ".counter-box",
-                start: "top 85%", // Starts when counters are 85% down the viewport
-            },
-            onUpdate: function() {
-                // Update the DOM element with the rounded number
-                counter.innerHTML = Math.floor(this.targets()[0].val);
-            }
+function updateUI(clickedItem, service, index) {
+    // 1. Move Desktop Indicator
+    if (window.innerWidth >= 768) {
+        gsap.to(activeIndicator, {
+            y: clickedItem.offsetTop,
+            height: clickedItem.offsetHeight,
+            duration: 0.6,
+            ease: "expo.out"
         });
+    }
+
+    // 2. Update Text Colors & Borders
+    const items = buttonsContainer.querySelectorAll('.feature-item');
+    items.forEach((item, i) => {
+        const title = item.querySelector('h3');
+        if (i === index) {
+            item.classList.replace('border-slate-100', 'border-blue-600');
+            title.classList.replace('text-slate-400', 'text-slate-900');
+        } else {
+            item.classList.replace('border-blue-600', 'border-slate-100');
+            title.classList.replace('text-slate-900', 'text-slate-400');
+        }
+    });
+
+    // 3. Mobile Details Accordion
+    toggleMobileDetails(index);
+
+    // 4. Desktop Image Swap (GSAP)
+    gsap.to(serviceBg, {
+        opacity: 0,
+        scale: 1.1,
+        duration: 0.3,
+        onComplete: () => {
+            serviceBg.style.backgroundImage = `url('${service.bgImage}')`;
+            gsap.to(serviceBg, { opacity: 1, scale: 1.05, duration: 0.6 });
+        }
+    });
+}
+
+function toggleMobileDetails(index) {
+    const allDetails = buttonsContainer.querySelectorAll('.feature-details');
+    allDetails.forEach((detail, i) => {
+        if (i === index) {
+            detail.style.maxHeight = "300px";
+            detail.style.opacity = "1";
+        } else {
+            detail.style.maxHeight = "0";
+            detail.style.opacity = "0";
+        }
     });
 }
 

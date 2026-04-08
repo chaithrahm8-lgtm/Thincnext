@@ -590,117 +590,11 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script>
         lucide.createIcons();
+        AOS.init();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    // 1. SWIPER CONFIGURATION (For your "More About Us" slider)
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: { delay: 4000, disableOnInteraction: false },
-        pagination: { el: ".swiper-pagination", clickable: true },
-        breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-        },
-    });
 
-    // 2. DROPDOWN LOGIC (For Services & Offer menus)
-    document.addEventListener('DOMContentLoaded', () => {
-        const setupDropdown = (btnId, menuId, arrowId) => {
-            const btn = document.getElementById(btnId);
-            const menu = document.getElementById(menuId);
-            const arrow = document.getElementById(arrowId);
-
-            if (!btn || !menu) return;
-
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isClosed = menu.classList.contains('invisible');
-                
-                // Close all other open menus first
-                closeAllMenus();
-
-                if (isClosed) {
-                    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-                    if (arrow) arrow.classList.add('rotate-180');
-                }
-            });
-        };
-
-        const closeAllMenus = () => {
-            const dropdowns = [
-                { menu: 'services-menu', arrow: 'services-arrow' },
-                { menu: 'offer-menu', arrow: 'offer-arrow' }
-            ];
-            
-            dropdowns.forEach(item => {
-                const m = document.getElementById(item.menu);
-                const a = document.getElementById(item.arrow);
-                if (m) {
-                    m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-                    if (a) a.classList.remove('rotate-180');
-                }
-            });
-        };
-
-        // Initialize both dropdowns
-        setupDropdown('services-btn', 'services-menu', 'services-arrow');
-        setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
-
-        // Close menus if user clicks anywhere else on the page
-        document.addEventListener('click', closeAllMenus);
-    });
-</script>
-
-
-<script>
-        AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
-
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Desktop Dropdowns
-        const triggers = document.querySelectorAll('.menu-trigger');
-        triggers.forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const targetId = trigger.getAttribute('data-target');
-                const targetMenu = document.getElementById(targetId);
-                const arrow = trigger.querySelector('svg');
-                
-                // Toggle current
-                const isOpen = !targetMenu.classList.contains('invisible');
-                
-                // Close all
-                document.querySelectorAll('.dropdown-menu').forEach(m => {
-                    m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-                });
-                document.querySelectorAll('.menu-trigger svg').forEach(s => s.classList.remove('rotate-180'));
-
-                if (!isOpen) {
-                    targetMenu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-                    arrow.classList.add('rotate-180');
-                }
-            });
-        });
-
-        // Close everything on document click
-        document.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            document.querySelectorAll('.dropdown-menu').forEach(m => {
-                m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-            });
-            document.querySelectorAll('.menu-trigger svg').forEach(s => s.classList.remove('rotate-180'));
-        });
-    </script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
