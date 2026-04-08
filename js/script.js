@@ -1,3 +1,72 @@
+// index nav
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Get Elements for Services
+    const servicesBtn = document.getElementById('services-btn');
+    const servicesMenu = document.getElementById('services-menu');
+    const servicesArrow = document.getElementById('services-arrow');
+
+    // 2. Get Elements for Offer
+    const offerBtn = document.getElementById('offer-btn');
+    const offerMenu = document.getElementById('offer-menu');
+    const offerArrow = document.getElementById('offer-arrow');
+
+    /**
+     * Helper function to toggle a specific menu
+     */
+    function toggleDropdown(menu, arrow, otherMenu, otherArrow) {
+        const isHidden = menu.classList.contains('invisible');
+
+        // Close the other menu if it's open
+        if (otherMenu) {
+            closeSpecificMenu(otherMenu, otherArrow);
+        }
+
+        if (isHidden) {
+            // Show requested menu
+            menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+            menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+            arrow.classList.add('rotate-180');
+        } else {
+            // Hide requested menu
+            closeSpecificMenu(menu, arrow);
+        }
+    }
+
+    /**
+     * Helper function to close a specific menu
+     */
+    function closeSpecificMenu(menu, arrow) {
+        if (menu && arrow) {
+            menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            arrow.classList.remove('rotate-180');
+        }
+    }
+
+    // --- Event Listeners ---
+
+    // Click for Services
+    servicesBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(servicesMenu, servicesArrow, offerMenu, offerArrow);
+    });
+
+    // Click for Offer
+    offerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(offerMenu, offerArrow, servicesMenu, servicesArrow);
+    });
+
+    // Close all menus when clicking anywhere else on the page
+    window.addEventListener('click', () => {
+        closeSpecificMenu(servicesMenu, servicesArrow);
+        closeSpecificMenu(offerMenu, offerArrow);
+    });
+});
+
+// about nav
+
+
 // main.js
 // index script
 window.addEventListener("load", () => {
@@ -268,3 +337,29 @@ document.querySelector(".marquee2").addEventListener("mouseleave", () => resumeM
 //       prevEl: ".swiper-button-prev",
 //     },
 //   });
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Header Entrance
+    gsap.from(".header-animate", {
+        duration: 1.2,
+        y: -30,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    // Bento Grid Reveal
+    gsap.from(".bento-card", {
+        scrollTrigger: {
+            trigger: ".bento-grid",
+            start: "top 90%",
+            toggleActions: "play none none none"
+        },
+        duration: 0.8,
+        y: 40,
+        opacity: 0,
+        stagger: 0.08,
+        ease: "power2.out",
+        clearProps: "all"
+    });
+});

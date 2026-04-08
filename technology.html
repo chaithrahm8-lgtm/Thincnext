@@ -3,9 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thincnext</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style type="text/tailwindcss">
+        @theme {
+            /* Fixed Shine - Smooth Sweep */
+            @keyframes shine {
+                0% { transform: translateX(-150%) skewX(-200deg); }
+                100% { transform: translateX(350%) skewX(-400deg); }
+            }
+            --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+            /* Multi-color Morphing */
+            @keyframes colorFlow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            --animate-color-flow: colorFlow 6s ease infinite;
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f0f7ff; 
+            color: #0f172a; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(220px, auto);
+            gap: 1.5rem;
+        }
+
+        .card-inner {
+            border-radius: 24px;
+            padding: 2.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .card-light {
+            background: #ffffff;
+            border: 2px solid #e2eefe;
+        }
+
+        .card-inner:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(30, 64, 175, 0.15);
+            border-color: #3b82f6;
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card-inner:hover .icon-box {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .col-span-2 { grid-column: span 2; }
+        .row-span-2 { grid-row: span 2; }
+
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .col-span-2 { grid-column: span 2; }
+        }
+        @media (max-width: 640px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .col-span-2 { grid-column: span 1; }
+        }
+    </style>
 </head>
-<body>
-    
+<body class="pt-6 ">
+
+ <header class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
+        <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
+    </div>
+
+    <a href="./index.html" class="relative z-10 flex items-center p-0">
+        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
+    </a>
+
+    <nav class="relative z-10">
+        <ul class="flex space-x-6 text-xs md:text-sm font-bold">
+            <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+            <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
+            
+            <li class="relative">
+                <button id="services-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                    Services
+                    <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul id="services-menu" class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                    <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a></li>
+                    <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing</a></li>
+                    <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Readymade</a></li>
+                </ul>
+            </li>
+
+            <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
+
+            <li class="relative">
+                <button id="offer-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                    Offer
+                    <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul id="offer-menu" class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                    <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing Offer</a></li>
+                    <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup Offer</a></li>
+                </ul>
+            </li>
+
+            <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <button class="relative z-10 px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
+        Book a Domain
+    </button>
+</header>
+
+    <section class="px-6 md:px-10 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <header class="mb-20">
+                <h1 class="text-5xl font-extrabold tracking-tight mb-4">
+                    Expertise <span class="text-blue-600">Technologies.</span>
+                </h1>
+                <p class="text-blue-900/60 text-xl max-w-2xl font-light">A Quality Experience Team With 8 Years Experience.</p>
+            </header>
+
+            <div class="bento-grid">
+                <div class="bento-card col-span-2 row-span-2">
+                    <div class="card-inner bg-gradient-to-br from-blue-700 to-blue-900 text-white border-none">
+                        <div class="icon-box bg-white/20 text-white backdrop-blur-md"><i class="fas fa-code"></i></div>
+                        <h3 class="text-4xl font-bold mb-6">Web Development</h3>
+                        <p class="text-blue-100 text-lg leading-relaxed">We develop scalable websites & applications that work. Whether it is powerful content management, e-commerce or a killer app, we have the skills to turn ideas into reality.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-inner card-light">
+                        <div class="icon-box bg-blue-100 text-blue-600"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="text-xl font-bold mb-3 text-blue-900">App Development</h3>
+                        <p class="text-blue-700/60 text-sm leading-relaxed">Custom mobile services built with unique & affordable methodology.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-inner card-light">
+                        <div class="icon-box bg-blue-50 text-blue-500"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="text-xl font-bold mb-3 text-blue-900">Cyber Security</h3>
+                        <p class="text-blue-700/60 text-sm leading-relaxed">Securing data linked to applications in our daily digital life.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card col-span-2">
+                    <div class="card-inner bg-gradient-to-r from-blue-300 to-blue-100 text-white border-none flex-row items-center gap-8">
+                        <div class="icon-box bg-white/20 text-blue-900 flex-shrink-0"><i class="fas fa-shopping-cart"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2 text-blue-900">E-commerce</h3>
+                            <p class="text-blue-900 text-sm leading-relaxed">Design & develop customised eCommerce websites from design to payment gateway.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card row-span-2">
+                    <div class="card-inner bg-slate-900 text-white border-none">
+                        <div class="icon-box bg-blue-500 text-white"><i class="fas fa-paint-brush"></i></div>
+                        <h3 class="text-2xl font-bold mb-6">Design for Startups</h3>
+                        <p class="text-blue-300 text-sm leading-relaxed">Long-term relationships. We host, maintain and offer on-going design retainers you'd expect to see.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-inner card-light">
+                        <div class="icon-box bg-blue-100 text-blue-700"><i class="fas fa-tasks"></i></div>
+                        <h3 class="text-xl font-bold mb-3 text-blue-900">ERP</h3>
+                        <p class="text-blue-700/60 text-sm leading-relaxed">Enterprise level application softwares based on architecture.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card col-span-2">
+                    <div class="card-inner card-light flex-row items-center gap-8">
+                        <div class="icon-box bg-blue-50 text-blue-400 flex-shrink-0"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-blue-900">Domain Purchase</h3>
+                            <p class="text-blue-700/60 text-sm leading-relaxed">Selling various types of domains at attractive prices and offers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card col-span-2">
+                    <div class="card-inner bg-gradient-to-r from-sky-400 to-blue-500 text-white border-none flex-row items-center gap-8">
+                        <div class="icon-box bg-white/20 text-white flex-shrink-0"><i class="fas fa-server"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Web Hosting</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Windows, Linux, Wordpress, and VPS hostings for every website.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-inner card-light">
+                        <div class="icon-box bg-blue-50 text-blue-600"><i class="fas fa-gamepad"></i></div>
+                        <h3 class="text-lg font-bold mb-2 text-blue-900">Game Development</h3>
+                        <p class="text-blue-700/60 text-xs">Multi-perspective approach to modern game projects.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-inner card-light">
+                        <div class="icon-box bg-blue-100 text-blue-500"><i class="fas fa-link"></i></div>
+                        <h3 class="text-lg font-bold mb-2 text-blue-900">Blockchain</h3>
+                        <p class="text-blue-700/60 text-xs">Decentralized applications and private blockchain support.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-inner card-light">
+                        <div class="icon-box bg-blue-900 text-white"><i class="fas fa-user-secret"></i></div>
+                        <h3 class="text-lg font-bold mb-2 text-blue-900">Ethical Hacking</h3>
+                        <p class="text-blue-700/60 text-xs">Finding and fixing network vulnerabilities for security.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-inner card-light">
+                        <div class="icon-box bg-sky-100 text-sky-600"><i class="fas fa-vr-cardboard"></i></div>
+                        <h3 class="text-lg font-bold mb-2 text-blue-900">AR / VR</h3>
+                        <p class="text-blue-700/60 text-xs">Interaction and animation to bring screens to life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <footer class="bg-[#020617] text-slate-400 px-8 py-20 border-t border-slate-900 font-sans mt-10">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16 mb-20">
+
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl font-bold text-white tracking-tight">Thincnext</h2>
+                        <p class="text-sm leading-relaxed text-slate-400 mt-4">
+                            Before we get creative or put a digital solution in place, we take the time to fully
+                            understand your brand, project & the people its intended for.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-white font-bold uppercase tracking-widest text-[14px] flex items-center">
+                            <span class="w-1.5 h-3 bg-blue-600 mr-3"></span>Connect With Us
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#"
+                                class="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-blue-600 transition-all duration-300 text-white border border-slate-800">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-sky-500 transition-all duration-300 text-white border border-slate-800 group">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-pink-600 transition-all duration-300 text-white border border-slate-800">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-blue-500 transition-all duration-300 text-white border border-slate-800">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                class="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-red-600 transition-all duration-300 text-white border border-slate-800">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12.017 0C5.396 0 0 5.397 0 12.017c0 5.078 3.158 9.412 7.64 11.14-.104-.944-.198-2.392.041-3.426.214-.93 1.387-5.875 1.387-5.875s-.353-.706-.353-1.75c0-1.639.95-2.863 2.133-2.863 1.006 0 1.492.756 1.492 1.662 0 1.012-.644 2.526-.977 3.929-.278 1.173.586 2.13 1.74 2.13 2.088 0 3.693-2.203 3.693-5.382 0-2.813-2.022-4.782-4.912-4.782-3.345 0-5.308 2.51-5.308 5.1 0 1.01.389 2.096.874 2.686a.35.35 0 0 1 .08.332c-.087.36-.281 1.144-.319 1.3-.051.21-.168.254-.388.152-1.448-.675-2.353-2.793-2.353-4.496 0-3.66 2.66-7.02 7.67-7.02 4.027 0 7.157 2.87 7.157 6.707 0 4.001-2.522 7.22-6.023 7.22-1.177 0-2.283-.612-2.661-1.331l-.725 2.762c-.262 1.004-0.971 2.263-1.446 3.033A12.017 12.017 0 0 0 12.017 24c6.621 0 12.017-5.396 12.017-12.017C24.034 5.397 18.638 0 12.017 0z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-white font-bold uppercase tracking-widest text-[14px] flex items-center">
+                        <span class="w-1.5 h-3 bg-blue-600 mr-3"></span>Reach Us
+                    </h3>
+                    <div class="flex items-center space-x-4 group">
+                        <div
+                            class="flex-shrink-0 p-3 bg-slate-900 rounded-xl border border-slate-800 text-blue-500 group-hover:border-blue-500/50 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm tracking-wide">+91 96115 04567</p>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Mon-Sat, 9am - 6pm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-white font-bold uppercase tracking-widest text-[14px] flex items-center">
+                        <span class="w-1.5 h-3 bg-blue-600 mr-3"></span>Mail Us
+                    </h3>
+                    <div class="flex items-center space-x-4 group">
+                        <div
+                            class="flex-shrink-0 p-3 bg-slate-900 rounded-xl border border-slate-800 text-blue-500 group-hover:border-blue-500/50 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm tracking-wide">Sales@Thincnext.Com</p>
+                            <p class="text-[11px] text-slate-400 mt-0.5">Typically replies within 24hrs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-white font-bold uppercase tracking-widest text-[14px] flex items-center">
+                        <span class="w-1.5 h-3 bg-blue-600 mr-3"></span>Locate Us
+                    </h3>
+                    <div class="flex items-start space-x-4 group">
+                        <div
+                            class="flex-shrink-0 p-3 bg-slate-900 rounded-xl border border-slate-800 text-blue-500 group-hover:border-blue-500/50 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div class="text-sm leading-snug">
+                            <p class="text-white font-semibold">#285, 1st Floor, Malleshwaram</p>
+                            <p class="text-slate-400 text-xs mt-0.5">Between 17th-18th Cross, 2nd Main</p>
+                            <p class="text-slate-400 text-xs">Bengaluru - 560 003</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-16 border-t border-slate-900 text-center">
+                <h1
+                    class="text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-r from-blue-600 via-cyan-400 to-indigo-600 bg-clip-text text-transparent opacity-20 hover:opacity-60 transition-opacity duration-700 cursor-default select-none">
+                    THINCNEXT
+                </h1>
+
+                <div
+                    class="mt-12 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 text-[12px] font-bold uppercase tracking-[0.3em] text-slate-600">
+                    <a href="#" class="hover:text-blue-500 transition-colors">Privacy Policy</a>
+                    <span class="hidden md:block w-1.5 h-1.5 bg-slate-800 rounded-full"></span>
+                    <a href="#" class="hover:text-blue-500 transition-colors">Terms of Service</a>
+                    <span class="hidden md:block w-1.5 h-1.5 bg-slate-800 rounded-full"></span>
+                    <span class="text-slate-600">© 2026 Thincnext. All Rights Reserved.</span>
+                </div>
+
+                <div class="mt-8 flex flex-col items-center gap-4">
+                    <p class="text-[11px] text-slate-800 uppercase tracking-[0.5em] font-medium">
+                        Designed by <span class="text-blue-500/40">Thincnext Team</span>
+                    </p>
+                    s
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

@@ -7,33 +7,61 @@
     <title>Startup Offer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script> -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 
 <body>
-    <header
-        class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative overflow-hidden">
-        <div class="absolute inset-0 pointer-events-none">
-            <div
-                class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-100/50 to-transparent animate-shine">
-            </div>
-        </div>
+   <header class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
+        <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
+    </div>
 
-        <a href="/" class="relative z-10 flex items-center p-0">
-            <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
-                class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
-        </a>
+    <a href="./index.html" class="relative z-10 flex items-center p-0">
+        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
+    </a>
 
-        <nav class="relative z-10">
-            <ul class="flex space-x-6 text-xs md:text-sm font-bold">
-                <li><a href="/" class="hover:text-blue-500 transition-colors">Home</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">About</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">Services</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">Career</a></li>
-                <li><a href="#" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="relative z-10">
+        <ul class="flex space-x-6 text-xs md:text-sm font-bold">
+            <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+            <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
+            
+            <li class="relative">
+                <button id="services-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                    Services
+                    <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul id="services-menu" class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                    <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a></li>
+                    <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing</a></li>
+                    <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Readymade</a></li>
+                </ul>
+            </li>
+
+            <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
+
+            <li class="relative">
+                <button id="offer-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                    Offer
+                    <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul id="offer-menu" class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                    <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing Offer</a></li>
+                    <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup Offer</a></li>
+                </ul>
+            </li>
+
+            <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <button class="relative z-10 px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
+        Book a Domain
+    </button>
+</header>
     <main>
         <section class=" min-h-[600px] flex items-center justify-center">
             <div class="min-h-fit">
