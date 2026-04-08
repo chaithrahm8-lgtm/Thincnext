@@ -1,3 +1,57 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to handle the dropdown toggle logic
+    const setupDropdown = (btnId, menuId, arrowId) => {
+        const btn = document.getElementById(btnId);
+        const menu = document.getElementById(menuId);
+        const arrow = document.getElementById(arrowId);
+
+        if (!btn || !menu) return;
+
+        btn.addEventListener('click', (e) => {
+            // Stop click from bubbling up to the document
+            e.stopPropagation();
+
+            // Check if this menu is already open
+            const isClosed = menu.classList.contains('invisible');
+
+            // Close all other dropdowns first
+            closeAllMenus();
+
+            // If it was closed, open it now
+            if (isClosed) {
+                menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                if (arrow) arrow.classList.add('rotate-180');
+            }
+        });
+    };
+
+    // Helper function to close all open menus
+    const closeAllMenus = () => {
+        const menus = [
+            { id: 'services-menu', arrow: 'services-arrow' },
+            { id: 'offer-menu', arrow: 'offer-arrow' }
+        ];
+
+        menus.forEach(item => {
+            const m = document.getElementById(item.id);
+            const a = document.getElementById(item.arrow);
+            if (m) {
+                m.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                if (a) a.classList.remove('rotate-180');
+            }
+        });
+    };
+
+    // Initialize for both dropdowns
+    setupDropdown('services-btn', 'services-menu', 'services-arrow');
+    setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
+
+    // Close menus if clicking anywhere else on the page
+    document.addEventListener('click', closeAllMenus);
+});
+// about nav
+
+
 // main.js
 // index script
 window.addEventListener("load", () => {
@@ -268,3 +322,29 @@ document.querySelector(".marquee2").addEventListener("mouseleave", () => resumeM
 //       prevEl: ".swiper-button-prev",
 //     },
 //   });
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Header Entrance
+    gsap.from(".header-animate", {
+        duration: 1.2,
+        y: -30,
+        opacity: 0,
+        ease: "power3.out"
+    });
+
+    // Bento Grid Reveal
+    gsap.from(".bento-card", {
+        scrollTrigger: {
+            trigger: ".bento-grid",
+            start: "top 90%",
+            toggleActions: "play none none none"
+        },
+        duration: 0.8,
+        y: 40,
+        opacity: 0,
+        stagger: 0.08,
+        ease: "power2.out",
+        clearProps: "all"
+    });
+});
