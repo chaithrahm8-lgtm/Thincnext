@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -53,20 +53,29 @@
         --animate-color-flow: colorFlow 6s ease infinite;
     }
 </style>
+
+
+
+
 </head>
+
 
 <body class="bg-white font-sans text-slate-900">
 
-<header class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative">
+
+<!-- headerabout -->
+
+<header class="flex justify-between items-center px-6 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative z-[100]">
+    
     <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
         <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
     </div>
 
     <a href="./index.html" class="relative z-10 flex items-center p-0">
-        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
+        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-12 md:h-12 w-auto object-contain transform scale-110 md:scale-125 origin-left transition-transform duration-300" />
     </a>
 
-    <nav class="relative z-10">
+    <nav class="relative z-10 hidden lg:block">
         <ul class="flex space-x-6 text-xs md:text-sm font-bold">
             <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
             <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
@@ -78,7 +87,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <ul id="services-menu" class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                <ul id="services-menu" class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[110] overflow-hidden">
                     <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a></li>
                     <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing</a></li>
                     <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Readymade</a></li>
@@ -94,7 +103,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
-                <ul id="offer-menu" class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                <ul id="offer-menu" class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[110] overflow-hidden">
                     <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing Offer</a></li>
                     <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup Offer</a></li>
                 </ul>
@@ -104,10 +113,40 @@
         </ul>
     </nav>
 
-    <button class="relative z-10 px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
-        Book a Domain
-    </button>
+    <div class="flex items-center gap-4 relative z-10">
+        <button class="hidden sm:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 transition-all">
+            Book a Domain
+        </button>
+
+        <button id="mobile-menu-btn" class="lg:hidden flex flex-col gap-1.5 focus:outline-none p-2">
+            <span class="w-6 h-0.5 bg-slate-800 rounded-full"></span>
+            <span class="w-6 h-0.5 bg-slate-800 rounded-full"></span>
+            <span class="w-6 h-0.5 bg-slate-800 rounded-full"></span>
+        </button>
+    </div>
+
+    <div id="mobile-sidebar" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[150] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden">
+        <div class="absolute right-0 top-0 h-full w-64 bg-white shadow-2xl p-6 transform translate-x-full transition-transform duration-300 ease-in-out" id="sidebar-content">
+            <div class="flex justify-end mb-8">
+                <button id="close-sidebar" class="text-slate-500 hover:text-blue-500">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <ul class="flex flex-col gap-6 text-base font-bold text-slate-700">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./readymade.html">Readymade</a></li>
+                <li><a href="./career.html">Career</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            <button class="w-full mt-10 py-3 bg-blue-800 text-white rounded-xl font-bold">Book a Domain</button>
+        </div>
+    </div>
 </header>
+
+
+
+<!-- sectionabout -->
 
 
     <section class="unified-section py-24 px-6 border-b border-slate-200">
@@ -563,6 +602,32 @@
     });
 </script>
 
+
+   
+
+
+<script>
+    // Mobile Sidebar Logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('close-sidebar');
+    const sidebar = document.getElementById('mobile-sidebar');
+    const sidebarContent = document.getElementById('sidebar-content');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.remove('opacity-0', 'pointer-events-none');
+        sidebarContent.classList.remove('translate-x-full');
+    });
+
+    const closeSidebar = () => {
+        sidebar.classList.add('opacity-0', 'pointer-events-none');
+        sidebarContent.classList.add('translate-x-full');
+    };
+
+    closeBtn.addEventListener('click', closeSidebar);
+    sidebar.addEventListener('click', (e) => {
+        if(e.target === sidebar) closeSidebar();
+    });
+</script>
 
 </body>
 
