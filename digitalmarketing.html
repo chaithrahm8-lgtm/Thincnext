@@ -54,7 +54,7 @@
 
 <body class="bg-[#f8fafc] overflow-x-hidden">
 
-  <header class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative">
+ <header class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative">
     <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
         <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
     </div>
@@ -399,6 +399,68 @@
             ease: "sine.inOut"
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // 1. SWIPER CONFIGURATION (For your "More About Us" slider)
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: { delay: 4000, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+        },
+    });
+
+    // 2. DROPDOWN LOGIC (For Services & Offer menus)
+    document.addEventListener('DOMContentLoaded', () => {
+        const setupDropdown = (btnId, menuId, arrowId) => {
+            const btn = document.getElementById(btnId);
+            const menu = document.getElementById(menuId);
+            const arrow = document.getElementById(arrowId);
+
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isClosed = menu.classList.contains('invisible');
+                
+                // Close all other open menus first
+                closeAllMenus();
+
+                if (isClosed) {
+                    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                    if (arrow) arrow.classList.add('rotate-180');
+                }
+            });
+        };
+
+        const closeAllMenus = () => {
+            const dropdowns = [
+                { menu: 'services-menu', arrow: 'services-arrow' },
+                { menu: 'offer-menu', arrow: 'offer-arrow' }
+            ];
+            
+            dropdowns.forEach(item => {
+                const m = document.getElementById(item.menu);
+                const a = document.getElementById(item.arrow);
+                if (m) {
+                    m.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                    if (a) a.classList.remove('rotate-180');
+                }
+            });
+        };
+
+        // Initialize both dropdowns
+        setupDropdown('services-btn', 'services-menu', 'services-arrow');
+        setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
+
+        // Close menus if user clicks anywhere else on the page
+        document.addEventListener('click', closeAllMenus);
+    });
+</script>
 </body>
 
 </html>
