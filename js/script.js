@@ -1,69 +1,54 @@
-// index nav
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Get Elements for Services
-    const servicesBtn = document.getElementById('services-btn');
-    const servicesMenu = document.getElementById('services-menu');
-    const servicesArrow = document.getElementById('services-arrow');
+    // Function to handle the dropdown toggle logic
+    const setupDropdown = (btnId, menuId, arrowId) => {
+        const btn = document.getElementById(btnId);
+        const menu = document.getElementById(menuId);
+        const arrow = document.getElementById(arrowId);
 
-    // 2. Get Elements for Offer
-    const offerBtn = document.getElementById('offer-btn');
-    const offerMenu = document.getElementById('offer-menu');
-    const offerArrow = document.getElementById('offer-arrow');
+        if (!btn || !menu) return;
 
-    /**
-     * Helper function to toggle a specific menu
-     */
-    function toggleDropdown(menu, arrow, otherMenu, otherArrow) {
-        const isHidden = menu.classList.contains('invisible');
+        btn.addEventListener('click', (e) => {
+            // Stop click from bubbling up to the document
+            e.stopPropagation();
 
-        // Close the other menu if it's open
-        if (otherMenu) {
-            closeSpecificMenu(otherMenu, otherArrow);
-        }
+            // Check if this menu is already open
+            const isClosed = menu.classList.contains('invisible');
 
-        if (isHidden) {
-            // Show requested menu
-            menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-            menu.classList.add('opacity-100', 'visible', 'translate-y-0');
-            arrow.classList.add('rotate-180');
-        } else {
-            // Hide requested menu
-            closeSpecificMenu(menu, arrow);
-        }
-    }
+            // Close all other dropdowns first
+            closeAllMenus();
 
-    /**
-     * Helper function to close a specific menu
-     */
-    function closeSpecificMenu(menu, arrow) {
-        if (menu && arrow) {
-            menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
-            menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-            arrow.classList.remove('rotate-180');
-        }
-    }
+            // If it was closed, open it now
+            if (isClosed) {
+                menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                if (arrow) arrow.classList.add('rotate-180');
+            }
+        });
+    };
 
-    // --- Event Listeners ---
+    // Helper function to close all open menus
+    const closeAllMenus = () => {
+        const menus = [
+            { id: 'services-menu', arrow: 'services-arrow' },
+            { id: 'offer-menu', arrow: 'offer-arrow' }
+        ];
 
-    // Click for Services
-    servicesBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleDropdown(servicesMenu, servicesArrow, offerMenu, offerArrow);
-    });
+        menus.forEach(item => {
+            const m = document.getElementById(item.id);
+            const a = document.getElementById(item.arrow);
+            if (m) {
+                m.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                if (a) a.classList.remove('rotate-180');
+            }
+        });
+    };
 
-    // Click for Offer
-    offerBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleDropdown(offerMenu, offerArrow, servicesMenu, servicesArrow);
-    });
+    // Initialize for both dropdowns
+    setupDropdown('services-btn', 'services-menu', 'services-arrow');
+    setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
 
-    // Close all menus when clicking anywhere else on the page
-    window.addEventListener('click', () => {
-        closeSpecificMenu(servicesMenu, servicesArrow);
-        closeSpecificMenu(offerMenu, offerArrow);
-    });
+    // Close menus if clicking anywhere else on the page
+    document.addEventListener('click', closeAllMenus);
 });
-
 // about nav
 
 
