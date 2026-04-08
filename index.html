@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="./style.css" rel="stylesheet">
      <!-- script of counter -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -126,6 +127,36 @@
 }
   
     </style> 
+
+<style type="text/tailwindcss">
+    @theme {
+      --color-brand-1: #1c8cc1;
+      --color-brand-2: #0892d0;
+      --color-brand-3: #2496cd;
+      --color-brand-dark: #0a0a0c;
+    }
+  </style>
+  <style>
+    .footer-shimmer {
+      /* Uses your brand-dark (#0a0a0c) as the base, with a sweep of brand-1 (#1c8cc1) */
+      background: linear-gradient(
+        130deg,
+       #0a0a0c 0%,
+        #0a0a0c 20%,
+        /* rgba(28, 140, 193, 0.15) 50%, The glowing blue shine */
+        #02384f 60%,
+        #0a0a0c 100%
+      );
+      background-size: 800% 100%;
+      /* Slower 6s animation so it feels elegant on a large footer */
+      animation: footerShineMove 6s linear infinite; 
+    }
+
+    @keyframes footerShineMove {
+      0% { background-position: 100% 0; }
+      10% { background-position: 200% 100; }
+    }
+  </style>
 </head>
 
 <body class="text-slate-900 bg-white">
@@ -770,63 +801,106 @@
 
    <!--footer-->
     
+<footer class=" footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
+      
 
-<footer class="bg-gray-100 text-gray-1000 px-8 py-16 border-t border-gray-200">
+      <div class="flex flex-col gap-6">
+        <div class="items-center">
+          <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo" class="h-10 md:h-20 w-auto object-contain">
+        </div>
+        
+        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+          Before we get creative or put a digital solution in place, we take the time to fully understand your brand, project & the people its intended for.
+        </p>
+      </div>
 
-  <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-      <div>
-        <h3 class="text-gray-900 font-semibold mb-4">Company</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">Home</a></li>
-          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">About</a></li>
-          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">Services</a></li>
-          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">Career</a></li>
-          <li><a href="#" class="hover:text-blue-600 hover:translate-x-1 transition duration-300">Contact Us</a></li>
+         <div class="flex flex-col gap-4 mt-2">
+          <div class="flex items-start gap-3 group cursor-default">
+            <i data-lucide="map-pin" class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+            <span class="text-sm text-slate-400 leading-relaxed">
+              #285,1st Floor,Between 17th- 18th Cross,
+              2nd Main (Sampige Road),<br>
+              Malleshwaram, Bengaluru - 560 003
+            </span>
+          </div>
+          <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+            <i data-lucide="phone" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+            <span class="text-sm">+91 96115 04567</span>
+          </div>
+          <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+            <i data-lucide="mail" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+            <span class="text-sm">Sales@Thincnext.Com</span>
+          </div>
+    
+        </div>
+
+      <div class="flex flex-col gap-6 md:pl-8">
+        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Company</h3>
+        <ul class="flex flex-col gap-3">
+          <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a></li>
+          <li><a href="services.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Services</a></li>
+          <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
+          <li><a href="offers.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Offers</a></li>
+          <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
         </ul>
       </div>
 
-      <div class="text-left md:text-center">
-        <h3 class="text-gray-900 font-semibold mb-4">Support</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="hover:text-blue-600 transition">Terms & Conditions</a></li>
-          <li><a href="#" class="hover:text-blue-600 transition">Policies</a></li>
-          <li><a href="#" class="hover:text-blue-600 transition">Email</a></li>
-          <li><a href="#" class="hover:text-blue-600 transition">Address</a></li>
+      <div class="flex flex-col gap-6">
+        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Social</h3>
+        
+        <ul class="flex flex-col gap-3">
+          <li>
+            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+              <img src="/assest/images/fbfoot.png" alt="Facebook" class="w-5 h-5 group-hover:scale-110 transition-transform">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+              <img src="/assest/images/twitfoot.png" alt="Twitter" class="w-5 h-5 group-hover:scale-110 transition-transform">
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+              <img src="/assest/images/instafoot.png" alt="Instagram" class="w-5 h-5 group-hover:scale-110 transition-transform">
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+              <img src="/assest/images/linkedfoot.png" alt="LinkedIn" class="w-5 h-5 group-hover:scale-110 transition-transform">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+              <img src="/assest/images/pintrtfoot.png" alt="Pinterest" class="w-5 h-5 group-hover:scale-110 transition-transform">
+              Pinterest
+            </a>
+          </li>
         </ul>
+
+        <div class="mt-4">
+          <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
+        </div>
       </div>
-
-      <div class="text-left md:text-right">
-        <h3 class="text-gray-900 font-semibold mb-4">Follow Us</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="hover:text-blue-600 transition">Instagram</a></li>
-          <li><a href="#" class="hover:text-blue-600 transition">YouTube</a></li>
-          <li><a href="#" class="hover:text-blue-600 transition">LinkedIn</a></li>
-          <li><a href="#" class="hover:text-blue-600 transition">Facebook</a></li>
-        </ul>
-      </div>
-
-            </div>
-
-    <div class="my-12 h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-
-    <div class="text-center">
-
-      <h1 class="text-5xl md:text-6xl font-extrabold tracking-widest 
-      bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-700 
-      bg-clip-text text-transparent
-      animate-pulse hover:scale-110 transition duration-300 drop-shadow-md">
-        THINCNEXT
-      </h1>
-
-      <p class="text-gray-500 text-sm mt-4 hover:text-blue-600 transition">
-        © 2026 THINCNEXT. All rights reserved.
-      </p>
+      
 
     </div>
 
-  </div>
-</footer> 
+    <div class="w-full py-6 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
+        <p>&copy; Copyrights thincnext. All rights reserved.</p>
+        <span class="hidden md:inline-block text-slate-600">|</span>
+        <p>Designed by <span class="text-brand-1 font-semibold">Thincnext</span></p>
+      </div>
+    </div>
+
+  </footer>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
