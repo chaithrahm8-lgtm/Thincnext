@@ -102,7 +102,7 @@
 
 /* --- MOBILE FIXES (Solves Double Line & Image issue) --- */
 @media (max-width: 768px) {
-    body { padding: 20px; }
+    /* body { padding: 20px; } */
 
     .workspace-grid {
         flex-direction: column;
