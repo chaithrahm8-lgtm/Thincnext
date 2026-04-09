@@ -43,6 +43,13 @@
       --color-brand-2: #0892d0;
       --color-brand-3: #2496cd;
       --color-brand-dark: #0a0a0c;
+
+      /* Fixed Shine - Smooth Sweep */
+      @keyframes shine {
+          0% { transform: translateX(-150%) skewX(-200deg); }
+          100% { transform: translateX(350%) skewX(-400deg); }
+      }
+      --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     }
   </style>
   <style>
@@ -65,27 +72,113 @@
       0% { background-position: 100% 0; }
       10% { background-position: 200% 100; }
     }
+
+    /* Mobile Menu Transitions */
+    #mobile-menu {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    #mobile-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
   </style>
 </head>
-<body>
+<body class="bg-blue-50 font-sans antialiased text-slate-800 m-0 overflow-x-hidden pt-6 selection:bg-slate-300">
 
-  <section class=" bg-blue-50 text-slate-800 font-sans antialiased min-h-screen items-center selection:bg-slate-300 w-full py-16 px-6 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
+<header class="flex justify-between items-center px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-[1200px] left-1/2 -translate-x-1/2 mt-4 z-[1000] fixed top-0">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
+        <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
+    </div>
+
+    <a href="./index.html" class="relative z-[60] flex items-center p-0">
+        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-10 md:h-12 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300" />
+    </a>
+
+    <nav class="hidden lg:block relative z-10">
+        <ul class="flex space-x-6 text-sm font-bold">
+            <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+            <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
+            
+            <li class="relative">
+                <button id="services-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                    Services
+                    <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul id="services-menu" class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden">
+                    <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a></li>
+                    <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing</a></li>
+                    <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors z-[60]">Readymade</a></li>
+                </ul>
+            </li>
+
+            <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
+
+            <li class="relative">
+                <button id="offer-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                    Offer
+                    <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <ul id="offer-menu" class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                    <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing Offer</a></li>
+                    <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup Offer</a></li>
+                </ul>
+            </li>
+
+            <li><a href="./contact.html" class="text-blue-600 hover:text-blue-500 transition-colors">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="flex items-center gap-3 relative z-10">
+        <button class="hidden md:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
+            Book a Domain
+        </button>
+        <button id="hamburger" class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden absolute top-[115%] left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]">
+        <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2">Home</a>
+        <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2">About</a>
+        <div class="flex flex-col gap-2">
+            <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Services</span>
+            <a href="./technology.html" class="pl-4 py-1 text-slate-600">Technology</a>
+            <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600">Digital Marketing</a>
+            <a href="./readymade.html" class="pl-4 py-1 text-slate-600">Readymade</a>
+        </div>
+        <a href="./career.html" class="text-lg font-bold border-b border-slate-100 pb-2">Career</a>
+        <div class="flex flex-col gap-2">
+            <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Offer</span>
+            <a href="./digitalmarketingoffer.html" class="pl-4 py-1 text-slate-600">Digital Marketing Offer</a>
+            <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600">Startup Offer</a>
+        </div>
+        <a href="./contact.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-blue-600">Contact Us</a>
+        <button class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl">Book a Domain</button>
+    </div>
+</header>
+
+<section class="mt-32 w-full py-16 px-6 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
 
     <div class="flex flex-col gap-8 w-full" data-aos="fade-right" data-aos-duration="1000">
       
       <div class="w-full h-[250px] md:h-[300px] bg-slate-200 rounded-2xl flex flex-col items-center justify-center text-slate-500 shadow-inner border border-slate-300 relative overflow-hidden">
-
-
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.0058153!3d40.7127492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Core%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
-    class="w-full h-full border-0" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.0058153!3d40.7127492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Core%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
+          class="w-full h-full border-0" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
- <img src="assest/images/Imgcontact.png" alt="Support Illustration" class="w-full max-w-[350px] mx-auto" />
+
       <div class="flex flex-col gap-4 pl-2">
         <div class="flex items-center gap-4 text-slate-600">
           <div class="p-2 bg-slate-200/50 rounded-full text-slate-500"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
@@ -101,12 +194,9 @@
         </div>
       </div>
 
-     
-
-    
+      <img src="assest/images/Imgcontact.png" alt="Support Illustration" class="w-full max-w-[350px] mx-auto hidden md:block mt-4" />
 
     </div>
-
 
     <div class="flex flex-col w-full h-full" data-aos="fade-left" data-aos-duration="1000">
       
@@ -116,7 +206,6 @@
       </div>
 
       <form class="p-8 md:p-10 rounded-3xl bg-slate-300/20 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.05)] flex flex-col gap-6">
-        
         <input type="text" placeholder="Your Name" required
                class="shimmer-field w-full px-5 py-4 rounded-xl border border-white/40 text-slate-700 placeholder-slate-500 font-medium focus:ring-2 focus:ring-slate-400 focus:outline-none transition-shadow">
         
@@ -134,9 +223,11 @@
           Send Msg
           <i data-lucide="send" class="w-4 h-4 ml-1"></i>
         </button>
-
       </form>
-  <div class="flex gap-4 items-center mt-20 justify-center">
+
+      <img src="assest/images/Imgcontact.png" alt="Support Illustration" class="w-full max-w-[350px] mx-auto block md:hidden mt-12" />
+
+      <div class="flex gap-4 items-center mt-12 md:mt-20 justify-center">
         <img src="assest/images/instagram.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-blue-500 hover:border-blue-500 hover:bg-white transition-all shadow-sm "/>
         <img src="assest/images/facebook.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-blue-600 hover:border-blue-600 hover:bg-white transition-all shadow-sm"/>
         <img src="assest/images/twitter.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-pink-600 hover:border-pink-600 hover:bg-white transition-all shadow-sm"/>
@@ -146,13 +237,10 @@
 
   </section>
 
-
-
-  <footer class=" footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden">
+<footer class=" footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden mt-10">
     
     <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
       
-
       <div class="flex flex-col gap-6">
         <div class="items-center">
           <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo" class="h-10 md:h-20 w-auto object-contain">
@@ -235,29 +323,98 @@
         </div>
       </div>
       
-
     </div>
 
     <div class="w-full py-6 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
       <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
-        <p>&copy; Copyrights thincnext. All rights reserved.</p>
+        <p>© Copyrights thincnext. All rights reserved.</p>
         <span class="hidden md:inline-block text-slate-600">|</span>
         <p>Designed by <span class="text-brand-1 font-semibold">Thincnext</span></p>
       </div>
     </div>
 
   </footer>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
   <script>
     // Initialize Animations
     AOS.init({
-      once: true, // Animation runs only once when scrolled into view
+      once: true, 
       offset: 50,
       easing: 'ease-out-cubic'
     });
 
     // Initialize Lucide Icons
     lucide.createIcons();
+
+    // Unified Menu Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Mobile Menu Hamburger Logic ---
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                mobileMenu.classList.toggle('active');
+            });
+            mobileMenu.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+            });
+        }
+
+        // --- Desktop Dropdown Logic ---
+        const setupDropdown = (btnId, menuId, arrowId) => {
+            const btn = document.getElementById(btnId);
+            const menu = document.getElementById(menuId);
+            const arrow = document.getElementById(arrowId);
+
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isClosed = menu.classList.contains('invisible');
+                closeAllDesktopMenus(); 
+
+                if (isClosed) {
+                    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                    if (arrow) arrow.classList.add('rotate-180');
+                }
+            });
+            
+            menu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        };
+
+        const closeAllDesktopMenus = () => {
+            const dropdowns = [
+                { menu: 'services-menu', arrow: 'services-arrow' },
+                { menu: 'offer-menu', arrow: 'offer-arrow' }
+            ];
+            
+            dropdowns.forEach(item => {
+                const m = document.getElementById(item.menu);
+                const a = document.getElementById(item.arrow);
+                if (m) {
+                    m.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                    if (a) a.classList.remove('rotate-180');
+                }
+            });
+        };
+
+        setupDropdown('services-btn', 'services-menu', 'services-arrow');
+        setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
+
+        // --- Global Click: Close Everything ---
+        document.addEventListener('click', () => {
+            closeAllDesktopMenus();
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    });
   </script>
 
 </body>
