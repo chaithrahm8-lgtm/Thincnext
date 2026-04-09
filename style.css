@@ -162,3 +162,8 @@
     object-fit: cover; /* Ensures the image fills the area without distortion */
     width: 100%; /* Maintains the responsive width */
 }
+
+.swiper{
+    width:80%;
+    height: 60%;
+}
