@@ -9,7 +9,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style type="text/tailwindcss">
         @theme {
@@ -52,89 +52,115 @@
         }
     </style>
     <style type="text/tailwindcss">
-    @theme {
+        @theme {
       --color-brand-1: #1c8cc1;
       --color-brand-2: #0892d0;
       --color-brand-3: #2496cd;
       --color-brand-dark: #0a0a0c;
     }
   </style>
-  <style>
-    .footer-shimmer {
-      /* Uses your brand-dark (#0a0a0c) as the base, with a sweep of brand-1 (#1c8cc1) */
-      background: linear-gradient(
-        130deg,
-       #0a0a0c 0%,
-        #0a0a0c 20%,
-        /* rgba(28, 140, 193, 0.15) 50%, The glowing blue shine */
-        #02384f 60%,
-        #0a0a0c 100%
-      );
-      background-size: 800% 100%;
-      /* Slower 6s animation so it feels elegant on a large footer */
-      animation: footerShineMove 6s linear infinite; 
-    }
+    <style>
+        .footer-shimmer {
+            /* Uses your brand-dark (#0a0a0c) as the base, with a sweep of brand-1 (#1c8cc1) */
+            background: linear-gradient(130deg,
+                    #0a0a0c 0%,
+                    #0a0a0c 20%,
+                    /* rgba(28, 140, 193, 0.15) 50%, The glowing blue shine */
+                    #02384f 60%,
+                    #0a0a0c 100%);
+            background-size: 800% 100%;
+            /* Slower 6s animation so it feels elegant on a large footer */
+            animation: footerShineMove 6s linear infinite;
+        }
 
-    @keyframes footerShineMove {
-      0% { background-position: 100% 0; }
-      10% { background-position: 200% 100; }
-    }
-  </style>
+        @keyframes footerShineMove {
+            0% {
+                background-position: 100% 0;
+            }
+
+            10% {
+                background-position: 200% 100;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-[#f8fafc] overflow-x-hidden">
 
- <header class="flex fixed justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative">
-    <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
-        <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
-    </div>
+    <header
+        class="flex fixed justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative">
+        <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
+            <div
+                class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine">
+            </div>
+        </div>
 
-    <a href="./index.html" class="relative z-10 flex items-center p-0">
-        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
-    </a>
+        <a href="./index.html" class="relative z-10 flex items-center p-0">
+            <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
+                class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
+        </a>
 
-    <nav class="relative z-10">
-        <ul class="flex space-x-6 text-xs md:text-sm font-bold">
-            <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
-            <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
-            
-            <li class="relative">
-                <button id="services-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
-                    Services
-                    <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <ul id="services-menu" class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0  translate-y-2 transition-all duration-300 z-[60] overflow-hidden">
-                    <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a></li>
-                    <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing</a></li>
-                    <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors z-[60]">Readymade</a></li>
-                </ul>
-            </li>
+        <nav class="relative z-10">
+            <ul class="flex space-x-6 text-xs md:text-sm font-bold">
+                <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+                <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
 
-            <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
+                <li class="relative">
+                    <button id="services-btn"
+                        class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                        Services
+                        <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul id="services-menu"
+                        class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0  translate-y-2 transition-all duration-300 z-[60] overflow-hidden">
+                        <li><a href="./technology.html"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a>
+                        </li>
+                        <li><a href="./digitalmarketing.html"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
+                                Marketing</a></li>
+                        <li><a href="./readymade.html"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors z-[60]">Readymade</a>
+                        </li>
+                    </ul>
+                </li>
 
-            <li class="relative">
-                <button id="offer-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
-                    Offer
-                    <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <ul id="offer-menu" class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
-                    <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing Offer</a></li>
-                    <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup Offer</a></li>
-                </ul>
-            </li>
+                <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
 
-            <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
-        </ul>
-    </nav>
+                <li class="relative">
+                    <button id="offer-btn"
+                        class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                        Offer
+                        <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul id="offer-menu"
+                        class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
+                        <li><a href="./digitalmarketingoffer.html"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
+                                Marketing Offer</a></li>
+                        <li><a href="./startupoffer.html"
+                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup
+                                Offer</a></li>
+                    </ul>
+                </li>
 
-    <button class="relative z-10 px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
-        Book a Domain
-    </button>
-</header>
+                <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <button
+            class="relative z-10 px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
+            Book a Domain
+        </button>
+    </header>
 
     <section class="relative  flex items-center px-8 md:px-20 mt-28 mb-10 z-2">
         <!-- <div class="circle-accent w-[800px] h-[800px] -right-40 -top-20"></div> -->
@@ -158,10 +184,12 @@
                     strategies.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <button
-                        class="bg-blue-600 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">
-                        Claim Offer Now
-                    </button>
+                    <a href="./digitalmarketingoffer.html">
+                        <button
+                            class="bg-blue-600 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all hover:scale-105 active:scale-95">
+                            Claim Offer Now
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -268,105 +296,128 @@
         </div>
     </section>
 
-    <footer class=" footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden mt-10">
-    
-    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
-      
+    <footer
+        class=" footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden mt-10">
 
-      <div class="flex flex-col gap-6">
-        <div class="items-center">
-          <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo" class="h-10 md:h-20 w-auto object-contain">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
+
+
+            <div class="flex flex-col gap-6">
+                <div class="items-center">
+                    <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo"
+                        class="h-10 md:h-20 w-auto object-contain">
+                </div>
+
+                <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+                    Before we get creative or put a digital solution in place, we take the time to fully understand your
+                    brand, project & the people its intended for.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 mt-2">
+                <div class="flex items-start gap-3 group cursor-default">
+                    <i data-lucide="map-pin"
+                        class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm text-slate-400 leading-relaxed">
+                        #285,1st Floor,Between 17th- 18th Cross,
+                        2nd Main (Sampige Road),<br>
+                        Malleshwaram, Bengaluru - 560 003
+                    </span>
+                </div>
+                <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+                    <i data-lucide="phone"
+                        class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm">+91 96115 04567</span>
+                </div>
+                <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+                    <i data-lucide="mail"
+                        class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm">Sales@Thincnext.Com</span>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col gap-6 md:pl-8">
+                <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Company</h3>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="text-sm text-slate-400 hover:text-brand-1 transition-all">Services</a></li>
+                    <li><a href="career.html"
+                            class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
+                    <li><a href="offers.html"
+                            class="text-sm text-slate-400 hover:text-brand-1 transition-all">Offers</a></li>
+                    <li><a href="portfolio.html"
+                            class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Social</h3>
+
+                <ul class="flex flex-col gap-3">
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                            <img src="/assest/images/fbfoot.png" alt="Facebook"
+                                class="w-5 h-5 group-hover:scale-110 transition-transform">
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                            <img src="/assest/images/twitfoot.png" alt="Twitter"
+                                class="w-5 h-5 group-hover:scale-110 transition-transform">
+                            Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                            <img src="/assest/images/instafoot.png" alt="Instagram"
+                                class="w-5 h-5 group-hover:scale-110 transition-transform">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                            <img src="/assest/images/linkedfoot.png" alt="LinkedIn"
+                                class="w-5 h-5 group-hover:scale-110 transition-transform">
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                            <img src="/assest/images/pintrtfoot.png" alt="Pinterest"
+                                class="w-5 h-5 group-hover:scale-110 transition-transform">
+                            Pinterest
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="mt-4">
+                    <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
+                </div>
+            </div>
+
+
         </div>
-        
-        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-          Before we get creative or put a digital solution in place, we take the time to fully understand your brand, project & the people its intended for.
-        </p>
-      </div>
 
-         <div class="flex flex-col gap-4 mt-2">
-          <div class="flex items-start gap-3 group cursor-default">
-            <i data-lucide="map-pin" class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
-            <span class="text-sm text-slate-400 leading-relaxed">
-              #285,1st Floor,Between 17th- 18th Cross,
-              2nd Main (Sampige Road),<br>
-              Malleshwaram, Bengaluru - 560 003
-            </span>
-          </div>
-          <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-            <i data-lucide="phone" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
-            <span class="text-sm">+91 96115 04567</span>
-          </div>
-          <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-            <i data-lucide="mail" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
-            <span class="text-sm">Sales@Thincnext.Com</span>
-          </div>
-    
+        <div
+            class="w-full py-6 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
+            <div
+                class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
+                <p>&copy; Copyrights thincnext. All rights reserved.</p>
+                <span class="hidden md:inline-block text-slate-600">|</span>
+                <p>Designed by <span class="text-brand-1 font-semibold">Thincnext</span></p>
+            </div>
         </div>
 
-      <div class="flex flex-col gap-6 md:pl-8">
-        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Company</h3>
-        <ul class="flex flex-col gap-3">
-          <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a></li>
-          <li><a href="services.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Services</a></li>
-          <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
-          <li><a href="offers.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Offers</a></li>
-          <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
-        </ul>
-      </div>
-
-      <div class="flex flex-col gap-6">
-        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Social</h3>
-        
-        <ul class="flex flex-col gap-3">
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/fbfoot.png" alt="Facebook" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/twitfoot.png" alt="Twitter" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/instafoot.png" alt="Instagram" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/linkedfoot.png" alt="LinkedIn" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/pintrtfoot.png" alt="Pinterest" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Pinterest
-            </a>
-          </li>
-        </ul>
-
-        <div class="mt-4">
-          <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
-        </div>
-      </div>
-      
-
-    </div>
-
-    <div class="w-full py-6 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
-        <p>&copy; Copyrights thincnext. All rights reserved.</p>
-        <span class="hidden md:inline-block text-slate-600">|</span>
-        <p>Designed by <span class="text-brand-1 font-semibold">Thincnext</span></p>
-      </div>
-    </div>
-
-  </footer>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -386,68 +437,68 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    // 1. SWIPER CONFIGURATION (For your "More About Us" slider)
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: { delay: 4000, disableOnInteraction: false },
-        pagination: { el: ".swiper-pagination", clickable: true },
-        breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-        },
-    });
+    <script>
+        // 1. SWIPER CONFIGURATION (For your "More About Us" slider)
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+        });
 
-    // 2. DROPDOWN LOGIC (For Services & Offer menus)
-    document.addEventListener('DOMContentLoaded', () => {
-        const setupDropdown = (btnId, menuId, arrowId) => {
-            const btn = document.getElementById(btnId);
-            const menu = document.getElementById(menuId);
-            const arrow = document.getElementById(arrowId);
+        // 2. DROPDOWN LOGIC (For Services & Offer menus)
+        document.addEventListener('DOMContentLoaded', () => {
+            const setupDropdown = (btnId, menuId, arrowId) => {
+                const btn = document.getElementById(btnId);
+                const menu = document.getElementById(menuId);
+                const arrow = document.getElementById(arrowId);
 
-            if (!btn || !menu) return;
+                if (!btn || !menu) return;
 
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isClosed = menu.classList.contains('invisible');
-                
-                // Close all other open menus first
-                closeAllMenus();
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isClosed = menu.classList.contains('invisible');
 
-                if (isClosed) {
-                    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-                    if (arrow) arrow.classList.add('rotate-180');
-                }
-            });
-        };
+                    // Close all other open menus first
+                    closeAllMenus();
 
-        const closeAllMenus = () => {
-            const dropdowns = [
-                { menu: 'services-menu', arrow: 'services-arrow' },
-                { menu: 'offer-menu', arrow: 'offer-arrow' }
-            ];
-            
-            dropdowns.forEach(item => {
-                const m = document.getElementById(item.menu);
-                const a = document.getElementById(item.arrow);
-                if (m) {
-                    m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-                    if (a) a.classList.remove('rotate-180');
-                }
-            });
-        };
+                    if (isClosed) {
+                        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                        if (arrow) arrow.classList.add('rotate-180');
+                    }
+                });
+            };
 
-        // Initialize both dropdowns
-        setupDropdown('services-btn', 'services-menu', 'services-arrow');
-        setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
+            const closeAllMenus = () => {
+                const dropdowns = [
+                    { menu: 'services-menu', arrow: 'services-arrow' },
+                    { menu: 'offer-menu', arrow: 'offer-arrow' }
+                ];
 
-        // Close menus if user clicks anywhere else on the page
-        document.addEventListener('click', closeAllMenus);
-    });
-</script>
-<script> lucide.createIcons();</script>
+                dropdowns.forEach(item => {
+                    const m = document.getElementById(item.menu);
+                    const a = document.getElementById(item.arrow);
+                    if (m) {
+                        m.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                        if (a) a.classList.remove('rotate-180');
+                    }
+                });
+            };
+
+            // Initialize both dropdowns
+            setupDropdown('services-btn', 'services-menu', 'services-arrow');
+            setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
+
+            // Close menus if user clicks anywhere else on the page
+            document.addEventListener('click', closeAllMenus);
+        });
+    </script>
+    <script> lucide.createIcons();</script>
 </body>
 
 </html>
