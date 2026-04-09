@@ -102,7 +102,7 @@
 
 /* --- MOBILE FIXES (Solves Double Line & Image issue) --- */
 @media (max-width: 768px) {
-    body { padding: 20px; }
+    /* body { padding: 20px; } */
 
     .workspace-grid {
         flex-direction: column;
@@ -161,4 +161,25 @@
     height: 350px; /* Change this value (e.g., 400px, 500px, 700px) to your desired height */
     object-fit: cover; /* Ensures the image fills the area without distortion */
     width: 100%; /* Maintains the responsive width */
+}
+
+.footer-shimmer {
+      background: linear-gradient(
+        130deg,
+       #0a0a0c 0%,
+        #0a0a0c 20%,
+        #02384f 60%,
+        #0a0a0c 100%
+      );
+      background-size: 800% 100%;
+      animation: footerShineMove 6s linear infinite; 
+    }
+
+    @keyframes footerShineMove {
+      0% { background-position: 100% 0; }
+      10% { background-position: 200% 100; }
+    }
+.swiper{
+    width:80%;
+    height: 60%;
 }
