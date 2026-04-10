@@ -23,55 +23,95 @@
             --color-brand-3: #2496cd;
             --color-brand-dark: #0a0a0c;
 
-            /* Fixed Shine - Smooth Sweep */
-            @keyframes shine {
-                0% { transform: translateX(-150%) skewX(-200deg); }
-                100% { transform: translateX(350%) skewX(-400deg); }
-            }
-            --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-
-            /* Multi-color Morphing */
-            @keyframes colorFlow {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-            --animate-color-flow: colorFlow 6s ease infinite;
+        /* Fixed Shine - Smooth Sweep */
+        @keyframes shine {
+          0% {
+            transform: translateX(-150%) skewX(-200deg);
+          }
+          100% {
+            transform: translateX(350%) skewX(-400deg);
+          }
         }
+        --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Multi-color Morphing */
+        @keyframes colorFlow {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
+        --animate-color-flow: colorFlow 6s ease infinite;
+      }
 
-        .animate-slide-up {
-            opacity: 0;
-            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        .delay-100 { animation-delay: 100ms; }
-        .delay-300 { animation-delay: 300ms; }
-        .delay-500 { animation-delay: 500ms; }
+      .animate-slide-up {
+        opacity: 0;
+        animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
 
-        .strength-card {
-            @apply font-black text-slate-950 tracking-tight flex items-center;
-            height: 90px;
-            opacity: 0.4;
-            transition: all 0.4s ease;
-        }
+      .delay-100 {
+        animation-delay: 100ms;
+      }
+      .delay-300 {
+        animation-delay: 300ms;
+      }
+      .delay-500 {
+        animation-delay: 500ms;
+      }
 
-        @keyframes step-slide {
-            0%, 15%   { transform: translateY(0); }
-            20%, 35%  { transform: translateY(-90px); }
-            40%, 55%  { transform: translateY(-180px); }
-            60%, 75%  { transform: translateY(-270px); }
-            80%, 95%  { transform: translateY(-360px); }
-            100%      { transform: translateY(-450px); }
+      .strength-card {
+        @apply font-black text-slate-950 tracking-tight flex items-center;
+        height: 90px;
+        opacity: 0.4;
+        transition: all 0.4s ease;
+      }
+
+      @keyframes step-slide {
+        0%,
+        15% {
+          transform: translateY(0);
         }
-        
-        .animate-step-slide {
-            animation: step-slide 12s infinite cubic-bezier(0.85, 0, 0.15, 1) reverse;
+        20%,
+        35% {
+          transform: translateY(-90px);
         }
+        40%,
+        55% {
+          transform: translateY(-180px);
+        }
+        60%,
+        75% {
+          transform: translateY(-270px);
+        }
+        80%,
+        95% {
+          transform: translateY(-360px);
+        }
+        100% {
+          transform: translateY(-450px);
+        }
+      }
+
+      .animate-step-slide {
+        animation: step-slide 12s infinite cubic-bezier(0.85, 0, 0.15, 1)
+          reverse;
+      }
     </style>
 
   <style>
@@ -416,10 +456,10 @@
         </div>
       </div>
 
-      <p class="text-slate-900 text-xl max-w-md">
-        We deliver digital excellence by focusing on core capabilities.
-      </p>
-    </div>
+        <p class="text-slate-900 text-xl max-w-md">
+          We deliver digital excellence by focusing on core capabilities.
+        </p>
+      </div>
 
     <div
       class="w-full lg:w-1/2 relative h-[550px] group overflow-hidden rounded-[40px] shadow-2xl border border-slate-100">
@@ -562,24 +602,28 @@
               </svg>
             </div>
 
-            <p class="text-gray-700 text-sm leading-relaxed font-semibold mb-6">
-              The yoga studio has helped me find inner peace and improve my
-              physical health. I highly recommend it.
-            </p>
+              <p
+                class="text-gray-700 text-sm leading-relaxed font-semibold mb-6"
+              >
+                The yoga studio has helped me find inner peace and improve my
+                physical health. I highly recommend it.
+              </p>
 
-            <div class="flex items-center gap-3">
-              <img src="https://i.pravatar.cc/40" alt="user" class="w-10 h-10 rounded-full">
-              <div>
-                <h4 class="font-semibold text-gray-800 text-sm">
-                  James Davidson
-                </h4>
-                <p class="text-xs text-gray-500">
-                  CEO, TheStudyHub
-                </p>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://i.pravatar.cc/40"
+                  alt="user"
+                  class="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 class="font-semibold text-gray-800 text-sm">
+                    James Davidson
+                  </h4>
+                  <p class="text-xs text-gray-500">CEO, TheStudyHub</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
         <div class="swiper-slide" role="group" aria-label="2 / 6" data-swiper-slide-index="1"
           style="width: 390px; margin-right: 25px;">
@@ -624,24 +668,28 @@
               </svg>
             </div>
 
-            <p class="text-gray-700 text-sm leading-relaxed font-semibold mb-6">
-              The yoga studio has helped me find inner peace and improve my
-              physical health. I highly recommend it.
-            </p>
+              <p
+                class="text-gray-700 text-sm leading-relaxed font-semibold mb-6"
+              >
+                The yoga studio has helped me find inner peace and improve my
+                physical health. I highly recommend it.
+              </p>
 
-            <div class="flex items-center gap-3">
-              <img src="https://i.pravatar.cc/40" alt="user" class="w-10 h-10 rounded-full">
-              <div>
-                <h4 class="font-semibold text-gray-800 text-sm">
-                  James Davidson
-                </h4>
-                <p class="text-xs text-gray-500">
-                  CEO, TheStudyHub
-                </p>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://i.pravatar.cc/40"
+                  alt="user"
+                  class="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 class="font-semibold text-gray-800 text-sm">
+                    James Davidson
+                  </h4>
+                  <p class="text-xs text-gray-500">CEO, TheStudyHub</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
         <div class="swiper-slide swiper-slide-prev" role="group" aria-label="3 / 6" data-swiper-slide-index="2"
           style="width: 390px; margin-right: 25px;">
@@ -686,24 +734,28 @@
               </svg>
             </div>
 
-            <p class="text-gray-700 text-sm leading-relaxed font-semibold mb-6">
-              The yoga studio has helped me find inner peace and improve my
-              physical health. I highly recommend it.
-            </p>
+              <p
+                class="text-gray-700 text-sm leading-relaxed font-semibold mb-6"
+              >
+                The yoga studio has helped me find inner peace and improve my
+                physical health. I highly recommend it.
+              </p>
 
-            <div class="flex items-center gap-3">
-              <img src="https://i.pravatar.cc/40" alt="user" class="w-10 h-10 rounded-full">
-              <div>
-                <h4 class="font-semibold text-gray-800 text-sm">
-                  James Davidson
-                </h4>
-                <p class="text-xs text-gray-500">
-                  CEO, TheStudyHub
-                </p>
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://i.pravatar.cc/40"
+                  alt="user"
+                  class="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <h4 class="font-semibold text-gray-800 text-sm">
+                    James Davidson
+                  </h4>
+                  <p class="text-xs text-gray-500">CEO, TheStudyHub</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
 
 
@@ -1026,8 +1078,8 @@
     // Initialize Icons
     lucide.createIcons();
 
-    // Initialize AOS
-    AOS.init({ once: true, duration: 1000 });
+      // Initialize AOS
+      AOS.init({ once: true, duration: 1000 });
 
     // GSAP Counter
     document.addEventListener("DOMContentLoaded", () => {
