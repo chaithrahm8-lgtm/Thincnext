@@ -1,185 +1,193 @@
 /* --- Existing Global Styles --- */
-.gradient-text {
-    background: linear-gradient(90deg, #3b82f6, #a855f7, #ca5fa5, #3b82f6);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
 .marquee-container {
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
 }
 
 #hero {
-    background-color: rgb(131, 168, 237);
-    background-image: radial-gradient(circle at 50% 0%, rgb(254, 253, 253) 49.15%, transparent 102.23%);
+  background-color: rgb(131, 168, 237);
+  background-image: radial-gradient(
+    circle at 50% 0%,
+    rgb(254, 253, 253) 49.15%,
+    transparent 102.23%
+  );
 }
 
-#buttons-container::-webkit-scrollbar { width: 6px; }
-#buttons-container::-webkit-scrollbar-thumb { background: #598af4; border-radius: 4px; }
+#buttons-container::-webkit-scrollbar {
+  width: 6px;
+}
+#buttons-container::-webkit-scrollbar-thumb {
+  background: #598af4;
+  border-radius: 4px;
+}
 
 /* --- Service Section Logic --- */
-:root {
-    --blue: #1a73e8;
-    --grey: #e8eaed;
-}
+
 
 .workspace-grid {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 60px;
-    align-items: flex-start; /* Better for tall content */
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+  align-items: flex-start; /* Better for tall content */
 }
 
-.image-side { flex: 1.2; }
+.image-side {
+  flex: 1.2;
+}
 .img-wrapper {
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item {
-    position: relative;
-    padding: 10px 0 20px 35px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    border-left: none; /* Ensure no double borders */
+  position: relative;
+  padding: 10px 0 20px 35px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-left: none; /* Ensure no double borders */
 }
 
 /* The Grey Background Line */
 .feature-item::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--grey);
-    border-radius: 4px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #e8eaed;
+  border-radius: 4px;
 }
 
 /* The Blue Progress Line */
 .feature-item::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 0%;
-    background: #0892d0;
-    border-radius: 4px;
-    z-index: 2;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0%;
+  background: #0892d0;
+  border-radius: 4px;
+  z-index: 2;
 }
 
 .feature-item.active::after {
-    animation: fillLine 5s linear forwards;
+  animation: fillLine 5s linear forwards;
 }
 
 @keyframes fillLine {
-    from { height: 0%; }
-    to { height: 100%; }
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
 }
 
-.feature-item h3 { margin: 0; color: #5f6368; font-size: 18px; transition: 0.3s; }
-.feature-item.active h3 { color: black; font-weight: 700; }
+.feature-item h3 {
+  margin: 0;
+  color: #5f6368;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.feature-item.active h3 {
+  color: black;
+  font-weight: 700;
+}
 
 .feature-details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
 .feature-item.active .feature-details {
-    max-height: 300px;
-    opacity: 1;
-    margin-top: 10px;
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 10px;
 }
 
 /* --- MOBILE FIXES (Solves Double Line & Image issue) --- */
 @media (max-width: 768px) {
-    /* body { padding: 20px; } */
+  /* body { padding: 20px; } */
 
-    .workspace-grid {
-        flex-direction: column;
-        gap: 0; /* No gap needed since image is gone */
-    }
+  .workspace-grid {
+    flex-direction: column;
+    gap: 0; /* No gap needed since image is gone */
+  }
 
-    .image-side {
-        display: none !important; /* Removes image on mobile */
-    }
+  .image-side {
+    display: none !important; /* Removes image on mobile */
+  }
 
-    .content-side {
-        width: 100%;
-    }
+  .content-side {
+    width: 100%;
+  }
 
-    .feature-item {
-        padding-left: 25px; /* Brings text closer to solve "double line" look */
-        width: 100%;
-    }
+  .feature-item {
+    padding-left: 25px; /* Brings text closer to solve "double line" look */
+    width: 100%;
+  }
 }
 
 /* --- Optimized Desktop Structure --- */
 .workspace-grid {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 60px;
-    align-items: flex-start;
-    /* This centers the flex items horizontally */
-    justify-content: center; 
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+  align-items: flex-start;
+  /* This centers the flex items horizontally */
+  justify-content: center;
 }
 
 /* Ensure the content side doesn't stretch too far on wide screens */
 .content-side {
-    flex: 1;
-    max-width: 500px; /* Limits width to keep it looking clean like your screenshot */
+  flex: 1;
+  max-width: 500px; /* Limits width to keep it looking clean like your screenshot */
 }
 
 /* --- Responsive Fixes --- */
 @media (max-width: 768px) {
-    .workspace-grid {
-        flex-direction: column;
-        align-items: flex-start; /* Keeps text left-aligned on mobile */
-        gap: 0;
-    }
+  .workspace-grid {
+    flex-direction: column;
+    align-items: flex-start; /* Keeps text left-aligned on mobile */
+    gap: 0;
+  }
 
-    .content-side {
-        max-width: 100%; /* Allows full width on mobile phones */
-    }
+  .content-side {
+    max-width: 100%; /* Allows full width on mobile phones */
+  }
 
-    .image-side {
-        display: none !important;
-    }
+  .image-side {
+    display: none !important;
+  }
 }
 /* --- Adjusting Image Height Only --- */
 #main-img {
-    height: 350px; /* Change this value (e.g., 400px, 500px, 700px) to your desired height */
-    object-fit: cover; /* Ensures the image fills the area without distortion */
-    width: 100%; /* Maintains the responsive width */
+  height: 350px; /* Change this value (e.g., 400px, 500px, 700px) to your desired height */
+  object-fit: cover; /* Ensures the image fills the area without distortion */
+  width: 100%; /* Maintains the responsive width */
 }
 
-.footer-shimmer {
-      background: linear-gradient(
-        130deg,
-       #0a0a0c 0%,
-        #0a0a0c 20%,
-        #02384f 60%,
-        #0a0a0c 100%
-      );
-      background-size: 800% 100%;
-      animation: footerShineMove 6s linear infinite; 
-    }
-
-    @keyframes footerShineMove {
-      0% { background-position: 100% 0; }
-      10% { background-position: 200% 100; }
-    }
-.swiper{
-    width:80%;
-    height: 60%;
+.swiper {
+  width: 80%;
+  height: 60%;
 }
