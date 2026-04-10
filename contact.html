@@ -7,11 +7,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <style>
+<style type="text/tailwindcss">
     /* Custom Silver Shimmer Effect for Form Fields */
     .shimmer-field {
       background: linear-gradient(
@@ -36,8 +37,7 @@
       -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.8) inset !important;
       -webkit-text-fill-color: #334155 !important;
     }
-  </style>
-  <style type="text/tailwindcss">
+ 
     @theme {
       --color-brand-1: #1c8cc1;
       --color-brand-2: #0892d0;
@@ -85,9 +85,23 @@
         opacity: 1;
         visibility: visible;
     }
+    .gradient-text {
+            background-image: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
+            background-size: 300% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        @keyframes colorFlow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            .animate-color-flow
+            { animation: colorFlow 6s ease infinite;}
   </style>
 </head>
-<body class="bg-blue-50 font-sans antialiased text-slate-800 m-0 overflow-x-hidden pt-6 selection:bg-slate-300">
+<body>
 
 <header class="flex justify-between items-center px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-[1200px] left-1/2 -translate-x-1/2 mt-4 z-[1000] fixed top-0">
     <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
@@ -100,44 +114,44 @@
 
     <nav class="hidden lg:block relative z-10">
         <ul class="flex space-x-6 text-sm font-bold">
-            <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
-            <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
-            
+            <li><a href="./index.html" class="hover:text-brand-1 transition-colors">Home</a></li>
+            <li><a href="./about.html" class="hover:text-brand-1 transition-colors">About</a></li>
+
             <li class="relative">
-                <button id="services-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                <button id="services-btn" class="flex items-center gap-1 hover:text-brand-1 transition-colors focus:outline-none">
                     Services
                     <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <ul id="services-menu" class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden">
-                    <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a></li>
-                    <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing</a></li>
-                    <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors z-[60]">Readymade</a></li>
+                    <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-brand-1 transition-colors">Technology</a></li>
+                    <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-brand-1 transition-colors">Digital Marketing</a></li>
+                    <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-brand-1 transition-colors z-[60]">Readymade</a></li>
                 </ul>
             </li>
 
-            <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
+            <li><a href="./career.html" class="hover:text-brand-1 transition-colors">Career</a></li>
 
             <li class="relative">
-                <button id="offer-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+                <button id="offer-btn" class="flex items-center gap-1 hover:text-brand-1 transition-colors focus:outline-none">
                     Offer
                     <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
                 <ul id="offer-menu" class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
-                    <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing Offer</a></li>
-                    <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup Offer</a></li>
+                    <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-brand-1 transition-colors">Digital Marketing Offer</a></li>
+                    <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-brand-1 transition-colors">Startup Offer</a></li>
                 </ul>
             </li>
 
-            <li><a href="./contact.html" class="text-blue-600 hover:text-blue-500 transition-colors">Contact Us</a></li>
+            <li><a href="./contact.html" class="text-blue-600 hover:text-brand-1 transition-colors">Contact Us</a></li>
         </ul>
     </nav>
 
     <div class="flex items-center gap-3 relative z-10">
-        <button class="hidden md:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
+        <button class="hidden md:block px-5 py-2.5 bg-brand-1 hover:bg-cyan-500 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
             Book a Domain
         </button>
         <button id="hamburger" class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
@@ -165,13 +179,13 @@
     </div>
 </header>
 
-<section class="mt-32 w-full py-16 px-6 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
+<section class="bg-blue-50 pt-30 w-full py-16 px-6 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
 
     <div class="flex flex-col gap-8 w-full" data-aos="fade-right" data-aos-duration="1000">
       
       <div class="w-full h-[250px] md:h-[300px] bg-slate-200 rounded-2xl flex flex-col items-center justify-center text-slate-500 shadow-inner border border-slate-300 relative overflow-hidden">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.0058153!3d40.7127492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Core%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11156.603793382643!2d77.52948043755872!3d12.99737850000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d9bcd2ec80b%3A0xd64c10e204297f9f!2sPizza%20Hut%20%7C%20Basaveshwar%20Nagar%2C%20Bangalore!5e1!3m2!1sen!2sin!4v1770945203131!5m2!1sen!2sin" 
           class="w-full h-full border-0" 
           allowfullscreen="" 
           loading="lazy" 
@@ -182,11 +196,12 @@
       <div class="flex flex-col gap-4 pl-2">
         <div class="flex items-center gap-4 text-slate-600">
           <div class="p-2 bg-slate-200/50 rounded-full text-slate-500"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
-          <p class="text-lg">123 Minimalist Avenue, Design City, 45678</p>
+          <p class="text-lg"> #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige Road),
+Malleshwaram, Bengaluru - 560003</p>
         </div>
         <div class="flex items-center gap-4 text-slate-600">
           <div class="p-2 bg-slate-200/50 rounded-full text-slate-500"><i data-lucide="phone" class="w-5 h-5"></i></div>
-          <p class="text-lg">+1 (555) 123-4567</p>
+          <p class="text-lg">+91 96115 04567</p>
         </div>
         <div class="flex items-center gap-4 text-slate-600">
           <div class="p-2 bg-slate-200/50 rounded-full text-slate-500"><i data-lucide="mail" class="w-5 h-5"></i></div>
@@ -194,14 +209,41 @@
         </div>
       </div>
 
-      <img src="assest/images/Imgcontact.png" alt="Support Illustration" class="w-full max-w-[350px] mx-auto hidden md:block mt-4" />
+    
+       <div class="flex space-x-6 flex-row items-center mt-12 md:mt-20 justify-center ">
+  
+  <a href="#" class="text-gray-500 hover:text-[#1c8cc1] transition-colors duration-300">
+    <i class="fa-brands fa-linkedin text-3xl"></i>
+  </a>
+
+  <a href="#" class="text-gray-500 hover:text-[#1c8cc1] transition-colors duration-300">
+    <i class="fa-brands fa-x-twitter text-3xl"></i>
+  </a>
+
+  <a href="#" class="text-gray-500 hover:text-[#1c8cc1] transition-colors duration-300">
+    <i class="fa-brands fa-instagram text-3xl"></i>
+  </a>
+
+  <a href="#" class="text-gray-500 hover:text-[#1c8cc1] transition-colors duration-300">
+    <i class="fa-brands fa-facebook text-3xl"></i>
+  </a>
+
+  <a href="https://wa.me/919611504567?text=Welcome!we would be happy to assist you." target="_blank" class="text-gray-500 hover:text-[#1c8cc1] transition-colors duration-300">
+    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  </a>
+
+  
+
+</div>
+
+    </div>
 
     </div>
 
     <div class="flex flex-col w-full h-full" data-aos="fade-left" data-aos-duration="1000">
       
       <div class="mb-8">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight mb-3">Contact Us</h2>
+        <h2 class="text-4xl font-bold md:text-5xl gradient-text animate-color-flow tracking-tight mb-3">Contact Us</h2>
         <p class="text-lg text-slate-500 font-light">We Are Available 24/7 For Customers</p>
       </div>
 
@@ -219,121 +261,96 @@
                   class="shimmer-field w-full px-5 py-4 rounded-xl border border-white/40 text-slate-700 placeholder-slate-500 font-medium focus:ring-2 focus:ring-slate-400 focus:outline-none transition-shadow resize-none"></textarea>
 
         <button type="submit" 
-                class="mt-2 px-10 py-4 bg-slate-800 text-white rounded-full font-semibold tracking-wide hover:bg-slate-900 transition-colors self-start shadow-lg hover:shadow-xl active:scale-95 transform duration-200 flex items-center gap-2">
-          Send Msg
+                class="mt-2 px-10 py-4 bg-slate-800 text-white rounded-full font-semibold tracking-wide hover:bg-green-600 transition-colors self-start shadow-lg hover:shadow-xl active:scale-95 transform duration-200 flex items-center gap-2">
+          Submit
           <i data-lucide="send" class="w-4 h-4 ml-1"></i>
         </button>
       </form>
 
-      <img src="assest/images/Imgcontact.png" alt="Support Illustration" class="w-full max-w-[350px] mx-auto block md:hidden mt-12" />
-
-      <div class="flex gap-4 items-center mt-12 md:mt-20 justify-center">
-        <img src="assest/images/instagram.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-blue-500 hover:border-blue-500 hover:bg-white transition-all shadow-sm "/>
-        <img src="assest/images/facebook.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-blue-600 hover:border-blue-600 hover:bg-white transition-all shadow-sm"/>
-        <img src="assest/images/twitter.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-pink-600 hover:border-pink-600 hover:bg-white transition-all shadow-sm"/>
-        <img src="assest/images/linkedin.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-blue-700 hover:border-blue-700 hover:bg-white transition-all shadow-sm"/>
-      </div>
-    </div>
 
   </section>
 
-<footer class=" footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden mt-10">
-    
-    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
-      
-      <div class="flex flex-col gap-6">
-        <div class="items-center">
-          <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo" class="h-10 md:h-20 w-auto object-contain">
-        </div>
-        
-        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-          Before we get creative or put a digital solution in place, we take the time to fully understand your brand, project & the people its intended for.
-        </p>
+<footer class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden ">
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
+
+    <div class="flex flex-col gap-6">
+      <div class="items-center">
+        <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo" class="h-10 md:h-20 w-auto object-contain">
       </div>
-
-         <div class="flex flex-col gap-4 mt-2">
-          <div class="flex items-start gap-3 group cursor-default">
-            <i data-lucide="map-pin" class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
-            <span class="text-sm text-slate-400 leading-relaxed">
-              #285,1st Floor,Between 17th- 18th Cross,
-              2nd Main (Sampige Road),<br>
-              Malleshwaram, Bengaluru - 560 003
-            </span>
-          </div>
-          <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-            <i data-lucide="phone" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
-            <span class="text-sm">+91 96115 04567</span>
-          </div>
-          <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-            <i data-lucide="mail" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
-            <span class="text-sm">Sales@Thincnext.Com</span>
-          </div>
-    
-        </div>
-
-      <div class="flex flex-col gap-6 md:pl-8">
-        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Company</h3>
-        <ul class="flex flex-col gap-3">
-          <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a></li>
-          <li><a href="services.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Services</a></li>
-          <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
-          <li><a href="offers.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Offers</a></li>
-          <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
-        </ul>
-      </div>
-
-      <div class="flex flex-col gap-6">
-        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Social</h3>
-        
-        <ul class="flex flex-col gap-3">
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/fbfoot.png" alt="Facebook" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/twitfoot.png" alt="Twitter" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/instafoot.png" alt="Instagram" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/linkedfoot.png" alt="LinkedIn" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/pintrtfoot.png" alt="Pinterest" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Pinterest
-            </a>
-          </li>
-        </ul>
-
-        <div class="mt-4">
-          <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
-        </div>
-      </div>
-      
+      <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+        Before we get creative or put a digital solution in place, we take the time to fully understand your brand, project & the people its intended for.
+      </p>
     </div>
 
-    <div class="w-full py-6 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
-        <p>© Copyrights thincnext. All rights reserved.</p>
-        <span class="hidden md:inline-block text-slate-600">|</span>
-        <p>Designed by <span class="text-brand-1 font-semibold">Thincnext</span></p>
+    <div class="flex flex-col gap-4 mt-2">
+      <div class="flex items-start gap-3 group cursor-default">
+        <i data-lucide="map-pin" class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+        <span class="text-sm text-slate-400 leading-relaxed">
+          #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige Road),<br> Malleshwaram, Bengaluru - 560 003
+        </span>
+      </div>
+      <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+        <i data-lucide="phone" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+        <span class="text-sm text-slate-400">+91 96115 04567</span>
+      </div>
+      <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+        <i data-lucide="mail" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+        <span class="text-sm text-slate-400">Sales@Thincnext.Com</span>
       </div>
     </div>
 
-  </footer>
+<div class="flex flex-col gap-3 md:pl-8">
+      <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Quick links</h3>
+      <ul class="flex flex-col gap-1">
+        <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a></li>
+        <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
+        <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
+        <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Terms & condition</a></li>
+        <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Privacy policy</a></li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <h3 class="text-lg font-semibold text-white tracking-wide pl-4 uppercase">Connect us</h3>
+      <ul class="flex flex-row items-center gap-5">
+        <li>
+          <a href="#" class="block transition-colors group" title="Facebook">
+            <img src="/assest/images/fbfoot.png" alt="Facebook" class="w-6 h-6 group-hover:scale-110 transition-transform">
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block transition-colors group" title="Twitter">
+            <img src="/assest/images/twitfoot.png" alt="Twitter" class="w-6 h-6 group-hover:scale-110 transition-transform">
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block transition-colors group" title="Instagram">
+            <img src="/assest/images/instafoot.png" alt="Instagram" class="w-6 h-6 group-hover:scale-110 transition-transform">
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block transition-colors group" title="LinkedIn">
+            <img src="/assest/images/linkedfoot.png" alt="LinkedIn" class="w-6 h-6 group-hover:scale-110 transition-transform">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="flex justify-center pb-6">
+    <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
+  </div>
+
+  <div class="w-full py-8 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
+      <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
+    </div>
+  </div>
+
+</footer>
+
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   

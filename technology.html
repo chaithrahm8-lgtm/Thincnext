@@ -13,21 +13,6 @@
 
     <style type="text/tailwindcss">
         @theme {
-            /* Fixed Shine - Smooth Sweep */
-            @keyframes shine {
-                0% { transform: translateX(-150%) skewX(-200deg); }
-                100% { transform: translateX(350%) skewX(-400deg); }
-            }
-            --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-
-            /* Multi-color Morphing */
-            @keyframes colorFlow {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-            --animate-color-flow: colorFlow 6s ease infinite;
-
             --color-brand-1: #1c8cc1;
             --color-brand-2: #0892d0;
             --color-brand-3: #2496cd;
@@ -176,7 +161,7 @@
 
 <body class="pt-6 ">
 
-    <header
+    <!-- <header
         class="flex justify-between items-center px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-[1200px] left-1/2 -translate-x-1/2 mt-4 z-[1000] fixed top-0">
         <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
             <div
@@ -286,8 +271,233 @@
             <button class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl">Book a
                 Domain</button>
         </div>
-    </header>
+    </header> -->
+  <header
+      class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
+      id="navbar"
+    >
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
+      >
+        <a href="./index.html" class="relative z-[60] flex items-center p-0">
+          <img
+            src="./assest/Logo/thincnextlogo1.png"
+            alt="Logo"
+            class="h-7 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
+          />
+        </a>
 
+        <ul
+          class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold"
+        >
+          <li>
+            <a href="./index.html" class="hover:text-blue-500 transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="./about.html" class="hover:text-blue-500 transition-colors"
+              >About</a
+            >
+          </li>
+
+          <li class="relative group">
+            <button
+              id="services-btn"
+              class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none"
+            >
+              Services
+              <svg
+                id="services-arrow"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <ul
+              id="services-menu"
+              class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+            >
+              <li>
+                <a
+                  href="./technology.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Technology</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./digitalmarketing.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./readymade.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Readymade</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="./portfolio.html"
+              class="hover:text-blue-500 transition-colors"
+              >Portfolio</a
+            >
+          </li>
+
+          <li class="relative group">
+            <button
+              id="offer-btn"
+              class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none"
+            >
+              Offer
+              <svg
+                id="offer-arrow"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <ul
+              id="offer-menu"
+              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+            >
+              <li>
+                <a
+                  href="./digitalmarketingoffer.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Digital Marketing Offer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./startupoffer.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Startup Offer</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="./contact.html"
+              class="hover:text-blue-500 transition-colors"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-3 relative z-10">
+          <button
+            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+          >
+            Book a Domain
+          </button>
+          <button
+            id="hamburger"
+            class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]"
+      >
+        <a
+          href="./index.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Home</a
+        >
+        <a
+          href="./about.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >About</a
+        >
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-sm font-extrabold text-blue-500 uppercase tracking-widest"
+            >Services</span
+          >
+          <a href="./technology.html" class="pl-4 py-1 text-slate-600"
+            >Technology</a
+          >
+          <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600"
+            >Digital Marketing</a
+          >
+          <a href="./readymade.html" class="pl-4 py-1 text-slate-600"
+            >Readymade</a
+          >
+        </div>
+        <a
+          href="./career.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Career</a
+        >
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-sm font-extrabold text-blue-500 uppercase tracking-widest"
+            >Offer</span
+          >
+          <a
+            href="./digitalmarketingoffer.html"
+            class="pl-4 py-1 text-slate-600"
+            >Digital Marketing Offer</a
+          >
+          <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600"
+            >Startup Offer</a
+          >
+        </div>
+        <a
+          href="./contact.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Contact Us</a
+        >
+        <button
+          class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl"
+        >
+          Book a Domain
+        </button>
+      </div>
+    </header>
 
 <section class="px-6 md:px-10 mt-36">
     <div class="max-w-7xl mx-auto">
@@ -507,7 +717,7 @@
 
 </footer>
 
-    <script>
+    <!-- <script>
         // Unified Menu Logic
         document.addEventListener('DOMContentLoaded', () => {
             // --- Mobile Menu Hamburger Logic ---
@@ -577,8 +787,9 @@
         });
 
         lucide.createIcons();
-    </script>
+    </script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/nav.js"></script>
 
     <script>
   AOS.init({
