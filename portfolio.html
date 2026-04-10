@@ -3,130 +3,235 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Clients</title>
+  <title>Our Clients | Thincnext</title>
 
-  <!-- Tailwind -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <style>
     .gradient-text {
-            background-image: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
-            background-size: 300% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
+        background-image: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
+        background-size: 300% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
 
-        @keyframes colorFlow {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-            .animate-color-flow{ animation: colorFlow 6s ease infinite;} 
-  </style>
+    @keyframes colorFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    .animate-color-flow { animation: colorFlow 6s ease infinite; } 
 
-   <style type="text/tailwindcss">
-    @theme {
-      --color-brand-1: #1c8cc1;
+    .footer-shimmer {
+      background: linear-gradient(130deg, #0a0a0c 0%, #0a0a0c 20%, #02384f 60%, #0a0a0c 100%);
+      background-size: 800% 100%;
+      animation: footerShineMove 6s linear infinite;
+    }
+
+    @keyframes footerShineMove {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0% 0; }
+    }
+
+    #mobile-menu {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #mobile-menu.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
     }
   </style>
 
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand-1: #1c8cc1;
+      --color-brand-2: #0892d0;
+      --color-brand-3: #2496cd;
+      --color-brand-dark: #0a0a0c;
+
+      @keyframes shine {
+          0% { transform: translateX(-150%) skewX(-20deg); }
+          100% { transform: translateX(350%) skewX(-20deg); }
+      }
+      --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-100">
 
-  <section class="p-10">
-<div>
-    <h1 class="text-6xl font-bold  gradient-text animate-color-flow text-center mb-4">
-    Clientele
-</h1>
-    <h3 class="text-center text-slate-500 text-xl">Our Esteemed Clients</h3>
-</div>
-    <!-- CATEGORY 1 -->
-    <div class="mb-14">
-      <h2 class="text-xl md:text-2xl font-bold mb-10 flex items-center gap-4" data-aos="fade-right">
-                <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span> Government
-            </h2>
-
-      <div id="startupContainer"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+  <header class="flex justify-between items-center px-4 md:px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-[1200px] left-1/2 -translate-x-1/2 mt-4 z-[1000] fixed top-0">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
+      <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
     </div>
 
-    <!-- CATEGORY 2 -->
-    <div class="mb-14">
-      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
-         Corporate Clients
+    <a href="./index.html" class="relative z-10 flex items-center">
+      <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-8 md:h-12 w-auto object-contain" />
+    </a>
+
+    <nav class="hidden lg:block relative z-10">
+      <ul class="flex space-x-6 text-sm font-bold">
+        <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+        <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
+        <li><a href="./portfolio.html" class="hover:text-blue-500 transition-colors">Portfolio</a></li>
+        <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-3 relative z-10">
+      <button class="hidden md:block px-5 py-2 bg-blue-800 text-white text-sm font-bold rounded-full shadow-lg">Book a Domain</button>
+      <button id="hamburger" class="lg:hidden p-2"><i data-lucide="menu"></i></button>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden absolute top-[115%] left-0 w-full bg-white p-6 rounded-3xl shadow-2xl flex flex-col gap-4">
+      <a href="./index.html" class="font-bold border-b pb-2">Home</a>
+      <a href="./about.html" class="font-bold border-b pb-2">About</a>
+      <a href="./portfolio.html" class="font-bold border-b pb-2">Portfolio</a>
+      <a href="./contact.html" class="font-bold border-b pb-2">Contact Us</a>
+    </div>
+  </header>
+
+  <section class="p-6 md:p-10 mt-24 max-w-7xl mx-auto">
+    <div class="mb-12">
+      <h1 class="text-4xl md:text-6xl font-bold gradient-text animate-color-flow text-center mb-4">Clientele</h1>
+      <h3 class="text-center text-slate-500 text-lg">Brands we've partnered with</h3>
+    </div>
+
+    <div class="mb-16">
+      <h2 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-4">
+        <span class="w-2 h-8 bg-brand-1 rounded-full"></span> Government & Startups
       </h2>
-
-      <div id="corporateContainer"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+      <div id="startupContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"></div>
     </div>
 
-    <!-- CATEGORY 3 -->
-    <div class="mb-14">
-      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
-         eCommerce Brands
+    <div class="mb-16">
+      <h2 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-4">
+        <span class="w-2 h-8 bg-brand-2 rounded-full"></span> Corporate
       </h2>
-
-      <div id="ecommerceContainer"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+      <div id="corporateContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"></div>
     </div>
 
-    <!-- CATEGORY 4 -->
-    <div class="mb-14">
-      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
-        Education & Others
+    <div class="mb-16">
+      <h2 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-4">
+        <span class="w-2 h-8 bg-brand-3 rounded-full"></span> eCommerce
       </h2>
-
-      <div id="othersContainer"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+      <div id="ecommerceContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"></div>
     </div>
 
+    <div class="mb-16">
+      <h2 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-4">
+        <span class="w-2 h-8 bg-gray-400 rounded-full"></span> Others
+      </h2>
+      <div id="othersContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"></div>
+    </div>
   </section>
 
+  <footer class="footer-shimmer bg-brand-dark text-slate-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5 pb-12">
+        <div class="col-span-1">
+            <img src="./assest/Logo/thincnextlogo1.png" class="h-12 mb-6" alt="Logo">
+            <p class="text-sm">Innovating digital landscapes through strategic design and technology.</p>
+        </div>
+        <div>
+            <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Connect</h4>
+            <div class="flex gap-4">
+                <i data-lucide="facebook" class="w-5 h-5 hover:text-brand-1 cursor-pointer"></i>
+                <i data-lucide="instagram" class="w-5 h-5 hover:text-brand-1 cursor-pointer"></i>
+                <i data-lucide="linkedin" class="w-5 h-5 hover:text-brand-1 cursor-pointer"></i>
+            </div>
+        </div>
+        <div class="col-span-2 text-right">
+            <p class="text-xs">© 2026 Thincnext. All Rights Reserved.</p>
+        </div>
+    </div>
+  </footer>
+
   <script>
-
-    // 🔥 REPLACE THESE WITH YOUR REAL LOGO URLs FROM MARQUEE
-
-    const startups = [
-      "img1.png","img2.png","img3.png","img4.png","img5.png","img6.png","img7.png"
+    /**
+     * 1. UPDATE YOUR PATHS HERE
+     * Ensure the path matches your folder exactly. 
+     * Example: if images are in 'assest/images/puma.png', use that.
+     */
+    const startupLogos = [
+        { name: "Puma", path: "./assest/images/linkedin.png" },
+        { name: "TVS", path: "./assest/images/instagram.png" },
+        { name: "Bosch", path: "" },
+        { name: "Acer", path: "" },
+        { name: "PhonePe", path: "" }
     ];
 
-    const corporate = [
-      "img8.png","img9.png","img10.png","img11.png","img12.png","img13.png","img14.png"
+    const corporateLogos = [
+        { name: "Sulekha", path: "" },
+        { name: "Prestige", path: "" },
+        { name: "Zivame", path: "" },
+        { name: "HealthifyMe", path: "" },
+        { name: "Airtel", path: "" }
     ];
 
-    const ecommerce = [
-      "img15.png","img16.png","img17.png","img18.png","img19.png","img20.png","img21.png"
+    const ecommerceLogos = [
+        { name: "Cure.fit", path: "" },
+        { name: "Livspace", path: "" },
+        { name: "Myntra", path: "" },
+        { name: "Swiggy", path: "" },
+        { name: "Cult.fit", path: "" }
     ];
 
-    const others = [
-      "img22.png","img23.png","img24.png","img25.png","img26.png","img27.png","img28.png"
+    const otherLogos = [
+        { name: "Uber", path: "" },
+        { name: "Licious", path: "" },
+        { name: "Urban Company", path: "" },
+        { name: "Zomato", path: "" },
+        { name: "Amazon", path: "" }
     ];
 
-    function renderCards(containerId, data) {
-      const container = document.getElementById(containerId);
+    function renderBrandCards(containerId, brandList) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
 
-      data.forEach((img) => {
-        const card = document.createElement("div");
+        brandList.forEach(brand => {
+            const card = document.createElement("div");
+            card.className = "bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-4 md:p-6 flex items-center justify-center min-h-[100px] group border border-gray-100";
 
-        card.className =
-          "bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300 p-6 flex items-center justify-center group";
-
-        card.innerHTML = `
-          <img src="${img}" 
-               class="h-12 object-contain grayscale group-hover:grayscale-0 transition duration-300"/>
-        `;
-
-        container.appendChild(card);
-      });
+            // If path is empty or image fails, show text name
+            if (brand.path === "") {
+                card.innerHTML = `<span class="text-gray-300 font-bold uppercase text-[10px] md:text-xs tracking-widest text-center">${brand.name}</span>`;
+            } else {
+                card.innerHTML = `
+                    <img src="${brand.path}" 
+                         alt="${brand.name}" 
+                         class="h-10 md:h-12 w-full object-contain grayscale group-hover:grayscale-0 transition duration-500"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-gray-300 font-bold uppercase text-[10px]\'>${brand.name}</span>';" />
+                `;
+            }
+            container.appendChild(card);
+        });
     }
 
-    renderCards("startupContainer", startups);
-    renderCards("corporateContainer", corporate);
-    renderCards("ecommerceContainer", ecommerce);
-    renderCards("othersContainer", others);
+    document.addEventListener("DOMContentLoaded", () => {
+        renderBrandCards("startupContainer", startupLogos);
+        renderBrandCards("corporateContainer", corporateLogos);
+        renderBrandCards("ecommerceContainer", ecommerceLogos);
+        renderBrandCards("othersContainer", otherLogos);
+        
+        // Initialize Lucide Icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
 
+        // Mobile Menu
+        const burger = document.getElementById('hamburger');
+        const menu = document.getElementById('mobile-menu');
+        if(burger) {
+            burger.addEventListener('click', () => menu.classList.toggle('active'));
+        }
+    });
   </script>
-
 </body>
 </html>
