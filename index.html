@@ -16,7 +16,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    
+
     <link href="./style.css" rel="stylesheet" />
     <link rel="stylesheet" href="./output.css">
 
@@ -30,7 +30,7 @@
       <nav
         class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
       >
-        <a href="./index.html" class="relative z-[60] flex items-center p-0">
+        <a href="./index.html" class="relative z-60 flex items-center p-0">
           <img
             src="./assest/Logo/thincnextlogo1.png"
             alt="Logo"
@@ -76,7 +76,7 @@
 
             <ul
               id="services-menu"
-              class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+              class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
             >
               <li>
                 <a
@@ -134,7 +134,7 @@
 
             <ul
               id="offer-menu"
-              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-99 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
             >
               <li>
                 <a
@@ -164,7 +164,7 @@
 
         <div class="flex items-center gap-3 relative z-10">
           <button
-            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer transition-all"
           >
             Book a Domain
           </button>
@@ -191,7 +191,7 @@
 
       <div
         id="mobile-menu"
-        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]"
+        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50"
       >
         <a
           href="./index.html"
@@ -243,7 +243,7 @@
           >Contact Us</a
         >
         <button
-          class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl"
+          class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl"
         >
           Book a Domain
         </button>
@@ -251,7 +251,7 @@
     </header>
 
     <main class="container mx-auto px-4 mt-28 ovrflow-hidden">
-      <div class="text-center mt-16 md:mt-32 overflow-hidden">
+      <div class="text-center mt-16 md:mt-42 overflow-hidden">
         <!-- mesh gradient blobs -->
         <div
           class="absolute top-60 md:top-0 -left-28 md:-left-8 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-14 md:opacity-30 animate-blob"
@@ -283,11 +283,11 @@
 
         <div class="mt-8 md:mt-12">
           <button
-            class="relative group border-2 border-blue-500 bg-transparent text-blue-500 hover:text-white font-bold px-6 py-3 md:px-5 md:py-2.5 rounded-3xl shadow-[0_0_15px_rgba(37,99,235,0.2)] hover:bg-blue-500 transition-all duration-300 cursor-pointer overflow-hidden mb-12 md:mb-20"
+            class="relative group border-2 border-brand-primary bg-transparent text-brand-primary hover:text-white font-bold px-6 py-3 md:px-5 md:py-2.5 rounded-3xl shadow-[0_0_15px_rgba(37,99,235,0.2)] hover:bg-brand-primary transition-all duration-300 cursor-pointer overflow-hidden mb-12 md:mb-20"
           >
             <span class="relative z-10">View Products</span>
             <div
-              class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"
+              class="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
             ></div>
           </button>
         </div>
@@ -297,34 +297,34 @@
 <section class="overflow-hidden">    
     <div class="marquee-swiper py-4 md:py-6 shadow-sm border-y border-slate-50">
         <div class="swiper-wrapper items-center text-lg md:text-xl font-semibold text-slate-600 uppercase tracking-tighter">
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
-                <span>Software Development</span> <span class="text-brand-1 text-2xl">|</span>
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
+                <span>Software Development</span> <span class="text-brand-primary text-2xl">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
-                <span>Web Applications</span> <span class="text-brand-1 text-2xl ml-7">|</span>
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
+                <span>Web Applications</span> <span class="text-brand-primary text-2xl ml-7">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
-                <span>Mobile Apps</span> <span class="text-brand-1 text-2xl ml-7">|</span>
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
+                <span>Mobile Apps</span> <span class="text-brand-primary text-2xl ml-7">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
-                <span>Branding</span> <span class="text-brand-1 text-2xl ml-7">|</span>
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
+                <span>Branding</span> <span class="text-brand-primary text-2xl ml-7">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
-                <span>Cybersecurity</span> <span class="text-brand-1 text-2xl ml-7">|</span>
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
+                <span>Cybersecurity</span> <span class="text-brand-primary text-2xl ml-7">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
-                <span>Design for Startups</span> <span class="text-blue-500 text-2xl ml-7">|</span>
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
+                <span>Design for Startups</span> <span class="text-brand-primary text-2xl ml-7">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
                 <span>eCommerce</span> <span class="text-blue-500 text-2xl ml-7">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
                 <span>ERP</span> <span class="text-blue-500 text-2xl ml-7">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
                 <span>SEO</span> <span class="text-blue-500 text-2xl ml-7">|</span>
             </div>
-            <div class="swiper-slide !w-auto flex items-center gap-4 md:gap-12 px-2 md:px-6">
+            <div class="swiper-slide w-auto! flex items-center gap-4 md:gap-12 px-2 md:px-6">
                 <span>Social Media Marketing</span> <span class="text-blue-500 text-2xl ml-7">|</span>
             </div>
         </div>
@@ -389,11 +389,6 @@
               your brand & empathise to understand truly with audience.
             </p>
           </div>
-          <a
-            href="#"
-            class="text-xs font-bold uppercase tracking-widest text-gray-500 underline underline-offset-8 decoration-2 hover:text-gray-900 transition-colors"
-            >Approach Details</a
-          >
         </div>
 
         <div
@@ -428,11 +423,6 @@
               clear project objectives during discovery sessions & workshops.
             </p>
           </div>
-          <a
-            href="#"
-            class="text-xs font-bold uppercase tracking-widest text-gray-100 underline underline-offset-8 decoration-2 hover:text-gray-900 transition-colors"
-            >Approach Details</a
-          >
         </div>
 
         <div
@@ -467,11 +457,6 @@
               browser for an experience your audience will love.
             </p>
           </div>
-          <a
-            href="#"
-            class="text-xs font-bold uppercase tracking-widest text-gray-100 underline underline-offset-8 decoration-2 hover:text-gray-900 transition-colors"
-            >Approach Details</a
-          >
         </div>
       </div>
     </section>
@@ -1517,17 +1502,17 @@
 
     <div class="flex flex-col gap-4 mt-2">
       <div class="flex items-start gap-3 group cursor-default">
-        <i data-lucide="map-pin" class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+        <i data-lucide="map-pin" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
         <span class="text-sm text-slate-400 leading-relaxed">
           #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige Road),<br> Malleshwaram, Bengaluru - 560 003
         </span>
       </div>
       <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-        <i data-lucide="phone" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+        <i data-lucide="phone" class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"></i>
         <span class="text-sm text-slate-400">+91 96115 04567</span>
       </div>
       <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-        <i data-lucide="mail" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+        <i data-lucide="mail" class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"></i>
         <span class="text-sm text-slate-400">Sales@Thincnext.Com</span>
       </div>
     </div>
@@ -1535,11 +1520,11 @@
 <div class="flex flex-col gap-3 md:pl-8">
       <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Quick links</h3>
       <ul class="flex flex-col gap-1">
-        <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a></li>
-        <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
-        <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
-        <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Terms & condition</a></li>
-        <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Privacy policy</a></li>
+        <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-primary transition-all">About</a></li>
+        <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Career</a></li>
+        <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Portfolio</a></li>
+        <li><a href="#" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Terms & condition</a></li>
+        <li><a href="#" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Privacy policy</a></li>
       </ul>
     </div>
 
@@ -1575,7 +1560,7 @@
     <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
   </div>
 
-  <div class="w-full py-8 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
+  <div class="w-full py-8 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-primatext-brand-primary/20 to-transparent">
     <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
       <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
     </div>

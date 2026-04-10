@@ -65,13 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     activate(0);
 });
+
+
 // Continuous Marquee Swiper Loop Initialization
     document.addEventListener('DOMContentLoaded', () => {
         new Swiper('.marquee-swiper', {
             loop: true,
             slidesPerView: 'auto',
             spaceBetween: 0,
-            speed: 4000, 
+            speed: 3000, 
             autoplay: {
                 delay: 0, 
                 disableOnInteraction: false,
