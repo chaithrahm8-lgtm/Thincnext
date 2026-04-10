@@ -86,7 +86,7 @@
     <header class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300" id="navbar">
         <nav
             class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl">
-            <a href="./index.html" class="relative z-60 flex items-center p-0">
+            <a href="./index.html" class="relative z-[60] flex items-center p-0">
                 <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
                     class="h-7 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300" />
             </a>
@@ -112,7 +112,7 @@
                     </button>
 
                     <ul id="services-menu"
-                        class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                        class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
                         <li>
                             <a href="./technology.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a>
@@ -145,7 +145,7 @@
                     </button>
 
                     <ul id="offer-menu"
-                        class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-100 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                        class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
                         <li>
                             <a href="./digitalmarketingoffer.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
@@ -166,11 +166,11 @@
 
             <div class="flex items-center gap-3 relative z-10">
                 <button
-                    class="hidden lg:block px-5 py-2.5 bg-(--color-brand-1) hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer">
+                    class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer">
                     Book a Domain
                 </button>
                 <button id="hamburger"
-                    class="lg:hidden p-2 text-slate-800 hover:text-(--color-brand-1) focus:outline-none cursor-pointer">
+                    class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16"></path>
@@ -180,7 +180,7 @@
         </nav>
 
         <div id="mobile-menu"
-            class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50">
+            class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]">
             <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2">Home</a>
             <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2">About</a>
             <div class="flex flex-col gap-2">
@@ -243,8 +243,7 @@
                         Basic
                     </h3>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold">₹ 2999.00</span><span
-                            class="text-slate-400 text-sm">/mo</span>
+                        <span class="text-4xl font-bold">₹ 2999.00</span><span class="text-slate-400 text-sm">/mo</span>
                     </div>
 
                     <ul class="space-y-4 my-8 text-md text-slate-600 grow">
@@ -310,10 +309,13 @@
                             </span>
                         </li>
                     </ul>
-                    <button
-                        class="w-full py-3 border-2 border-(--color-brand-1) text-(--color-brand-1) font-bold rounded-xl hover:bg-(--color-brand-1) hover:text-white transition-all">
-                        Select Plan
-                    </button>
+                    
+                    <div class="table_btn flex justify-center">
+                        <form>
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_Lzm1hU4T8ODhdE" async> </script>
+                        </form>
+                    </div>
                 </div>
 
                 <div
@@ -322,8 +324,7 @@
                         Standard
                     </h3>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold">₹ 4999.00</span><span
-                            class="text-slate-400 text-sm">/mo</span>
+                        <span class="text-4xl font-bold">₹ 4999.00</span><span class="text-slate-400 text-sm">/mo</span>
                     </div>
 
                     <ul class="space-y-4 my-8 text-md text-slate-600 grow">
@@ -388,15 +389,16 @@
                             </span>
                         </li>
                     </ul>
-                    <button
-                        class="w-full py-3 border-2 border-(--color-brand-1) text-(--color-brand-1) font-bold rounded-xl 
-                        hover:bg-(--color-brand-1) hover:text-white transition-all">
-                        Select Plan
-                    </button>
+                    <div class="table_btn flex justify-center">
+                        <form>
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_Lzm7dVC98zeDaf" async> </script>
+                        </form>
+                    </div>
                 </div>
 
                 <div
-                    class="glass p-8 rounded-3xl flex flex-col hover:shadow-2xl transition-all ring-2 ring-(--color-brand-1) relative lg:-translate-y-4">
+                    class="glass p-8 rounded-3xl flex flex-col hover:shadow-2xl transition-all ring-2 ring-(--color-brand-1) relative lg:translate-y-0">
                     <div
                         class="absolute -top-3 left-1/2 -translate-x-1/2 bg-(--color-brand-1) text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
                         Best Selling
@@ -405,8 +407,7 @@
                         Professional
                     </h3>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold">₹ 9999.00</span><span
-                            class="text-slate-400 text-sm">/mo</span>
+                        <span class="text-4xl font-bold">₹ 9999.00</span><span class="text-slate-400 text-sm">/mo</span>
                     </div>
 
                     <ul class="space-y-4 my-8 text-md text-slate-600 grow">
@@ -471,10 +472,12 @@
                             </span>
                         </li>
                     </ul>
-                    <button
-                        class="w-full py-3 border-2 border-(--color-brand-1) text-(--color-brand-1) font-bold rounded-xl hover:bg-(--color-brand-1) hover:text-white transition-all">
-                        Select Plan
-                    </button>
+                    <div class="table_btn flex justify-center">
+                        <form>
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_Lzm9cvIXPCSlT5" async> </script>
+                        </form>
+                    </div>
                 </div>
 
                 <div
@@ -550,10 +553,12 @@
                             </span>
                         </li>
                     </ul>
-                    <button
-                        class="w-full py-3 border-2 border-(--color-brand-1) text-(--color-brand-1) font-bold rounded-xl hover:bg-(--color-brand-1) hover:text-white transition-all">
-                        Select Plan
-                    </button>
+                    <div class="table_btn flex justify-center">
+                        <form>
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_LzmBHqKciTp7YR" async> </script>
+                        </form>
+                    </div>
                 </div>
 
             </div>

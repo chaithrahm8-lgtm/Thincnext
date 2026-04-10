@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="./output.css" rel="stylesheet">
-    
+
     <style>
         @theme {
             --color-brand-blue: #1c8cc1;
@@ -68,7 +68,7 @@
     <header class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300" id="navbar">
         <nav
             class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl">
-            <a href="./index.html" class="relative z-60 flex items-center p-0">
+            <a href="./index.html" class="relative z-[60] flex items-center p-0">
                 <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
                     class="h-7 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300" />
             </a>
@@ -94,7 +94,7 @@
                     </button>
 
                     <ul id="services-menu"
-                        class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                        class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
                         <li>
                             <a href="./technology.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a>
@@ -127,7 +127,7 @@
                     </button>
 
                     <ul id="offer-menu"
-                        class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-100 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                        class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
                         <li>
                             <a href="./digitalmarketingoffer.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
@@ -148,7 +148,7 @@
 
             <div class="flex items-center gap-3 relative z-10">
                 <button
-                    class="hidden lg:block px-5 py-2.5 bg-[#1c8cc1] hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer">
+                    class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer">
                     Book a Domain
                 </button>
                 <button id="hamburger"
@@ -162,7 +162,7 @@
         </nav>
 
         <div id="mobile-menu"
-            class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50">
+            class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]">
             <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2">Home</a>
             <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2">About</a>
             <div class="flex flex-col gap-2">
@@ -184,7 +184,7 @@
         </div>
     </header>
 
-    
+
     <section
         class="unified-section pt-28 lg:pt-24 md:pt-20 md:pb-12 sm:pt-12 sm:pb-16 mt-4 sm:mt-10 md:mt-10 lg:mt-0 px-4 border-b border-slate-200">
         <div class="max-w-7xl mx-auto">
@@ -241,7 +241,8 @@
                         <div class="relative z-10  h-90 flex flex-col justify-between">
                             <p class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-8">Business Ethics
                             </p>
-                            <h3 class="text-sm sm:text-base md:text-lg lg:text-4xl font-medium leading-snug mb-8 italic px-8">
+                            <h3
+                                class="text-sm sm:text-base md:text-lg lg:text-4xl font-medium leading-snug mb-8 italic px-8">
                                 "Your money is just a condition to get our business,
                                 <span class="text-white font-bold sm:text-base md:text-lg lg:text-4xl">
                                     our professionalism is the price.
@@ -266,7 +267,7 @@
             <div class="bg-white rounded-2xl shadow-md p-6 md:p-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="flex justify-center">
-                        <img src="https://i.pinimg.com/originals/e0/93/b7/e093b7260b423ec80a9b484b4a040bd4.jpg"
+                        <img src="./assest//images/img-ceo.jpg"
                             alt="CEO" class="rounded-2xl w-full max-w-sm object-cover shadow-lg">
                     </div>
                     <div>
@@ -280,16 +281,17 @@
                             Visionary Leadership
                         </p>
                         <p class="text-gray-500 leading-relaxed mb-4 text-sm md:text-base">
-                            As the driving force behind our company, [CEO's Name] brings a wealth of experience and a
-                            forward-thinking approach that defines our mission. With a proven track record of fostering
-                            innovation, he has guided our team to achieve remarkable milestones while staying true to
-                            our core values.
+                            The name <span class="text-(--logo-color) font-bold">thincnext</span> was never accidental. It carries a question inside it — what comes next?
+                            Not just for us as a company, but for every business we touch, every industry we enter,
+                            every problem we are asked to solve.
                         </p>
                         <p class="text-gray-500 leading-relaxed text-sm md:text-base">
-                            Under his leadership, we are continually pushing boundaries, creating meaningful solutions,
-                            and making a lasting impact in our industry. Thomas's passion for excellence, combined with
-                            his commitment to a collaborative culture, makes our journey both inspiring and
-                            transformative.
+                            We did not build thincnext to keep up with the future. We built it to help shape what that
+                            future looks like.
+                            Technology, at its best, does not complicate — it clarifies. It removes the friction between
+                            where a business is today and where it is capable of going. That has always been our north
+                            star. Not features. Not products. Outcomes. Transformation. Progress that people can
+                            actually feel.
                         </p>
                     </div>
                 </div>
