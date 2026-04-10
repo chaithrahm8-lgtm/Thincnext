@@ -118,27 +118,24 @@
   </head>
 
   <body class="bg-[#f8fafc] overflow-x-hidden">
-    <header
-      class="flex fixed justify-between items-center px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-[1200px] left-1/2 -translate-x-1/2 mt-4 z-[1000]"
+   <header
+      class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
+      id="navbar"
     >
-      <div
-        class="absolute inset-0 pointer-events-none overflow-hidden rounded-full"
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
       >
-        <div
-          class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"
-        ></div>
-      </div>
+        <a href="./index.html" class="relative z-[60] flex items-center p-0">
+          <img
+            src="./assest/Logo/thincnextlogo1.png"
+            alt="Logo"
+            class="h-7 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
+          />
+        </a>
 
-      <a href="./index.html" class="relative z-10 flex items-center p-0">
-        <img
-          src="./assest/Logo/thincnextlogo1.png"
-          alt="Logo"
-          class="h-12 md:h-12 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
-        />
-      </a>
-
-      <nav class="hidden lg:block relative z-10">
-        <ul class="flex space-x-6 text-sm font-bold">
+        <ul
+          class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold"
+        >
           <li>
             <a href="./index.html" class="hover:text-blue-500 transition-colors"
               >Home</a
@@ -150,15 +147,15 @@
             >
           </li>
 
-          <li class="relative">
+          <li class="relative group">
             <button
               id="services-btn"
-              class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none"
+              class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none"
             >
               Services
               <svg
                 id="services-arrow"
-                class="w-3 h-3 transition-transform duration-300"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -171,9 +168,10 @@
                 ></path>
               </svg>
             </button>
+
             <ul
               id="services-menu"
-              class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden"
+              class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
             >
               <li>
                 <a
@@ -201,21 +199,21 @@
 
           <li>
             <a
-              href="./career.html"
+              href="./portfolio.html"
               class="hover:text-blue-500 transition-colors"
-              >Career</a
+              >Portfolio</a
             >
           </li>
 
-          <li class="relative">
+          <li class="relative group">
             <button
               id="offer-btn"
-              class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none"
+              class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none"
             >
               Offer
               <svg
                 id="offer-arrow"
-                class="w-3 h-3 transition-transform duration-300"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -228,9 +226,10 @@
                 ></path>
               </svg>
             </button>
+
             <ul
               id="offer-menu"
-              class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden"
+              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
             >
               <li>
                 <a
@@ -257,37 +256,37 @@
             >
           </li>
         </ul>
-      </nav>
 
-      <div class="flex items-center gap-3 relative z-10">
-        <button
-          class="hidden md:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30"
-        >
-          Book a Domain
-        </button>
-        <button
-          id="hamburger"
-          class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
-        >
-          <svg
-            class="w-7 h-7"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <div class="flex items-center gap-3 relative z-10">
+          <button
+            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
-      </div>
+            Book a Domain
+          </button>
+          <button
+            id="hamburger"
+            class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
 
       <div
         id="mobile-menu"
-        class="lg:hidden absolute top-[115%] left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4"
+        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]"
       >
         <a
           href="./index.html"
@@ -307,9 +306,7 @@
           <a href="./technology.html" class="pl-4 py-1 text-slate-600"
             >Technology</a
           >
-          <a
-            href="./digitalmarketing.html"
-            class="pl-4 py-1 text-blue-600 font-bold"
+          <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600"
             >Digital Marketing</a
           >
           <a href="./readymade.html" class="pl-4 py-1 text-slate-600"
@@ -347,26 +344,12 @@
         </button>
       </div>
     </header>
-
     <!--header-->
-    <section class="relative flex items-center px-8 md:px-20 pt-32 pb-16 z-10">
+    <section class="relative flex items-center justify-center px-8 md:px-20 pt-32 pb-16 z-10 min-h-screen sm:min-h-screen">
       <div class="container mx-auto flex justify-center">
-        <div id="hero-content" class="text-center max-w-3xl">
-          <div
-            class="inline-flex items-center space-x-2 bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-sm font-bold mb-6 border border-blue-100"
-          >
-            <span class="relative flex h-2 w-2">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
-              ></span>
-              <span
-                class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
-              ></span>
-            </span>
-            <span>Digital Transformation Experts</span>
-          </div>
+        <div  class="text-center max-w-3xl">
 
-          <h1 class="text-4xl md:text-7xl font-bold leading-tight mb-8">
+          <h1 class="text-4xl md:text-6xl font-bold mb-8 lg:mt-16 leading-tight">
             <span class="gradient-text animate-color-flow">
               We Create Solutions for Your Business</span
             >
@@ -387,7 +370,7 @@
               <span class="relative z-10">Claim Offer now</span>
 
               <div
-                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+                class="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
               ></div>
             </a>
           </div>
@@ -396,21 +379,23 @@
     </section>
 
     <section class="py-24 px-8 md:px-20 relative bg-[#fdfeff]">
-      <div class="container mx-auto px-4">
-  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+     <div class="container mx-auto px-4">
+  <div class="flex flex-col items-center text-center gap-6 mb-16">
 
+    <!-- Heading Section -->
     <div class="max-w-2xl">
       <h2 class="text-blue-600 font-semibold tracking-[0.2em] uppercase text-xs sm:text-sm mb-3">
         Core Expertise
       </h2>
 
-      <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
         We Provide the <span class="text-blue-600">Best Services</span>
       </h3>
     </div>
 
-    <p class="text-slate-500 text-sm sm:text-base max-w-md leading-relaxed">
-      Elevating your brand with precision-engineered digital strategies 
+    <!-- Description -->
+    <p class="text-slate-500 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
+      Elevating your brand with precision-engineered digital strategies
     </p>
 
   </div>
@@ -418,8 +403,8 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            class="group relative p-10 rounded-[2.5rem] bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-200/40"
-            data-aos="fade-up"
+            class="group relative p-10 rounded-[2.5rem] bg-linear-to-br from-blue-50 to-blue-100 border border-blue-200/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-200/40"
+            data-aos="fade-up" data-aos-delay="100"
           >
             <div
               class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm text-blue-500 group-hover:scale-110 transition-transform"
@@ -427,7 +412,7 @@
               <i class="fa-solid fa-magnifying-glass text-2xl"></i>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-blue-900">SEO</h3>
-            <p class="text-blue-800/60 text-sm leading-relaxed">
+            <p class="text-blue-800/60 text-sm leading-relaxed text-justify">
               Search engine optimisation plays an vital role
                 n for every website to get optimised or viewed
             by the search engines or daily basis. We prived
@@ -439,7 +424,7 @@
           </div>
 
           <div
-            class="group relative p-10 rounded-[2.5rem] bg-gradient-to-br from-indigo-500/10 to-blue-600/10 border border-blue-200 transition-all duration-500 hover:-translate-y-2 hover:bg-white"
+            class="group relative p-10 rounded-[2.5rem] bg-linear-to-br from-indigo-500/10 to-blue-600/10 border border-blue-200 transition-all duration-500 hover:-translate-y-2 hover:bg-white"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -449,7 +434,7 @@
               <i class="fa-solid fa-bolt text-2xl fill-current text-white"></i>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-blue-900">Pay Per Click</h3>
-            <p class="text-blue-800/60 text-sm leading-relaxed">
+            <p class="text-blue-800/60 text-sm leading-relaxed text-justify">
               PPC campaign is an important role in lead
                 generation for any business, based on keyword
                 reasarch we startegise the campaign and
@@ -457,13 +442,13 @@
                 tracking points.
             </p>
             <div
-              class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              class="absolute inset-0 bg-linear-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
             ></div>
           </div>
 
           <div
-            class="group relative p-10 rounded-[2.5rem] bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-200/40"
-            data-aos="fade-up"
+            class="group relative p-10 rounded-[2.5rem] bg-linear-to-br from-blue-50 to-blue-100 border border-blue-200/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-200/40"
+            data-aos="fade-up" data-aos-delay="100"
           >
             <div
               class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm text-blue-500 group-hover:scale-110 transition-transform"
@@ -472,7 +457,7 @@
               
             </div>
             <h3 class="text-2xl font-bold mb-4 text-blue-900">Ad Words</h3>
-            <p class="text-blue-800/60 text-sm leading-relaxed">
+            <p class="text-blue-800/60 text-sm leading-relaxed text-justify">
               Adwords campainging includes google
                 adwords, youtube adwords, facebook, linkedin
                 we take care of marketing campaing to builf
@@ -484,17 +469,17 @@
           </div>
           
           <div
-            class="group relative p-10 rounded-[2.5rem] bg-gradient-to-br from-indigo-500/10 to-blue-600/10 border border-blue-200 transition-all duration-500 hover:-translate-y-2 hover:bg-white"
+            class="group relative p-10 rounded-[2.5rem] bg-linear-to-br from-indigo-500/10 to-blue-600/10 border border-blue-200 transition-all duration-500 hover:-translate-y-2 hover:bg-white"
             data-aos="fade-up"
             data-aos-delay="100"
           >
             <div
               class="w-14 h-14 bg-blue-300 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-200"
             >
-              <i class="fa-solid fa-lightbulb text-2xl fill-current text-white"></i>
+              <i class="fa-solid fa-lightbulb text-2xl fill-current text-blue-900"></i>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-blue-900">Branding</h3>
-            <p class="text-blue-800/60 text-sm leading-relaxed">
+            <p class="text-blue-800/60 text-sm leading-relaxed text-justify">
               Our discovery workshops are designed to get
             under the hood of your brand & empathise
             with your audience. We'll put a winning
@@ -503,7 +488,7 @@
           </div>
 
           <div
-            class="group relative p-10 rounded-[2.5rem] bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-200/40"
+            class="group relative p-10 rounded-[2.5rem] bg-linear-to-br from-blue-50 to-blue-100 border border-blue-200/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-200/40"
             data-aos="fade-up"
           >
             <div
@@ -513,7 +498,7 @@
               
             </div>
             <h3 class="text-2xl font-bold mb-4 text-blue-900">Reputation</h3>
-            <p class="text-blue-800/60 text-sm leading-relaxed">
+            <p class="text-blue-800/60 text-sm leading-relaxed text-justify">
               In this digital world Online reputation
                 management is very important such that it
                 boost up the value of the company or business
@@ -525,17 +510,17 @@
           </div>
 
           <div
-            class="group relative p-10 rounded-[2.5rem] bg-gradient-to-br from-indigo-500/10 to-blue-600/10 border border-blue-200 transition-all duration-500 hover:-translate-y-2 hover:bg-white"
+            class="group relative p-10 rounded-[2.5rem] bg-linear-to-br from-indigo-500/10 to-blue-600/10 border border-blue-200 transition-all duration-500 hover:-translate-y-2 hover:bg-white"
             data-aos="fade-up"
             data-aos-delay="100"
           >
             <div
               class="w-14 h-14 bg-blue-300 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-200"
             >
-              <i class="fa-solid fa-share-nodes text-2xl fill-current text-white"></i>
+              <i class="fa-solid fa-share-nodes text-2xl fill-current text-blue-900"></i>
             </div>
             <h3 class="text-2xl font-bold mb-4 text-blue-900">Social Media</h3>
-            <p class="text-blue-800/60 text-sm leading-relaxed">
+            <p class="text-blue-800/60 text-sm leading-relaxed text-justify">
                Post covid major business turned online
                 including marketing too. Social media
                 marketing become one of the greates source
@@ -550,226 +535,95 @@
       </div>
     </section>
 
-    <footer
-      class="footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden mt-10"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12"
-      >
-        <div class="flex flex-col gap-6">
-          <div class="items-center">
-            <img
-              src="/assest/Logo/thincnextlogo1.png"
-              alt="Thincnext Logo"
-              class="h-10 md:h-20 w-auto object-contain"
-            />
-          </div>
-          <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-            Before we get creative or put a digital solution in place, we take
-            the time to fully understand your brand, project & the people its
-            intended for.
-          </p>
-        </div>
+    <!-- footer section -->
+    <footer class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden ">
 
-        <div class="flex flex-col gap-4 mt-2">
-          <div class="flex items-start gap-3 group cursor-default">
-            <i
-              data-lucide="map-pin"
-              class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm text-slate-400 leading-relaxed">
-              #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige
-              Road),<br />
-              Malleshwaram, Bengaluru - 560 003
-            </span>
-          </div>
-          <div
-            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
-          >
-            <i
-              data-lucide="phone"
-              class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm">+91 96115 04567</span>
-          </div>
-          <div
-            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
-          >
-            <i
-              data-lucide="mail"
-              class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm">Sales@Thincnext.Com</span>
-          </div>
-        </div>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
 
-        <div class="flex flex-col gap-6 md:pl-8">
-          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
-            Company
-          </h3>
-          <ul class="flex flex-col gap-3">
-            <li>
-              <a
-                href="about.html"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="services.html"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="career.html"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
-                >Career</a
-              >
-            </li>
-            <li>
-              <a
-                href="offers.html"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
-                >Offers</a
-              >
-            </li>
-            <li>
-              <a
-                href="portfolio.html"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
-                >Portfolio</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="flex flex-col gap-6">
-          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
-            Social
-          </h3>
-          <ul class="flex flex-col gap-3">
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group"
-              >
-                <img
-                  src="/assest/images/fbfoot.png"
-                  alt="Facebook"
-                  class="w-5 h-5 group-hover:scale-110 transition-transform"
-                />
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group"
-              >
-                <img
-                  src="/assest/images/twitfoot.png"
-                  alt="Twitter"
-                  class="w-5 h-5 group-hover:scale-110 transition-transform"
-                />
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group"
-              >
-                <img
-                  src="/assest/images/instafoot.png"
-                  alt="Instagram"
-                  class="w-5 h-5 group-hover:scale-110 transition-transform"
-                />
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group"
-              >
-                <img
-                  src="/assest/images/linkedfoot.png"
-                  alt="LinkedIn"
-                  class="w-5 h-5 group-hover:scale-110 transition-transform"
-                />
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group"
-              >
-                <img
-                  src="/assest/images/pintrtfoot.png"
-                  alt="Pinterest"
-                  class="w-5 h-5 group-hover:scale-110 transition-transform"
-                />
-                Pinterest
-              </a>
-            </li>
-          </ul>
-          <div class="mt-4">
-            <img
-              src="/assest/images/dmca_protected_12_120.png"
-              alt="DMCA Protected"
-              class="h-8 opacity-80"
-            />
-          </div>
-        </div>
+    <div class="flex flex-col gap-6">
+      <div class="items-center">
+        <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo" class="h-10 md:h-20 w-auto object-contain">
       </div>
+      <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+        Before we get creative or put a digital solution in place, we take the time to fully understand your brand, project & the people its intended for.
+      </p>
+    </div>
 
-      <div
-        class="w-full py-6 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent"
-      >
-        <div
-          class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400"
-        >
-          <p>&copy; Copyrights thincnext. All rights reserved.</p>
-          <span class="hidden md:inline-block text-slate-600">|</span>
-          <p>
-            Designed by
-            <span class="text-brand-1 font-semibold">Thincnext</span>
-          </p>
-        </div>
+    <div class="flex flex-col gap-4 mt-2">
+      <div class="flex items-start gap-3 group cursor-default">
+        <i data-lucide="map-pin" class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+        <span class="text-sm text-slate-400 leading-relaxed">
+          #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige Road),<br> Malleshwaram, Bengaluru - 560 003
+        </span>
       </div>
-    </footer>
+      <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+        <i data-lucide="phone" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+        <span class="text-sm text-slate-400">+91 96115 04567</span>
+      </div>
+      <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+        <i data-lucide="mail" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+        <span class="text-sm text-slate-400">Sales@Thincnext.Com</span>
+      </div>
+    </div>
+
+<div class="flex flex-col gap-3 md:pl-8">
+      <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Quick links</h3>
+      <ul class="flex flex-col gap-1">
+        <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a></li>
+        <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
+        <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
+        <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Terms & condition</a></li>
+        <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Privacy policy</a></li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Connect us</h3>
+      <ul class="flex flex-row items-center gap-5">
+        <li>
+          <a href="#" class="block transition-colors group" title="Facebook">
+            <img src="/assest/images/fbfoot.png" alt="Facebook" class="w-6 h-6 group-hover:scale-110 transition-transform">
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block transition-colors group" title="Twitter">
+            <img src="/assest/images/twitfoot.png" alt="Twitter" class="w-6 h-6 group-hover:scale-110 transition-transform">
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block transition-colors group" title="Instagram">
+            <img src="/assest/images/instafoot.png" alt="Instagram" class="w-6 h-6 group-hover:scale-110 transition-transform">
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block transition-colors group" title="LinkedIn">
+            <img src="/assest/images/linkedfoot.png" alt="LinkedIn" class="w-6 h-6 group-hover:scale-110 transition-transform">
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="flex justify-center pb-6">
+    <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
+  </div>
+
+  <div class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-1/20 to-transparent">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
+      <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
+    </div>
+  </div>
+
+</footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({ duration: 1000, once: true });
 
       // Hero GSAP Animations
-      gsap.from("#hero-content", {
-        opacity: 0,
-        y: 50,
-        duration: 1.2,
-        ease: "power4.out",
-      });
-      gsap.from("#hero-image", {
-        opacity: 0,
-        x: 50,
-        rotation: 10,
-        duration: 1.5,
-        delay: 0.3,
-        ease: "power3.out",
-      });
-      gsap.to("#hero-image", {
-        y: -20,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
+     
       // Interactive Menu Logic (Combined)
       document.addEventListener("DOMContentLoaded", () => {
         // --- 1. Mobile Menu Hamburger Logic ---

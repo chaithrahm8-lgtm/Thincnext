@@ -1,132 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Clients</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Clients | Thincnext</title>
 
-  <!-- Tailwind -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-    .gradient-text {
-            background-image: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
-            background-size: 300% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
 
-        @keyframes colorFlow {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-            .animate-color-flow{ animation: colorFlow 6s ease infinite;} 
-  </style>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-   <style type="text/tailwindcss">
+  <style type="text/tailwindcss">
     @theme {
       --color-brand-1: #1c8cc1;
+      --color-brand-2: #0892d0;
+      --color-brand-3: #2496cd;
+      --color-brand-dark: #0a0a0c;
+
+      @keyframes shine {
+          0% { transform: translateX(-150%) skewX(-20deg); }
+          100% { transform: translateX(350%) skewX(-20deg); }
+      }
+      --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    /* Premium Card Effects */
+    .premium-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .premium-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        border-color: #1c8cc1;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
+    }
+
+    /* Logo Glow */
+    .logo-glow {
+        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.2));
+        transition: all 0.4s ease;
+    }
+
+    .premium-card:hover .logo-glow {
+        filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4));
+        filter: grayscale(0);
+    }
+
+    /* Original Header/Footer Animations */
+    .gradient-text {
+        background: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
+        background-size: 300% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: colorFlow 6s ease infinite;
+    }
+
+    @keyframes colorFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .footer-shimmer {
+      background: linear-gradient(130deg, #0a0a0c 0%, #0a0a0c 20%, #02384f 60%, #0a0a0c 100%);
+      background-size: 800% 100%;
+      animation: footerShineMove 6s linear infinite;
+    }
+
+    @keyframes footerShineMove {
+      0% { background-position: 100% 0; }
+      100% { background-position: 0% 0; }
+    }
+
+    #mobile-menu {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #mobile-menu.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
     }
   </style>
+
 
 </head>
 
 <body class="bg-gray-100">
 
-  <section class="p-10">
-<div>
-    <h1 class="text-6xl font-bold  gradient-text animate-color-flow text-center mb-4">
-    Clientele
-</h1>
-    <h3 class="text-center text-slate-500 text-xl">Our Esteemed Clients</h3>
-</div>
-    <!-- CATEGORY 1 -->
-    <div class="mb-14">
-      <h2 class="text-xl md:text-2xl font-bold mb-10 flex items-center gap-4" data-aos="fade-right">
-                <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span> Government
-            </h2>
-
-      <div id="startupContainer"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+  <header
+    class="flex justify-between items-center px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-[1200px] left-1/2 -translate-x-1/2 mt-4 z-[1000] fixed top-0">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
+      <div
+        class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine">
+      </div>
     </div>
 
-    <!-- CATEGORY 2 -->
-    <div class="mb-14">
-      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
-         Corporate Clients
+    <a href="./index.html" class="relative z-10 flex items-center p-0">
+      <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
+        class="h-10 md:h-12 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300" />
+    </a>
+
+    <nav class="hidden lg:block relative z-10">
+      <ul class="flex space-x-6 text-sm font-bold">
+        <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+        <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
+
+        <li class="relative group">
+          <button id="services-btn"
+            class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+            Services
+            <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+              </path>
+            </svg>
+          </button>
+
+          <ul id="services-menu" class="absolute left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl 
+        opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden 
+        group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+
+            <li><a href="./technology.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a>
+            </li>
+            <li><a href="./digitalmarketing.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
+                Marketing</a></li>
+            <li><a href="./readymade.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Ready made
+                Softwares</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="./portfolio.html" class="hover:text-blue-500 transition-colors">Portfolio</a></li>
+
+        <li class="relative group">
+          <button id="offer-btn"
+            class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+            Offer
+            <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+              </path>
+            </svg>
+          </button>
+
+          <ul id="offer-menu" class="absolute left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl 
+        opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden
+        group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+
+            <li><a href="./digitalmarketingoffer.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
+                Marketing Offer</a></li>
+            <li><a href="./startupoffer.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup
+                Offer</a></li>
+          </ul>
+        </li>
+
+        <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-3 relative z-10">
+      <button
+        class="hidden md:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
+        Book a Domain
+      </button>
+      <button id="hamburger" class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+          </path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu"
+      class="lg:hidden absolute top-[115%] left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]">
+      <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2">Home</a>
+      <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2">About</a>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Services</span>
+        <a href="./technology.html" class="pl-4 py-1 text-slate-600">Technology</a>
+        <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600">Digital Marketing</a>
+        <a href="./readymade.html" class="pl-4 py-1 text-slate-600">Readymade</a>
+      </div>
+      <a href="./career.html" class="text-lg font-bold border-b border-slate-100 pb-2">Career</a>
+      <div class="flex flex-col gap-2">
+        <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Offer</span>
+        <a href="./digitalmarketingoffer.html" class="pl-4 py-1 text-slate-600">Digital Marketing Offer</a>
+        <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600">Startup Offer</a>
+      </div>
+      <a href="./contact.html" class="text-lg font-bold border-b border-slate-100 pb-2">Contact Us</a>
+      <button class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl">Book a
+        Domain</button>
+    </div>
+  </header>
+
+  <section class="p-6 md:p-10 mt-24 max-w-7xl mx-auto">
+    <div class="mb-12">
+      <h1 class="text-4xl md:text-6xl font-bold gradient-text animate-color-flow text-center mb-4">Clientele</h1>
+      <h3 class="text-center text-slate-500 text-lg">Our Esteemed Clients</h3>
+    </div>
+    <!-- 1part -->
+    <div class="mb-16 ">
+      <h2 class="text-xl md:text-2xl font-bold  mb-8 flex items-center gap-4 " data-aos="fade-right"
+        data-aos-duration="2000">
+        <span class="w-2 h-8 bg-brand-1 rounded-full "></span> Government & Startups
       </h2>
-
-      <div id="corporateContainer"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+      <div id="startupContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
+        data-aos="fade-up" data-aos-duration="3000"></div>
     </div>
 
-    <!-- CATEGORY 3 -->
-    <div class="mb-14">
-      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
-         eCommerce Brands
+    <!-- 2part -->
+    <div class="mb-16">
+      <h2 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-4" data-aos="fade-right"
+        data-aos-duration="2000">
+        <span class="w-2 h-8 bg-brand-2 rounded-full"></span> Corporate
       </h2>
-
-      <div id="ecommerceContainer"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+      <div id="corporateContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
+        data-aos="fade-up" data-aos-duration="3000"></div>
     </div>
 
-    <!-- CATEGORY 4 -->
-    <div class="mb-14">
-      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
-        Education & Others
+    <!-- 3part -->
+    <div class="mb-16">
+      <h2 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-4" data-aos="fade-right"
+        data-aos-duration="2000">
+        <span class="w-2 h-8 bg-brand-3 rounded-full"></span> eCommerce
       </h2>
-
-      <div id="othersContainer"
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+      <div id="ecommerceContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
+        data-aos="fade-up" data-aos-duration="3000"></div>
     </div>
 
+    <!-- 4part -->
+    <div class="mb-16">
+      <h2 class="text-xl md:text-2xl font-bold mb-8 flex items-center gap-4" data-aos="fade-right"
+        data-aos-duration="2000">
+        <span class="w-2 h-8 bg- rounded-full"></span> Others
+      </h2>
+      <div id="othersContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
+        data-aos="fade-up" data-aos-duration="3000"></div>
+    </div>
   </section>
 
+
+  <!-- footer -->
+  <footer
+    class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden ">
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
+
+      <div class="flex flex-col gap-6">
+        <div class="items-center">
+          <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo" class="h-10 md:h-20 w-auto object-contain">
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+          Before we get creative or put a digital solution in place, we take the time to fully understand your brand,
+          project & the people its intended for.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4 mt-2">
+        <div class="flex items-start gap-3 group cursor-default">
+          <i data-lucide="map-pin"
+            class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400 leading-relaxed">
+            #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige Road),<br> Malleshwaram, Bengaluru - 560 003
+          </span>
+        </div>
+        <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+          <i data-lucide="phone" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400">+91 96115 04567</span>
+        </div>
+        <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+          <i data-lucide="mail" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400">Sales@Thincnext.Com</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3 md:pl-8">
+        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Quick links</h3>
+        <ul class="flex flex-col gap-1">
+          <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a></li>
+          <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
+          <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a>
+          </li>
+          <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Terms & condition</a></li>
+          <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Connect us</h3>
+        <ul class="flex flex-row items-center gap-5">
+          <li>
+            <a href="#" class="block transition-colors group" title="Facebook">
+              <img src="/assest/images/fbfoot.png" alt="Facebook"
+                class="w-6 h-6 group-hover:scale-110 transition-transform">
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block transition-colors group" title="Twitter">
+              <img src="/assest/images/twitfoot.png" alt="Twitter"
+                class="w-6 h-6 group-hover:scale-110 transition-transform">
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block transition-colors group" title="Instagram">
+              <img src="/assest/images/instafoot.png" alt="Instagram"
+                class="w-6 h-6 group-hover:scale-110 transition-transform">
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block transition-colors group" title="LinkedIn">
+              <img src="/assest/images/linkedfoot.png" alt="LinkedIn"
+                class="w-6 h-6 group-hover:scale-110 transition-transform">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="flex justify-center pb-6">
+      <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
+    </div>
+
+    <div class="w-full py-8 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
+        <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
+      </div>
+    </div>
+
+  </footer>
+
+
+
   <script>
-
-    // 🔥 REPLACE THESE WITH YOUR REAL LOGO URLs FROM MARQUEE
-
-    const startups = [
-      "img1.png","img2.png","img3.png","img4.png","img5.png","img6.png","img7.png"
+    /**
+     * 1. UPDATE YOUR PATHS HERE
+     * Ensure the path matches your folder exactly. 
+     * Example: if images are in 'assest/images/puma.png', use that.
+     */
+    const startupLogos = [
+      { name: "Puma", path: "./assest/images/linkedin.png" },
+      { name: "TVS", path: "./assest/images/instagram.png" },
+      { name: "Bosch", path: "" },
+      { name: "Acer", path: "" },
+      { name: "PhonePe", path: "" }
     ];
 
-    const corporate = [
-      "img8.png","img9.png","img10.png","img11.png","img12.png","img13.png","img14.png"
+    const corporateLogos = [
+      { name: "Sulekha", path: "" },
+      { name: "Prestige", path: "" },
+      { name: "Zivame", path: "" },
+      { name: "HealthifyMe", path: "" },
+      { name: "Airtel", path: "" }
     ];
 
-    const ecommerce = [
-      "img15.png","img16.png","img17.png","img18.png","img19.png","img20.png","img21.png"
+    const ecommerceLogos = [
+      { name: "Cure.fit", path: "" },
+      { name: "Livspace", path: "" },
+      { name: "Myntra", path: "" },
+      { name: "Swiggy", path: "" },
+      { name: "Cult.fit", path: "" }
     ];
 
-    const others = [
-      "img22.png","img23.png","img24.png","img25.png","img26.png","img27.png","img28.png"
+    const otherLogos = [
+      { name: "Uber", path: "" },
+      { name: "Licious", path: "" },
+      { name: "Urban Company", path: "" },
+      { name: "Zomato", path: "" },
+      { name: "Amazon", path: "" }
     ];
 
-    function renderCards(containerId, data) {
+    function renderBrandCards(containerId, brandList) {
       const container = document.getElementById(containerId);
+      if (!container) return;
 
-      data.forEach((img) => {
+      brandList.forEach(brand => {
         const card = document.createElement("div");
+        card.className = "bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-4 md:p-6 flex items-center justify-center min-h-[100px] group border border-gray-100";
 
-        card.className =
-          "bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300 p-6 flex items-center justify-center group";
-
-        card.innerHTML = `
-          <img src="${img}" 
-               class="h-12 object-contain grayscale group-hover:grayscale-0 transition duration-300"/>
-        `;
-
+        // If path is empty or image fails, show text name
+        if (brand.path === "") {
+          card.innerHTML = `<span class="text-gray-300 font-bold uppercase text-[10px] md:text-xs tracking-widest text-center">${brand.name}</span>`;
+        } else {
+          card.innerHTML = `
+                    <img src="${brand.path}" 
+                         alt="${brand.name}" 
+                         class="h-10 md:h-12 w-full object-contain grayscale group-hover:grayscale-0 transition duration-500"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-gray-300 font-bold uppercase text-[10px]\'>${brand.name}</span>';" />
+                `;
+        }
         container.appendChild(card);
       });
     }
 
-    renderCards("startupContainer", startups);
-    renderCards("corporateContainer", corporate);
-    renderCards("ecommerceContainer", ecommerce);
-    renderCards("othersContainer", others);
+    document.addEventListener("DOMContentLoaded", () => {
+      renderBrandCards("startupContainer", startupLogos);
+      renderBrandCards("corporateContainer", corporateLogos);
+      renderBrandCards("ecommerceContainer", ecommerceLogos);
+      renderBrandCards("othersContainer", otherLogos);
 
+      // Initialize Lucide Icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // Mobile Menu
+      const burger = document.getElementById('hamburger');
+      const menu = document.getElementById('mobile-menu');
+      if (burger) {
+        burger.addEventListener('click', () => menu.classList.toggle('active'));
+      }
+    });
   </script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
+
 </html>

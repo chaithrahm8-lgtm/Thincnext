@@ -26,7 +26,7 @@ var swiper = new Swiper(".testimonial", {
   }
 });
 
-// v2 script
+// service section script
 document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll('.feature-item');
     const mainImg = document.getElementById('main-img');
