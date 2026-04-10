@@ -177,17 +177,19 @@
       class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
     >
       <nav
-        class=" max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
       >
         <a href="./index.html" class="relative z-[60] flex items-center p-0">
           <img
             src="./assest/Logo/thincnextlogo1.png"
             alt="Logo"
-            class="h-5 md:h-7 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
+            class="h-7 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
           />
         </a>
 
-        <ul class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold">
+        <ul
+          class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold"
+        >
           <li>
             <a href="./index.html" class="hover:text-blue-500 transition-colors"
               >Home</a
@@ -338,7 +340,7 @@
 
       <div
         id="mobile-menu"
-        class="lg:hidden  top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]"
+        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]"
       >
         <a
           href="./index.html"
@@ -398,31 +400,34 @@
     </header>
 
     <main class="container mx-auto px-4 mt-36">
-      <div class="text-center mt-16 md:mt-32">
+      <div class="text-center mt-16 md:mt-32 overflow-hidden">
+        <!-- mesh gradient blobs -->
+        <div
+          class="absolute top-60 md:top-0 -left-28 md:-left-8 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-14 md:opacity-30 animate-blob"
+        ></div>
+        <div
+          class="absolute top-0 -right-8 md:-right-4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-14 md:opacity-30 animate-blob animation-delay-2000"
+        ></div>
+        <div
+          class="hidden lg:block absolute bottom-12 left-0 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity:12 md:opacity-30 animate-blob animation-delay-4000"
+        ></div>
+
         <div data-aos="fade-left" data-aos-duration="1000">
           <h1
             class="text-3xl md:text-6xl font-bold leading-tight tracking-tight"
           >
             <span class="gradient-text animate-color-flow block"
-              >Driving Digital Transformation</span
+              >Full-Stack Software Development</span
             >
-            <span
-              class="font-light text-xl md:text-4xl block mt-1 text-gray-500"
-            >
-              Through Full-Stack Technology Solutions
+            <span class="gradient-text animate-color-flow block">
+              Company in India
             </span>
           </h1>
-        </div>
-
-        <div data-aos="fade-right" data-aos-duration="1000">
-          <p
-            class="text-sm md:text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed mt-6 md:mt-10 px-4"
+          <span
+            class="font-light text-xl mt-2 text-center md:text-3xl block mt-1 text-gray-500"
           >
-            Software Development <span class="text-blue-400">|</span> Web
-            Applications <span class="text-purple-400">|</span> Mobile
-            <span class="text-pink-400">|</span> AI
-            <span class="text-blue-400">|</span> Cybersecurity
-          </p>
+            Empowering businesses with full-stack technology solutions.
+          </span>
         </div>
 
         <div class="mt-8 md:mt-12">
@@ -440,7 +445,7 @@
 
     <div class="mb-12">
       <div
-        class="bg-white py-4 md:py-6 shadow-sm marquee-container overflow-hidden border-y border-slate-50"
+        class="py-4 md:py-6 shadow-sm marquee-container overflow-hidden border-y border-slate-50"
       >
         <div
           id="smooth-marquee"
@@ -623,7 +628,7 @@
     </section>
 
     <div
-      class="lg:col-span-2 flex justify-center gap-30 pl-4 border-l border-gray-100"
+      class="flex flex-wrap justify-center gap-30 pl-4 border-l border-gray-100"
     >
       <div class="counter-box">
         <div class="text-6xl font-light text-gray-500 mb-1">
@@ -738,7 +743,7 @@
       </div>
     </section>
 
-    <section class="services-section py-20 px-4">
+    <section class="services-section py-4 px-4 h-150 overflow-hidden">
       <div class="max-w-4xl mx-auto mb-16 text-center">
         <h1
           class="text-4xl md:text-6xl font-light tracking-tight text-slate-800 leading-tight"
@@ -852,7 +857,7 @@
 
     <section class="bg-white mb-20">
       <p
-        class="text-center text-6xl text-black font-bold pt-20"
+        class="text-center text-4xl md:text-6xl text-black font-bold pt-20"
         data-aos="fade-up"
         data-aos-duration="1500"
       >
