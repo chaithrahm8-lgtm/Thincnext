@@ -1,1 +1,161 @@
 @import "tailwindcss";
+
+@import "tailwindcss";
+
+/* =========================
+   THEME VARIABLES
+========================= */
+@theme {
+  --color-brand-primary: #2993C5;
+  --color-brand-dark: #0a0a0c;
+  --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  --animate-color-flow: colorFlow 6s ease infinite;
+}
+
+/* =========================
+   UTILITIES & KEYFRAMES
+========================= */
+@layer utilities {
+  /* Shine */
+  @keyframes shine {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    100% {
+      transform: translateX(350%) skewX(-20deg);
+    }
+  }
+
+  /* Gradient Flow */
+  @keyframes colorFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Slide Up */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Step Slide */
+  @keyframes step-slide {
+    0%,
+    15% {
+      transform: translateY(0);
+    }
+    20%,
+    35% {
+      transform: translateY(-90px);
+    }
+    40%,
+    55% {
+      transform: translateY(-180px);
+    }
+    60%,
+    75% {
+      transform: translateY(-270px);
+    }
+    80%,
+    95% {
+      transform: translateY(-360px);
+    }
+    100% {
+      transform: translateY(-450px);
+    }
+  }
+
+  /* =========================
+     CUSTOM UTILITIES
+  ========================= */
+
+  .animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-step-slide {
+    animation: step-slide 12s infinite cubic-bezier(0.85, 0, 0.15, 1) reverse;
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .strength-card {
+    @apply text-slate-950 tracking-tight flex items-center font-semibold;
+    height: 70px;
+    opacity: 0.4;
+    transition: all 0.5s ease;
+  }
+
+   /* Gradient Text */
+  .gradient-text {
+    background-image: linear-gradient(
+      to right,
+      #9333ea,
+      #715edc,
+      #a94aa3,
+      #9333ea
+    );
+    background-size: 300% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* Footer shimmer */
+  .footer-shimmer {
+    background: linear-gradient(
+      130deg,
+      #0a0a0c 0%,
+      #0a0a0c 20%,
+      #02384f 60%,
+      #0a0a0c 100%
+    );
+    background-size: 800% 100%;
+    animation: footerShineMove 6s linear infinite;
+  }
+
+  @keyframes footerShineMove {
+    0% {
+      background-position: 100% 0;
+    }
+    10% {
+      background-position: 200% 100%;
+    }
+  }
+
+  /* Mobile menu */
+  #mobile-menu {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  #mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
