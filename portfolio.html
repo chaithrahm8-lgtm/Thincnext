@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Clients</title>
+
+  <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .gradient-text {
+            background-image: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
+            background-size: 300% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes colorFlow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            .animate-color-flow{ animation: colorFlow 6s ease infinite;} 
+  </style>
+
+   <style type="text/tailwindcss">
+    @theme {
+      --color-brand-1: #1c8cc1;
+    }
+  </style>
+
 </head>
-<body>
-    
+
+<body class="bg-gray-100">
+
+  <section class="p-10">
+<div>
+    <h1 class="text-6xl font-bold  gradient-text animate-color-flow text-center mb-4">
+    Clientele
+</h1>
+    <h3 class="text-center text-slate-500 text-xl">Our Esteemed Clients</h3>
+</div>
+    <!-- CATEGORY 1 -->
+    <div class="mb-14">
+      <h2 class="text-xl md:text-2xl font-bold mb-10 flex items-center gap-4" data-aos="fade-right">
+                <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span> Government
+            </h2>
+
+      <div id="startupContainer"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+    </div>
+
+    <!-- CATEGORY 2 -->
+    <div class="mb-14">
+      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
+         Corporate Clients
+      </h2>
+
+      <div id="corporateContainer"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+    </div>
+
+    <!-- CATEGORY 3 -->
+    <div class="mb-14">
+      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
+         eCommerce Brands
+      </h2>
+
+      <div id="ecommerceContainer"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+    </div>
+
+    <!-- CATEGORY 4 -->
+    <div class="mb-14">
+      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
+        Education & Others
+      </h2>
+
+      <div id="othersContainer"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"></div>
+    </div>
+
+  </section>
+
+  <script>
+
+    // 🔥 REPLACE THESE WITH YOUR REAL LOGO URLs FROM MARQUEE
+
+    const startups = [
+      "img1.png","img2.png","img3.png","img4.png","img5.png","img6.png","img7.png"
+    ];
+
+    const corporate = [
+      "img8.png","img9.png","img10.png","img11.png","img12.png","img13.png","img14.png"
+    ];
+
+    const ecommerce = [
+      "img15.png","img16.png","img17.png","img18.png","img19.png","img20.png","img21.png"
+    ];
+
+    const others = [
+      "img22.png","img23.png","img24.png","img25.png","img26.png","img27.png","img28.png"
+    ];
+
+    function renderCards(containerId, data) {
+      const container = document.getElementById(containerId);
+
+      data.forEach((img) => {
+        const card = document.createElement("div");
+
+        card.className =
+          "bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300 p-6 flex items-center justify-center group";
+
+        card.innerHTML = `
+          <img src="${img}" 
+               class="h-12 object-contain grayscale group-hover:grayscale-0 transition duration-300"/>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    renderCards("startupContainer", startups);
+    renderCards("corporateContainer", corporate);
+    renderCards("ecommerceContainer", ecommerce);
+    renderCards("othersContainer", others);
+
+  </script>
+
 </body>
 </html>
