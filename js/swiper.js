@@ -1,6 +1,7 @@
 var swiper = new Swiper(".testimonial", {
   pagination: {
     el: ".swiper-pagination",
+    clickable:true,
   },
   navigation: {
     nextEl: ".next",
@@ -12,7 +13,7 @@ var swiper = new Swiper(".testimonial", {
     disableOnInteraction: false,
   },
   slidesPerView: 1,
-  spaceBetween: 20,
+  spaceBetween: 20,allowTouchMove: true,
   loop: true,
    breakpoints: {
     768: {
