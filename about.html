@@ -20,29 +20,7 @@
         }
     </style>
 
-    <style type="text/tailwindcss">
-        @theme {
-            /* Fixed Shine - Smooth Sweep */
-            @keyframes shine {
-                0% { transform: translateX(-150%) skewX(-200deg); }
-                100% { transform: translateX(350%) skewX(-400deg); }
-            }
-            --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 
-            /* Multi-color Morphing */
-            @keyframes colorFlow {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-            --animate-color-flow: colorFlow 6s ease infinite;
-
-            --color-brand-1: #1c8cc1;
-            --color-brand-2: #0892d0;
-            --color-brand-3: #2496cd;
-            --color-brand-dark: #0a0a0c;
-        }
-    </style>
     <style>
         .footer-shimmer {
             background: linear-gradient(130deg,
@@ -64,7 +42,6 @@
             }
         }
 
-        /* Mobile Menu Transitions */
         #mobile-menu {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateY(-20px);
@@ -264,8 +241,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </section>
 
@@ -307,8 +282,6 @@
         </div>
     </section>
 
-
-
     <section class="relative isolate bg-white px-6 py-24 sm:py-32 overflow-hidden font-sans">
 
         <div
@@ -324,9 +297,7 @@
                     </p>
                     <h2 class="text-5xl md:text-7xl font-light tracking-tight text-slate-900 leading-[1.1]">
                         Turning <span
-                            class="bg-gradient-to-r from-[var(--logo-color)] to-blue-600 bg-clip-text text-transparent font-bold italic">Visions</span>
-                        <!-- <br> -->
-                        into <span class="font-black font-semibold">Reality.</span>
+                            class="bg-gradient-to-r from-[var(--logo-color)] to-blue-600 bg-clip-text text-transparent font-bold italic">Visions</span> into <span class="font-black font-semibold">Reality.</span>
                     </h2>
                 </div>
                 <div class="hidden md:block pb-2">
@@ -335,7 +306,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-
                 <div class="md:col-span-7 relative">
                     <div
                         class="relative z-10 rounded-[3rem] bg-blue-100/50 p-10 md:p-16 shadow-2xl transition-transform duration-500">
@@ -359,7 +329,6 @@
                 </div>
 
                 <div class="md:col-span-5">
-
                     <div class="group flex gap-6 p-6 rounded-3xl transition-all hover:bg-blue-50">
                         <div
                             class="flex-shrink-0 h-16 w-16 flex items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-100 text-2xl font-black text-[var(--logo-color)] group-hover:scale-110 transition-transform">
@@ -389,7 +358,6 @@
                                 Apps | from Branding to Digital Marketing and many more...</p>
                         </div>
                     </div>
-
                 </div>
 
                 <div
@@ -542,7 +510,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // 1. SWIPER CONFIGURATION (For your "More About Us" slider)
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 30,
@@ -555,9 +522,7 @@
             },
         });
 
-        // 2. Interactive Menu Logic (Desktop + Mobile Unified)
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Mobile Menu Hamburger Logic ---
             const hamburger = document.getElementById('hamburger');
             const mobileMenu = document.getElementById('mobile-menu');
 
@@ -566,13 +531,11 @@
                     e.stopPropagation();
                     mobileMenu.classList.toggle('active');
                 });
-                // Prevent clicks inside the menu from closing it
                 mobileMenu.addEventListener('click', (e) => {
                     e.stopPropagation();
                 });
             }
 
-            // --- Desktop Dropdown Logic ---
             const setupDropdown = (btnId, menuId, arrowId) => {
                 const btn = document.getElementById(btnId);
                 const menu = document.getElementById(menuId);
@@ -584,7 +547,7 @@
                     e.stopPropagation();
                     const isClosed = menu.classList.contains('invisible');
 
-                    closeAllDesktopMenus(); // Close other dropdowns
+                    closeAllDesktopMenus();
 
                     if (isClosed) {
                         menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
@@ -613,11 +576,9 @@
                 });
             };
 
-            // Initialize desktop dropdowns
             setupDropdown('services-btn', 'services-menu', 'services-arrow');
             setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
 
-            // --- Global Click: Close Everything ---
             document.addEventListener('click', () => {
                 closeAllDesktopMenus();
                 if (mobileMenu && mobileMenu.classList.contains('active')) {
