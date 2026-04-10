@@ -80,10 +80,10 @@
       }
 
       .strength-card {
-        @apply font-black text-slate-950 tracking-tight flex items-center;
-        height: 90px;
+        @apply text-slate-950 tracking-tight flex items-center font-semibold;
+        height: 70px;
         opacity: 0.4;
-        transition: all 0.4s ease;
+        transition: all 0.5s ease;
       }
 
       @keyframes step-slide {
@@ -175,6 +175,7 @@
   <body class="text-slate-900 bg-white overflow-x-hidden">
     <header
       class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
+      id="navbar"
     >
       <nav
         class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
@@ -253,9 +254,9 @@
 
           <li>
             <a
-              href="./career.html"
+              href="./portfolio.html"
               class="hover:text-blue-500 transition-colors"
-              >Career</a
+              >Portfolio</a
             >
           </li>
 
@@ -313,7 +314,7 @@
 
         <div class="flex items-center gap-3 relative z-10">
           <button
-            class="hidden lg:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
           >
             Book a Domain
           </button>
@@ -399,14 +400,14 @@
       </div>
     </header>
 
-    <main class="container mx-auto px-4 mt-36">
+    <main class="container mx-auto px-4 mt-36 ovrflow-hidden">
       <div class="text-center mt-16 md:mt-32 overflow-hidden">
         <!-- mesh gradient blobs -->
         <div
           class="absolute top-60 md:top-0 -left-28 md:-left-8 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-14 md:opacity-30 animate-blob"
         ></div>
         <div
-          class="absolute top-0 -right-8 md:-right-4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-14 md:opacity-30 animate-blob animation-delay-2000"
+          class="absolute top-0 right-4 md:-right-4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-14 md:opacity-30 animate-blob animation-delay-2000"
         ></div>
         <div
           class="hidden lg:block absolute bottom-12 left-0 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity:12 md:opacity-30 animate-blob animation-delay-4000"
@@ -424,7 +425,7 @@
             </span>
           </h1>
           <span
-            class="font-light text-xl mt-2 text-center md:text-3xl block mt-1 text-gray-500"
+            class="font-light text-xl mt-2 text-center md:text-3xl block text-gray-500"
           >
             Empowering businesses with full-stack technology solutions.
           </span>
@@ -453,21 +454,21 @@
         >
           <div class="flex gap-4 md:gap-12 px-6 items-center whitespace-nowrap">
             <span>Software Development</span>
-            <span class="text-blue-500 text-2xl">|</span>
+            <span class="text-brand-1 text-2xl">|</span>
             <span>Web Applications</span>
-            <span class="text-blue-500 text-2xl">|</span>
+            <span class="text-brand-1 text-2xl">|</span>
             <span>Mobile Apps</span>
-            <span class="text-blue-500 text-2xl">|</span> <span>Branding</span>
-            <span class="text-blue-500 text-2xl">|</span>
+            <span class="text-brand-1 text-2xl">|</span> <span>Branding</span>
+            <span class="text-brand-1 text-2xl">|</span>
             <span>Cybersecurity</span>
-            <span class="text-blue-500 text-2xl">|</span>
+            <span class="text-brand-1 text-2xl">|</span>
           </div>
           <div class="flex gap-4 md:gap-12 px-6 items-center whitespace-nowrap">
             <span>Design for Startups</span>
-            <span class="text-blue-500 text-2xl">|</span> <span>eCommerce</span>
-            <span class="text-blue-500 text-2xl">|</span> <span>ERP</span>
-            <span class="text-blue-500 text-2xl">|</span> <span>SEO</span>
-            <span class="text-blue-500 text-2xl">|</span>
+            <span class="text-brand-1 text-2xl">|</span> <span>eCommerce</span>
+            <span class="text-brand-1 text-2xl">|</span> <span>ERP</span>
+            <span class="text-brand-1 text-2xl">|</span> <span>SEO</span>
+            <span class="text-brand-1 text-2xl">|</span>
             <span>Social Media Marketing</span>
             <span class="text-blue-500 text-2xl">|</span>
           </div>
@@ -587,7 +588,7 @@
         </div>
 
         <div
-          class="sticky top-40 bg-blue-500 rounded-4xl p-10 min-h-[420px] shadow-xl border border-blue-400 flex flex-col justify-between group transition-all duration-500"
+          class="sticky top-40 bg-slate-900 rounded-4xl p-10 min-h-[420px] shadow-xl border border-gray-900 flex flex-col justify-between group transition-all duration-500"
         >
           <div>
             <div class="flex justify-between items-start">
@@ -606,14 +607,14 @@
                   ></path>
                 </svg>
               </div>
-              <span class="text-6xl font-black text-blue-100">03</span>
+              <span class="text-6xl font-black text-gray-100">03</span>
             </div>
             <h3
               class="text-2xl font-bold uppercase mt-8 mb-4 tracking-wider text-gray-100"
             >
               Create
             </h3>
-            <p class="text-gray-100 text-base leading-relaxed font-semibold">
+            <p class="text-gray-100 text- leading-relaxed font-semibold">
               Our design & development teams will bring all ideas to life in
               browser for an experience your audience will love.
             </p>
@@ -679,15 +680,15 @@
         </div>
 
         <div
-          class="relative h-90 overflow-hidden flex items-center border-l-4 border-blue-200 pl-5"
+          class="relative h-80 overflow-hidden flex items-center border-l-4 border-blue-200 pl-5"
         >
           <div class="animate-step-slide flex flex-col">
-            <h3 class="strength-card text-3xl">Creative Design</h3>
-            <h3 class="strength-card text-3xl">Retina Ready</h3>
-            <h3 class="strength-card text-3xl">Solution Oriented</h3>
-            <h3 class="strength-card text-3xl">Easy To Use</h3>
-            <h3 class="strength-card text-3xl">Budget Friendly</h3>
-            <h3 class="strength-card text-3xl">Creative Design</h3>
+            <h4 class="strength-card text-3xl">Creative Design</h4>
+            <h4 class="strength-card text-3xl">Retina Ready</h4>
+            <h4 class="strength-card text-3xl">Solution Oriented</h4>
+            <h4 class="strength-card text-3xl">Easy To Use</h4>
+            <h4 class="strength-card text-3xl">Budget Friendly</h4>
+            <h4 class="strength-card text-3xl">Creative Design</h4>
           </div>
         </div>
 
@@ -697,12 +698,12 @@
       </div>
 
       <div
-        class="w-full lg:w-1/2 relative h-[550px] group overflow-hidden rounded-[40px] shadow-2xl border border-slate-100"
+        class="w-full lg:w-1/2 relative group overflow-hidden rounded-4xl shadow-2xl border border-slate-100"
       >
         <img
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
           alt="Corporate Strategy Center"
-          class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          class="object-cover transition-transform duration-1000 group-hover:scale-105"
         />
         <div
           class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"
@@ -772,11 +773,6 @@
               alt="Preview"
               class="w-full"
             />
-            <div
-              class="read-more-overlay absolute bottom-6 left-6 bg-white py-2 px-6 rounded-full text-blue-600 font-bold shadow-md"
-            >
-              read more
-            </div>
           </div>
         </div>
 
@@ -791,11 +787,6 @@
                 We're all about creating long-term relationships. We host and
                 maintain our own solutions & offer on-going analysis.
               </p>
-              <a
-                href="./technology.html"
-                class="blue-link text-blue-600 font-semibold mt-2 inline-block"
-                >read more</a
-              >
             </div>
           </div>
 
@@ -809,11 +800,6 @@
                 We develop scalable websites & applications that work. We have
                 the skills to turn ideas into reality.
               </p>
-              <a
-                href="./technology.html"
-                class="blue-link text-blue-600 font-semibold mt-2 inline-block"
-                >read more</a
-              >
             </div>
           </div>
 
@@ -827,11 +813,6 @@
                 Our discovery is designed to get under the hood of your brand &
                 empathise with your audience.
               </p>
-              <a
-                href="./technology.html"
-                class="blue-link text-blue-600 font-semibold mt-2 inline-block"
-                >read more</a
-              >
             </div>
           </div>
 
@@ -844,11 +825,6 @@
               <p class="text-slate-500">
                 We provide top-tier security for your data.
               </p>
-              <a
-                href="./technology.html"
-                class="blue-link text-blue-600 font-semibold mt-2 inline-block"
-                >read more</a
-              >
             </div>
           </div>
         </div>
@@ -901,7 +877,7 @@
             style="width: 390px; margin-right: 25px"
           >
             <div
-              class="border border-gray-300 hover:border-gray-400 shadow-xl rounded-2xl shadow-md p-6 max-w-xl w-full bg-white aos-init aos-animate"
+              class="border border-gray-300 hover:border-gray-400 rounded-2xl shadow-md p-6 max-w-xl w-full bg-white aos-init aos-animate"
               data-aos="fade-up"
               data-aos-duration="1500"
             >
@@ -1878,9 +1854,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <script src="js/swiper.js"></script>
-    <script src="js/script.js"></script>
-
     <script>
       // Initialize Locomtive
       const locomotiveScroll = new LocomotiveScroll();
@@ -1890,126 +1863,11 @@
 
       // Initialize AOS
       AOS.init({ once: true, duration: 1000 });
-
-      // GSAP Counter
-      document.addEventListener("DOMContentLoaded", () => {
-        const counters = document.querySelectorAll(".counter-val");
-        const animateCounter = (el) => {
-          const targetValue = parseInt(el.getAttribute("data-target"));
-          gsap.to(el, {
-            innerText: targetValue,
-            duration: 2.5,
-            snap: { innerText: 1 },
-            ease: "power2.out",
-            onUpdate: function () {
-              el.innerHTML = Math.ceil(this.targets()[0].innerText);
-            },
-          });
-        };
-
-        const observerOptions = { threshold: 0.7 };
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateCounter(entry.target);
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
-
-        counters.forEach((counter) => observer.observe(counter));
-      });
-
-      // Testimonials Swiper
-      document.addEventListener("DOMContentLoaded", () => {
-        var testimonialSwiper = new Swiper(".testimonial", {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          loop: true,
-          autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          },
-        });
-      });
-
-      // Unified Menu Logic
-      document.addEventListener("DOMContentLoaded", () => {
-        // --- Mobile Menu Hamburger Logic ---
-        const hamburger = document.getElementById("hamburger");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        if (hamburger && mobileMenu) {
-          hamburger.addEventListener("click", (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle("active");
-          });
-          mobileMenu.addEventListener("click", (e) => {
-            e.stopPropagation();
-          });
-        }
-
-        // --- Desktop Dropdown Logic ---
-        const setupDropdown = (btnId, menuId, arrowId) => {
-          const btn = document.getElementById(btnId);
-          const menu = document.getElementById(menuId);
-          const arrow = document.getElementById(arrowId);
-
-          if (!btn || !menu) return;
-
-          btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            const isClosed = menu.classList.contains("invisible");
-            closeAllDesktopMenus();
-
-            if (isClosed) {
-              menu.classList.remove("opacity-0", "invisible", "translate-y-2");
-              if (arrow) arrow.classList.add("rotate-180");
-            }
-          });
-
-          menu.addEventListener("click", (e) => {
-            e.stopPropagation();
-          });
-        };
-
-        const closeAllDesktopMenus = () => {
-          const dropdowns = [
-            { menu: "services-menu", arrow: "services-arrow" },
-            { menu: "offer-menu", arrow: "offer-arrow" },
-          ];
-
-          dropdowns.forEach((item) => {
-            const m = document.getElementById(item.menu);
-            const a = document.getElementById(item.arrow);
-            if (m) {
-              m.classList.add("opacity-0", "invisible", "translate-y-2");
-              if (a) a.classList.remove("rotate-180");
-            }
-          });
-        };
-
-        setupDropdown("services-btn", "services-menu", "services-arrow");
-        setupDropdown("offer-btn", "offer-menu", "offer-arrow");
-
-        // --- Global Click: Close Everything ---
-        document.addEventListener("click", () => {
-          closeAllDesktopMenus();
-          if (mobileMenu && mobileMenu.classList.contains("active")) {
-            mobileMenu.classList.remove("active");
-          }
-        });
-      });
     </script>
-    <script src="js/script.js"></script>
-    <script src="js/swiper.js"></script>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/counter.js"></script>
   </body>
 </html>
