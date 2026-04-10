@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Offer</title>
+    <link href="./output.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -35,6 +36,40 @@
         }
         --animate-color-flow: colorFlow 6s ease infinite;
       }
+
+
+          #mobile-menu {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #mobile-menu.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+        .footer-shimmer {
+      background: linear-gradient(130deg,
+          #0a0a0c 0%,
+          #0a0a0c 20%,
+          #02384f 60%,
+          #0a0a0c 100%);
+      background-size: 800% 100%;
+      animation: footerShineMove 6s linear infinite;
+    }
+
+    @keyframes footerShineMove {
+      0% {
+        background-position: 100% 0;
+      }
+
+      10% {
+        background-position: 200% 100;
+      }
+    }
     </style>
 </head>
 
@@ -42,105 +77,127 @@
 <body>
 
     <header
-        class="flex justify-between items-center px-8 py-2 md:px-10 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full max-w-[1200px] mx-auto mt-4 relative">
+        class="flex justify-between items-center px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-300 left-1/2 -translate-x-1/2 mt-4 z-1000 fixed top-0">
         <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
             <div
-                class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine">
+                class="absolute inset-0 w-1/4 h-full bg-linear-to-r from-transparent via-blue-200/50 to-transparent animate-shine">
             </div>
         </div>
 
         <a href="./index.html" class="relative z-10 flex items-center p-0">
             <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
-                class="h-16 md:h-12 w-auto object-contain transform scale-125 origin-left transition-transform duration-300" />
+                class="h-10 md:h-12 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300" />
         </a>
 
-        <nav class="relative z-10">
-            <ul class="flex space-x-6 text-xs md:text-sm font-bold">
-                <li>
-                    <a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a>
-                </li>
-                <li>
-                    <a href="./about.html" class="hover:text-blue-500 transition-colors">About</a>
-                </li>
+        <nav class="hidden lg:block relative z-10">
+            <ul class="flex space-x-6 text-sm font-bold">
+                <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
+                <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
 
-                <li class="relative">
+                <li class="relative group">
                     <button id="services-btn"
                         class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
                         Services
-                        <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none"
+                        <svg id="services-arrow"
+                            class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
                             </path>
                         </svg>
                     </button>
-                    <ul id="services-menu"
-                        class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
-                        <li>
-                            <a href="./technology.html"
+
+                    <ul id="services-menu" class="absolute left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl 
+        opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden 
+        group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+
+                        <li><a href="./technology.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a>
                         </li>
-                        <li>
-                            <a href="./digitalmarketing.html"
+                        <li><a href="./digitalmarketing.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
-                                Marketing</a>
-                        </li>
-                        <li>
-                            <a href="./readymade.html"
+                                Marketing</a></li>
+                        <li><a href="./readymade.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Readymade</a>
                         </li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a>
-                </li>
+                <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
 
-                <li class="relative">
+                <li class="relative group">
                     <button id="offer-btn"
                         class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
                         Offer
-                        <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                        <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
                             </path>
                         </svg>
                     </button>
-                    <ul id="offer-menu"
-                        class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
-                        <li>
-                            <a href="./digitalmarketingoffer.html"
+
+                    <ul id="offer-menu" class="absolute left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl 
+        opacity-0 invisible translate-y-2 transition-all duration-300 z-100 overflow-hidden
+        group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+
+                        <li><a href="./digitalmarketingoffer.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
-                                Marketing Offer</a>
-                        </li>
-                        <li>
-                            <a href="./startupoffer.html"
+                                Marketing Offer</a></li>
+                        <li><a href="./startupoffer.html"
                                 class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup
-                                Offer</a>
-                        </li>
+                                Offer</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a>
-                </li>
+                <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
             </ul>
         </nav>
 
-        <button
-            class="relative z-10 px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
-            Book a Domain
-        </button>
+        <div class="flex items-center gap-3 relative z-10">
+            <button
+                class="hidden md:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
+                Book a Domain
+            </button>
+            <button id="hamburger"
+                class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="lg:hidden absolute top-[115%] left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50">
+            <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2">Home</a>
+            <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2">About</a>
+            <div class="flex flex-col gap-2">
+                <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Services</span>
+                <a href="./technology.html" class="pl-4 py-1 text-slate-600">Technology</a>
+                <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600">Digital Marketing</a>
+                <a href="./readymade.html" class="pl-4 py-1 text-slate-600">Readymade</a>
+            </div>
+            <a href="./career.html" class="text-lg font-bold border-b border-slate-100 pb-2">Career</a>
+            <div class="flex flex-col gap-2">
+                <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Offer</span>
+                <a href="./digitalmarketingoffer.html" class="pl-4 py-1 text-slate-600">Digital Marketing Offer</a>
+                <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600">Startup Offer</a>
+            </div>
+            <a href="./contact.html" class="text-lg font-bold border-b border-slate-100 pb-2">Contact Us</a>
+            <button class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl">Book a
+                Domain</button>
+        </div>
     </header>
 
     <main>
-        <section class="min-h-[600px] h-fit flex items-center justify-center">
+        <section class="min-h-175 h-fit flex items-center justify-center">
             <div class="py-14 sm:py-16 md:py-20 px-4 sm:px-6">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2><span
-                            class="text-5xl  md:text-[45px] lg:text-6xl font-bold gradient-text animate-color-flow block pb-6 md:mb-10 break-words">Exclusive
-                            Startup Package</span></h2>
+                            class="text-5xl  md:text-[45px] lg:text-6xl font-bold gradient-text animate-color-flow block pb-6 md:mb-10 wrap-break-word">Exclusive Startup Package
+                        </span>
+                    </h2>
                     <p
-                        class="font-light text-xl sm:text-lg md:text-xl lg:text-2xl text-gray-500 max-w-2xl mx-auto mb-8 md:mb-10 px-2">
+                        class="font-light text-xl sm:text-lg md:text-xl lg:text-2xl text-gray-500 max-w-2xl mx-auto mb-8 md:mb-10 px-2 pb-10">
                         Take your business online with easy access to website dashboard and build your static
                         website on your own
                     </p>
@@ -156,7 +213,7 @@
 
         <section id="offers" class="max-w-7xl mx-auto px-6 flex flex-col gap-12 pb-16">
             <div data-aos="fade-up" data-aos-duration="2000" class="pb-8">
-                <p class="text-center font-bold text-5xl p-9">Startup Packages</p>
+                <p class="text-center font-bold text-5xl p-9">Packages</p>
                 <p class="text-center text-gray-600 text-lg">
                     Reach Your Business To Targeted & Potential Online Customers.
                 </p>
@@ -173,7 +230,7 @@
                             class="text-slate-400 text-sm">/mo</span>
                     </div>
 
-                    <ul class="space-y-4 my-8 text-md text-slate-600 flex-grow">
+                    <ul class="space-y-4 my-8 text-md text-slate-600 grow">
                         <li class="flex items-start">
                             <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
                             <span>
@@ -252,7 +309,7 @@
                             class="text-slate-400 text-sm">/mo</span>
                     </div>
 
-                    <ul class="space-y-4 my-8 text-md text-slate-600 flex-grow">
+                    <ul class="space-y-4 my-8 text-md text-slate-600 grow">
                         <li class="flex items-start">
                             <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
                             <span>
@@ -334,7 +391,7 @@
                             class="text-slate-400 text-sm">/mo</span>
                     </div>
 
-                    <ul class="space-y-4 my-8 text-md text-slate-600 flex-grow">
+                    <ul class="space-y-4 my-8 text-md text-slate-600 grow">
                         <li class="flex items-start">
                             <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
                             <span>
@@ -413,7 +470,7 @@
                             class="text-slate-400 text-sm">/mo</span>
                     </div>
 
-                    <ul class="space-y-4 my-8 text-md text-slate-600 flex-grow">
+                    <ul class="space-y-4 my-8 text-md text-slate-600 grow">
                         <li class="flex items-start">
                             <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
                             <span>
@@ -487,17 +544,15 @@
 
 
     <footer
-        class=" footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden">
+        class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden ">
 
         <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
-
 
             <div class="flex flex-col gap-6">
                 <div class="items-center">
                     <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo"
                         class="h-10 md:h-20 w-auto object-contain">
                 </div>
-
                 <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
                     Before we get creative or put a digital solution in place, we take the time to fully understand your
                     brand, project & the people its intended for.
@@ -509,101 +564,79 @@
                     <i data-lucide="map-pin"
                         class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
                     <span class="text-sm text-slate-400 leading-relaxed">
-                        #285,1st Floor,Between 17th- 18th Cross,
-                        2nd Main (Sampige Road),<br>
-                        Malleshwaram, Bengaluru - 560 003
+                        #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige Road),<br> Malleshwaram, Bengaluru -
+                        560 003
                     </span>
                 </div>
                 <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
                     <i data-lucide="phone"
                         class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm">+91 96115 04567</span>
+                    <span class="text-sm text-slate-400">+91 96115 04567</span>
                 </div>
                 <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
                     <i data-lucide="mail"
                         class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
-                    <span class="text-sm">Sales@Thincnext.Com</span>
+                    <span class="text-sm text-slate-400">Sales@Thincnext.Com</span>
                 </div>
-
             </div>
 
-            <div class="flex flex-col gap-6 md:pl-8">
-                <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Company</h3>
-                <ul class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 md:pl-8">
+                <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Quick links</h3>
+                <ul class="flex flex-col gap-1">
                     <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a>
                     </li>
-                    <li><a href="services.html"
-                            class="text-sm text-slate-400 hover:text-brand-1 transition-all">Services</a></li>
                     <li><a href="career.html"
                             class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
-                    <li><a href="offers.html"
-                            class="text-sm text-slate-400 hover:text-brand-1 transition-all">Offers</a></li>
                     <li><a href="portfolio.html"
                             class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
+                    <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Terms &
+                            condition</a></li>
+                    <li><a href="#" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Privacy policy</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="flex flex-col gap-6">
-                <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Social</h3>
-
-                <ul class="flex flex-col gap-3">
+                <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Connect us</h3>
+                <ul class="flex flex-row items-center gap-5">
                     <li>
-                        <a href="#"
-                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                        <a href="#" class="block transition-colors group" title="Facebook">
                             <img src="/assest/images/fbfoot.png" alt="Facebook"
-                                class="w-5 h-5 group-hover:scale-110 transition-transform">
-                            Facebook
+                                class="w-6 h-6 group-hover:scale-110 transition-transform">
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                        <a href="#" class="block transition-colors group" title="Twitter">
                             <img src="/assest/images/twitfoot.png" alt="Twitter"
-                                class="w-5 h-5 group-hover:scale-110 transition-transform">
-                            Twitter
+                                class="w-6 h-6 group-hover:scale-110 transition-transform">
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                        <a href="#" class="block transition-colors group" title="Instagram">
                             <img src="/assest/images/instafoot.png" alt="Instagram"
-                                class="w-5 h-5 group-hover:scale-110 transition-transform">
-                            Instagram
+                                class="w-6 h-6 group-hover:scale-110 transition-transform">
                         </a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
+                        <a href="#" class="block transition-colors group" title="LinkedIn">
                             <img src="/assest/images/linkedfoot.png" alt="LinkedIn"
-                                class="w-5 h-5 group-hover:scale-110 transition-transform">
-                            LinkedIn
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-                            <img src="/assest/images/pintrtfoot.png" alt="Pinterest"
-                                class="w-5 h-5 group-hover:scale-110 transition-transform">
-                            Pinterest
+                                class="w-6 h-6 group-hover:scale-110 transition-transform">
                         </a>
                     </li>
                 </ul>
-
-                <div class="mt-4">
-                    <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
-                </div>
             </div>
-
 
         </div>
 
+        <div class="flex justify-center pb-6">
+            <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
+        </div>
+
         <div
-            class="w-full py-6 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
+            class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-1/20 to-transparent">
             <div
                 class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
-                <p>&copy; Copyrights thincnext. All rights reserved.</p>
-                <span class="hidden md:inline-block text-slate-600">|</span>
-                <p>Designed by <span class="text-brand-1 font-semibold">Thincnext</span></p>
+                <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
             </div>
         </div>
 
@@ -612,6 +645,72 @@
     <script>
         lucide.createIcons();
         AOS.init();
+    </script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (hamburger && mobileMenu) {
+                hamburger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('active');
+                });
+                mobileMenu.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            }
+
+            const setupDropdown = (btnId, menuId, arrowId) => {
+                const btn = document.getElementById(btnId);
+                const menu = document.getElementById(menuId);
+                const arrow = document.getElementById(arrowId);
+
+                if (!btn || !menu) return;
+
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isClosed = menu.classList.contains('invisible');
+                    closeAllDesktopMenus();
+
+                    if (isClosed) {
+                        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                        if (arrow) arrow.classList.add('rotate-180');
+                    }
+                });
+
+                menu.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            };
+
+            const closeAllDesktopMenus = () => {
+                const dropdowns = [
+                    { menu: 'services-menu', arrow: 'services-arrow' },
+                    { menu: 'offer-menu', arrow: 'offer-arrow' }
+                ];
+
+                dropdowns.forEach(item => {
+                    const m = document.getElementById(item.menu);
+                    const a = document.getElementById(item.arrow);
+                    if (m) {
+                        m.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                        if (a) a.classList.remove('rotate-180');
+                    }
+                });
+            };
+
+            setupDropdown('services-btn', 'services-menu', 'services-arrow');
+            setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
+
+            document.addEventListener('click', () => {
+                closeAllDesktopMenus();
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
 
