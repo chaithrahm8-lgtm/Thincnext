@@ -1,6 +1,7 @@
 var swiper = new Swiper(".testimonial", {
   pagination: {
     el: ".swiper-pagination",
+    clickable:true,
   },
   navigation: {
     nextEl: ".next",
@@ -12,7 +13,7 @@ var swiper = new Swiper(".testimonial", {
     disableOnInteraction: false,
   },
   slidesPerView: 1,
-  spaceBetween: 20,
+  spaceBetween: 20,allowTouchMove: true,
   loop: true,
    breakpoints: {
     768: {
@@ -65,13 +66,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     activate(0);
 });
+
+
 // Continuous Marquee Swiper Loop Initialization
     document.addEventListener('DOMContentLoaded', () => {
         new Swiper('.marquee-swiper', {
             loop: true,
             slidesPerView: 'auto',
             spaceBetween: 0,
-            speed: 4000, 
+            speed: 3000, 
             autoplay: {
                 delay: 0, 
                 disableOnInteraction: false,
