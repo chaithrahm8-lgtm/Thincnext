@@ -28,38 +28,6 @@
             --logo-color: #1c8cc1;
         }
 
-        .footer-shimmer {
-            background: linear-gradient(130deg,
-                    #0a0a0c 0%,
-                    #0a0a0c 20%,
-                    #02384f 60%,
-                    #0a0a0c 100%);
-            background-size: 800% 100%;
-            animation: footerShineMove 6s linear infinite;
-        }
-
-        @keyframes footerShineMove {
-            0% {
-                background-position: 100% 0;
-            }
-
-            10% {
-                background-position: 200% 100;
-            }
-        }
-
-        #mobile-menu {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateY(-20px);
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        #mobile-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
     </style>
 </head>
 
@@ -148,7 +116,7 @@
 
             <div class="flex items-center gap-3 relative z-10">
                 <button
-                    class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer">
+                    class="hidden lg:block px-5 py-2.5 bg-(--logo-color) hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer">
                     Book a Domain
                 </button>
                 <button id="hamburger"
@@ -242,7 +210,7 @@
                             <p class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-8">Business Ethics
                             </p>
                             <h3
-                                class="text-sm sm:text-base md:text-lg lg:text-4xl font-medium leading-snug mb-8 italic px-8">
+                                class="text-xl sm:text-base md:text-lg lg:text-4xl font-medium leading-snug mb-8 italic px-8">
                                 "Your money is just a condition to get our business,
                                 <span class="text-white font-bold sm:text-base md:text-lg lg:text-4xl">
                                     our professionalism is the price.

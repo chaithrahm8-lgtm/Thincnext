@@ -13,30 +13,6 @@
     <link rel="stylesheet" href="style.css">
     <style type="text/tailwindcss">
         @theme {
-        @keyframes shine {
-          0% {
-            transform: translateX(-150%) skewX(-200deg);
-          }
-          100% {
-            transform: translateX(350%) skewX(-400deg);
-          }
-        }
-        --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-
-        @keyframes colorFlow {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        --animate-color-flow: colorFlow 6s ease infinite;
-
-
         --color-brand-blue: #1c8cc1;
         --color-brand-1: #1c8cc1;
         --color-brand-2: #0892d0;
@@ -44,39 +20,6 @@
         --color-brand-dark: #0a0a0c;
       }
 
-
-          #mobile-menu {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      transform: translateY(-20px);
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    #mobile-menu.active {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-    }
-
-        .footer-shimmer {
-      background: linear-gradient(130deg,
-          #0a0a0c 0%,
-          #0a0a0c 20%,
-          #02384f 60%,
-          #0a0a0c 100%);
-      background-size: 800% 100%;
-      animation: footerShineMove 6s linear infinite;
-    }
-
-    @keyframes footerShineMove {
-      0% {
-        background-position: 100% 0;
-      }
-
-      10% {
-        background-position: 200% 100;
-      }
-    }
     </style>
 </head>
 
