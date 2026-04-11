@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thincnext | Digital Marketing</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link
@@ -17,67 +17,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style type="text/tailwindcss">
-      @theme {
-        --color-brand-1: #1c8cc1;
-        --color-brand-2: #0892d0;
-        --color-brand-3: #2496cd;
-        --color-brand-dark: #0a0a0c;
-        --color-brand-light: #3b82f6;
-        --color-brand-base: #2563eb;
-
-        @keyframes colorFlow {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        --animate-color-flow: colorFlow 6s ease infinite;
-
-        @keyframes shine {
-          0% {
-            transform: translateX(-150%) skewX(-200deg);
-          }
-          100% {
-            transform: translateX(350%) skewX(-400deg);
-          }
-        }
-        --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-      }
-
-      .circle-accent {
-        position: absolute;
-        background: radial-gradient(
-          circle,
-          rgba(59, 130, 246, 0.1) 0%,
-          rgba(255, 255, 255, 0) 70%
-        );
-        border-radius: 50%;
-        z-index: -1;
-      }
-
-      /* Modern Card Redesign */
-      .bento-card {
-        @apply relative overflow-hidden bg-white/60 backdrop-blur-md border border-blue-100/50 p-8 transition-all duration-500;
-        border-radius: 2rem;
-      }
-
-      .bento-card:hover {
-        @apply -translate-y-2 border-blue-400/30;
-        box-shadow: 0 30px 60px -12px rgba(37, 99, 235, 0.15);
-      }
-
-      .icon-box {
-        @apply w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-500;
-      }
-
-      .bento-card:hover .icon-box {
-        @apply scale-110 rotate-3;
-      }
     </style>
 
     <style>
@@ -103,18 +42,7 @@
         }
       }
 
-      /* Mobile Menu Transitions */
-      #mobile-menu {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateY(-20px);
-        opacity: 0;
-        visibility: hidden; /* Hides it completely when not active */
-      }
-      #mobile-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
+      
     </style>
   </head>
 
@@ -262,7 +190,7 @@
           <button
             class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
           >
-            Book a Domain
+            Buy a Domain
           </button>
           <button
             id="hamburger"
@@ -346,7 +274,7 @@
       </div>
     </header>
     <!--header-->
-    <section class="relative flex lg:pt-20 justify-center px-8 md:px-20 pt-32 pb-16 z-10 min-h-screen sm:min-h-screen">
+    <section class="relative flex lg:pt-35 justify-center px-8 md:px-20 pt-42  z-10 min-h-screen sm:min-h-screen">
       <div class="container mx-auto flex justify-center">
          
         <div  class="text-center max-w-3xl">
@@ -380,7 +308,7 @@
       </div>
     </section>
 
-    <section class="py-24 px-8 md:px-20 relative bg-[#fdfeff]">
+    <section class="pb-10 px-8 md:px-20 relative bg-[#fdfeff]">
      <div class="container mx-auto px-4">
   <div class="flex flex-col items-center text-center gap-6 mb-16" data-aos="fade-up" data-aos-delay="100"">
 
@@ -621,87 +549,9 @@
 </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/nav.js"></script>
     <script>
       AOS.init({ duration: 1000, once: true });
-
-      // Hero GSAP Animations
-     
-      // Interactive Menu Logic (Combined)
-      document.addEventListener("DOMContentLoaded", () => {
-        // --- 1. Mobile Menu Hamburger Logic ---
-        const hamburger = document.getElementById("hamburger");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        if (hamburger && mobileMenu) {
-          hamburger.addEventListener("click", (e) => {
-            e.stopPropagation(); // Stops the click from bubbling up and triggering the document click listener immediately
-            mobileMenu.classList.toggle("active");
-          });
-
-          // Prevent clicks *inside* the mobile menu from closing it
-          mobileMenu.addEventListener("click", (e) => {
-            e.stopPropagation();
-          });
-        }
-
-        // --- 2. Desktop Dropdown Logic ---
-        const setupDropdown = (btnId, menuId, arrowId) => {
-          const btn = document.getElementById(btnId);
-          const menu = document.getElementById(menuId);
-          const arrow = document.getElementById(arrowId);
-
-          if (!btn || !menu) return;
-          if (!btn || !menu) return;
-
-          btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            const isClosed = menu.classList.contains("invisible");
-
-            closeAllDesktopMenus(); // Close other dropdowns
-
-            if (isClosed) {
-              menu.classList.remove("opacity-0", "invisible", "translate-y-2");
-              if (arrow) arrow.classList.add("rotate-180");
-            }
-          });
-
-          // Prevent clicks *inside* the desktop menu from closing it
-          menu.addEventListener("click", (e) => {
-            e.stopPropagation();
-          });
-        };
-
-        const closeAllDesktopMenus = () => {
-          const dropdowns = [
-            { menu: "services-menu", arrow: "services-arrow" },
-            { menu: "offer-menu", arrow: "offer-arrow" },
-          ];
-
-          dropdowns.forEach((item) => {
-            const m = document.getElementById(item.menu);
-            const a = document.getElementById(item.arrow);
-            if (m) {
-              m.classList.add("opacity-0", "invisible", "translate-y-2");
-              if (a) a.classList.remove("rotate-180");
-            }
-          });
-        };
-
-        // Initialize both desktop dropdowns
-        setupDropdown("services-btn", "services-menu", "services-arrow");
-        setupDropdown("offer-btn", "offer-menu", "offer-arrow");
-
-        // --- 3. Global Click: Close Everything ---
-        document.addEventListener("click", () => {
-          // Close Desktop
-          closeAllDesktopMenus();
-
-          // Close Mobile
-          if (mobileMenu && mobileMenu.classList.contains("active")) {
-            mobileMenu.classList.remove("active");
-          }
-        });
-      });
     </script>
     <script>
       lucide.createIcons();

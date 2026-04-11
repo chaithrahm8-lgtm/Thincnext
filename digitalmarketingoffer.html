@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,29 +13,7 @@
     <title>Digital Marketing Offers</title>
 
     <style type="text/tailwindcss">
-      @theme {
-       
-         --color-brand-blue: #1c8cc1;
-        --color-brand-1: #1c8cc1;
-        --color-brand-2: #0892d0;
-        --color-brand-3: #2496cd;
-        --color-brand-dark: #0a0a0c;
-
-        /* Multi-color Morphing */
-        @keyframes colorFlow {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        --animate-color-flow: colorFlow 6s ease infinite;
-      }
-
+     
       /* Footer Shimmer */
       .footer-shimmer {
         background: linear-gradient(
@@ -58,18 +36,6 @@
         }
       }
 
-      /* Mobile Menu Transitions */
-      #mobile-menu {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateY(-20px);
-        opacity: 0;
-        visibility: hidden; /* Hides it completely when not active */
-      }
-      #mobile-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
     </style>
   </head>
   <body>
@@ -216,7 +182,7 @@
           <button
             class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
           >
-            Book a Domain
+            Buy a Domain
           </button>
           <button
             id="hamburger"
@@ -303,7 +269,7 @@
     <main class="">
       <!--header section-->
       <section
-        class="mx-auto px-4 min-h-screen sm:min-h-screen flex items-center sm:items-center justify-center pt-16 sm:pt-32 lg:items-center lg:pb-24"
+        class="mx-auto px-4 min-h-screen sm:min-h-screen flex items-center sm:items-center justify-center pt-16 sm:pt-32 lg:items-center lg:pb-20"
       >
         <div class="text-center w-full max-w-4xl mx-auto">
           
@@ -914,73 +880,7 @@
     <script>
       lucide.createIcons();
       AOS.init();
-
-      document.addEventListener("DOMContentLoaded", () => {
-        // --- Mobile Menu Hamburger Logic ---
-        const hamburger = document.getElementById("hamburger");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        if (hamburger && mobileMenu) {
-          hamburger.addEventListener("click", (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle("active");
-          });
-          mobileMenu.addEventListener("click", (e) => {
-            e.stopPropagation();
-          });
-        }
-
-        // --- Desktop Dropdown Logic ---
-        const setupDropdown = (btnId, menuId, arrowId) => {
-          const btn = document.getElementById(btnId);
-          const menu = document.getElementById(menuId);
-          const arrow = document.getElementById(arrowId);
-
-          if (!btn || !menu) return;
-
-          btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            const isClosed = menu.classList.contains("invisible");
-            closeAllDesktopMenus();
-
-            if (isClosed) {
-              menu.classList.remove("opacity-0", "invisible", "translate-y-2");
-              if (arrow) arrow.classList.add("rotate-180");
-            }
-          });
-
-          menu.addEventListener("click", (e) => {
-            e.stopPropagation();
-          });
-        };
-
-        const closeAllDesktopMenus = () => {
-          const dropdowns = [
-            { menu: "services-menu", arrow: "services-arrow" },
-            { menu: "offer-menu", arrow: "offer-arrow" },
-          ];
-
-          dropdowns.forEach((item) => {
-            const m = document.getElementById(item.menu);
-            const a = document.getElementById(item.arrow);
-            if (m) {
-              m.classList.add("opacity-0", "invisible", "translate-y-2");
-              if (a) a.classList.remove("rotate-180");
-            }
-          });
-        };
-
-        setupDropdown("services-btn", "services-menu", "services-arrow");
-        setupDropdown("offer-btn", "offer-menu", "offer-arrow");
-
-        // --- Global Click: Close Everything ---
-        document.addEventListener("click", () => {
-          closeAllDesktopMenus();
-          if (mobileMenu && mobileMenu.classList.contains("active")) {
-            mobileMenu.classList.remove("active");
-          }
-        });
-      });
     </script>
+    <script src="./js/nav.js"></script>
   </body>
 </html>
