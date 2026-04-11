@@ -11,16 +11,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="style.css">
-    <style type="text/tailwindcss">
-        @theme {
-        --color-brand-blue: #1c8cc1;
-        --color-brand-1: #1c8cc1;
-        --color-brand-2: #0892d0;
-        --color-brand-3: #2496cd;
-        --color-brand-dark: #0a0a0c;
-      }
-
-    </style>
 </head>
 
 
@@ -252,7 +242,7 @@
                             </span>
                         </li>
                     </ul>
-                    
+
                     <div class="table_btn flex justify-center">
                         <form>
                             <script src="https://checkout.razorpay.com/v1/payment-button.js"
@@ -611,72 +601,8 @@
         lucide.createIcons();
         AOS.init();
     </script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.getElementById('hamburger');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (hamburger && mobileMenu) {
-                hamburger.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    mobileMenu.classList.toggle('active');
-                });
-                mobileMenu.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-            }
-
-            const setupDropdown = (btnId, menuId, arrowId) => {
-                const btn = document.getElementById(btnId);
-                const menu = document.getElementById(menuId);
-                const arrow = document.getElementById(arrowId);
-
-                if (!btn || !menu) return;
-
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const isClosed = menu.classList.contains('invisible');
-                    closeAllDesktopMenus();
-
-                    if (isClosed) {
-                        menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-                        if (arrow) arrow.classList.add('rotate-180');
-                    }
-                });
-
-                menu.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-            };
-
-            const closeAllDesktopMenus = () => {
-                const dropdowns = [
-                    { menu: 'services-menu', arrow: 'services-arrow' },
-                    { menu: 'offer-menu', arrow: 'offer-arrow' }
-                ];
-
-                dropdowns.forEach(item => {
-                    const m = document.getElementById(item.menu);
-                    const a = document.getElementById(item.arrow);
-                    if (m) {
-                        m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-                        if (a) a.classList.remove('rotate-180');
-                    }
-                });
-            };
-
-            setupDropdown('services-btn', 'services-menu', 'services-arrow');
-            setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
-
-            document.addEventListener('click', () => {
-                closeAllDesktopMenus();
-                if (mobileMenu && mobileMenu.classList.contains('active')) {
-                    mobileMenu.classList.remove('active');
-                }
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 
 </html>
