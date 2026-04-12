@@ -4,42 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="./style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./output.css">
     <title>Digital Marketing Offers</title>
 
     <style type="text/tailwindcss">
-      @theme {
-        /* Fixed Shine - Smooth Sweep */
-        @keyframes shine {
-          0% {
-            transform: translateX(-150%) skewX(-200deg);
-          }
-          100% {
-            transform: translateX(350%) skewX(-400deg);
-          }
-        }
-        --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-
-        /* Multi-color Morphing */
-        @keyframes colorFlow {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-        --animate-color-flow: colorFlow 6s ease infinite;
-      }
-
-    
+     
       /* Footer Shimmer */
       .footer-shimmer {
         background: linear-gradient(
@@ -62,140 +36,243 @@
         }
       }
 
-      /* Mobile Menu Transitions */
-      #mobile-menu {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateY(-20px);
-        opacity: 0;
-        visibility: hidden; /* Hides it completely when not active */
-      }
-      #mobile-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-    
     </style>
   </head>
   <body>
     <header
-        class="flex justify-between items-center px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-[1200px] left-1/2 -translate-x-1/2 mt-4 z-[1000] fixed top-0">
-        <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
-            <div
-                class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine">
-            </div>
-        </div>
-
-        <a href="./index.html" class="relative z-10 flex items-center p-0">
-            <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
-                class="h-10 md:h-12 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300" />
+      class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
+      id="navbar"
+    >
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
+      >
+        <a href="./index.html" class="relative z-60 flex items-center p-0">
+          <img
+            src="./assest/Logo/thincnextlogo1.png"
+            alt="Logo"
+            class="h-7 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
+          />
         </a>
 
-        <nav class="hidden lg:block relative z-10">
-            <ul class="flex space-x-6 text-sm font-bold">
-                <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
-                <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
+        <ul
+          class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold"
+        >
+          <li>
+            <a href="./index.html" class="hover:text-blue-500 transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="./about.html" class="hover:text-blue-500 transition-colors"
+              >About</a
+            >
+          </li>
 
-                <li class="relative group">
-                    <button id="services-btn"
-                        class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
-                        Services
-                        <svg id="services-arrow"
-                            class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
+          <li class="relative group">
+            <button
+              id="services-btn"
+              class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none"
+            >
+              Services
+              <svg
+                id="services-arrow"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
 
-                    <ul id="services-menu" class="absolute left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl 
-        opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden 
-        group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-
-                        <li><a href="./technology.html"
-                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a>
-                        </li>
-                        <li><a href="./digitalmarketing.html"
-                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
-                                Marketing</a></li>
-                        <li><a href="./readymade.html"
-                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Readymade</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
-
-                <li class="relative group">
-                    <button id="offer-btn"
-                        class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
-                        Offer
-                        <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-
-                    <ul id="offer-menu" class="absolute left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl 
-        opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden
-        group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-
-                        <li><a href="./digitalmarketingoffer.html"
-                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
-                                Marketing Offer</a></li>
-                        <li><a href="./startupoffer.html"
-                                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup
-                                Offer</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a></li>
+            <ul
+              id="services-menu"
+              class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+            >
+              <li>
+                <a
+                  href="./technology.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Technology</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./digitalmarketing.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./readymade.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Readymade</a
+                >
+              </li>
             </ul>
-        </nav>
+          </li>
+
+          <li>
+            <a
+              href="./portfolio.html"
+              class="hover:text-blue-500 transition-colors"
+              >Portfolio</a
+            >
+          </li>
+
+          <li class="relative group">
+            <button
+              id="offer-btn"
+              class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none"
+            >
+              Offer
+              <svg
+                id="offer-arrow"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <ul
+              id="offer-menu"
+              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+            >
+              <li>
+                <a
+                  href="./digitalmarketingoffer.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Digital Marketing Offer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./startupoffer.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Startup Offer</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="./contact.html"
+              class="hover:text-blue-500 transition-colors"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
 
         <div class="flex items-center gap-3 relative z-10">
-            <button
-                class="hidden md:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
-                Book a Domain
-            </button>
-            <button id="hamburger"
-                class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-            </button>
+          <button
+            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+          >
+            Buy a Domain
+          </button>
+          <button
+            id="hamburger"
+            class="lg:hidden p-2 text-slate-800 hover:text-brand-primary focus:outline-none cursor-pointer"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </div>
+      </nav>
 
-        <div id="mobile-menu"
-            class="lg:hidden absolute top-[115%] left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]">
-            <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2">Home</a>
-            <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2">About</a>
-            <div class="flex flex-col gap-2">
-                <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Services</span>
-                <a href="./technology.html" class="pl-4 py-1 text-slate-600">Technology</a>
-                <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600">Digital Marketing</a>
-                <a href="./readymade.html" class="pl-4 py-1 text-slate-600">Readymade</a>
-            </div>
-            <a href="./career.html" class="text-lg font-bold border-b border-slate-100 pb-2">Portfolio</a>
-            <div class="flex flex-col gap-2">
-                <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Offer</span>
-                <a href="./digitalmarketingoffer.html" class="pl-4 py-1 text-slate-600">Digital Marketing Offer</a>
-                <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600">Startup Offer</a>
-            </div>
-            <a href="./contact.html" class="text-lg font-bold border-b border-slate-100 pb-2">Contact Us</a>
-            <button class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl">Book a
-                Domain</button>
+      <div
+        id="mobile-menu"
+        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50"
+      >
+        <a
+          href="./index.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Home</a
+        >
+        <a
+          href="./about.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >About</a
+        >
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-sm font-extrabold text-blue-500 uppercase tracking-widest"
+            >Services</span
+          >
+          <a href="./technology.html" class="pl-4 py-1 text-slate-600"
+            >Technology</a
+          >
+          <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600"
+            >Digital Marketing</a
+          >
+          <a href="./readymade.html" class="pl-4 py-1 text-slate-600"
+            >Readymade</a
+          >
         </div>
+        <a
+          href="./career.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Career</a
+        >
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-sm font-extrabold text-blue-500 uppercase tracking-widest"
+            >Offer</span
+          >
+          <a
+            href="./digitalmarketingoffer.html"
+            class="pl-4 py-1 text-slate-600"
+            >Digital Marketing Offer</a
+          >
+          <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600"
+            >Startup Offer</a
+          >
+        </div>
+        <a
+          href="./contact.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Contact Us</a
+        >
+        <button
+          class="w-full mt-4 px-5 py-4 bg-(--color-brand-1) text-white font-bold rounded-2xl shadow-xl"
+        >
+          Book a Domain
+        </button>
+      </div>
     </header>
 
     <main class="">
       <!--header section-->
       <section
-        class="mx-auto px-4 min-h-[100vh] sm:min-h-[100vh] flex items-center sm:items-center justify-center pt-16 sm:pt-32 lg:items-center  lg:pb-24"
+        class="mx-auto px-4 min-h-screen sm:min-h-screen flex items-center sm:items-center justify-center pt-16 sm:pt-32 lg:items-center lg:pb-20"
       >
         <div class="text-center w-full max-w-4xl mx-auto">
+          
           <!-- Heading -->
           <div data-aos="fade-left" data-aos-duration="1000">
             <h1 class="font-bold tracking-tight leading-snug md:leading-tight">
@@ -218,12 +295,12 @@
           <div class="mt-6 sm:mt-8 md:mt-12">
             <a
               href="#offers"
-              class="inline-block relative group border-2 border-blue-600 text-blue-600 hover:text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base rounded-full font-semibold shadow-md hover:shadow-xl hover:bg-blue-600 transform hover:scale-105 transition-all duration-300 overflow-hidden"
+              class="inline-block relative group border-2 border-brand-primary text-brand-primary hover:text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base rounded-full font-semibold shadow-md hover:shadow-xl hover:bg-brand-primary transform hover:scale-105 transition-all duration-300 overflow-hidden"
             >
               <span class="relative z-10">Claim Offer</span>
 
               <div
-                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+                class="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
               ></div>
             </a>
           </div>
@@ -233,7 +310,7 @@
       <!-- offers section -->
       <section
         id="offers"
-        class="flex flex-col lg:gap-20 sm:gap-15 lg:mt-4 md:mt-4 mb-4"
+        class="max-w-7xl mx-auto flex flex-col lg:gap-20 sm:gap-15 lg:mt-4 md:mt-4 mb-4"
       >
         <div data-aos="fade-up" data-aos-duration="2000">
           <p
@@ -254,358 +331,374 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
           <!-- Basic -->
           <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-lg"
+            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl border-2 border-gray-300"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
             <h3
-              class="text-slate-500 font-bold uppercase text-xs tracking-widest mb-4"
+              class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4"
             >
               Basic
             </h3>
             <div class="mb-6">
-              <span class="text-4xl font-black">₹14,999.00</span
+              <span class="text-4xl font-bold">₹14,999.00</span
               ><span class="text-slate-400 text-sm">/mo</span>
             </div>
 
-            <ul class="space-y-4 my-8 text-md text-slate-600 flex-grow">
+            <ul class="space-y-4 my-8 text-md text-slate-600 grow">
               <li class="flex font-bold">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Social Media Handles
               </li>
               <li class="flex font-bold">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i
                 >Facebook | Instagram | X
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">20 Monthly</span> Posts </span>
               </li>
 
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Content </span>Creation </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Analytics</span> Research </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Insight</span> Reports </span>
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Geo Based Social SEO
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i> 1
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i> 1
                 Email NewsLetter
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 24/7 Support Via Phone & EMail
               </li>
             </ul>
-            <button
-              class="w-full py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all"
+            <!-- <button
+              class="w-full py-3 border-2 border-blue-600 text-brand-primary font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all"
             >
               Select Plan
-            </button>
+            </button> -->
+            <div class="table_btn flex justify-center">
+              <!--  <a href="https://paytm.me/wbyK-bJ" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
+              <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LzmFmzaOyUjf2m" async> </script> </form>
+              </div>
           </div>
 
           <!-- Standard -->
           <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-lg"
+            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl border-2 border-gray-300"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
             <h3
-              class="text-slate-500 font-bold uppercase text-xs tracking-widest mb-4"
+              class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4"
             >
               Standard
             </h3>
             <div class="mb-6">
-              <span class="text-4xl font-black">₹24,999.00</span
+              <span class="text-4xl font-bold">₹24,999.00</span
               ><span class="text-slate-400 text-sm">/mo</span>
             </div>
 
-            <ul class="space-y-4 my-8 text-md text-slate-600 flex-grow">
+            <ul class="space-y-4 my-8 text-md text-slate-600 grow">
               <li class="flex font-bold">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Social Media Handles
               </li>
               <li class="flex font-bold">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i
                 >Facebook | Instagram | X
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">WhatsApp</span> Business Catalogue
                 </span>
               </li>
 
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">25 monthly </span>posts </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Google</span> Adwords campaign
                 </span>
               </li>
 
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Sponsered </span>Ad Campaign
                 </span>
               </li>
 
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Content </span>creation </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Analytics</span> Research </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Insight</span> Reports </span>
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Local SEO
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Geo Based Social SEO
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i> 3
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i> 3
                 Email NewsLetter
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 24/7 Support Via Phone & EMail
               </li>
             </ul>
-            <button
-              class="w-full py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all"
+            <!-- <button
+              class="w-full py-3 border-2 border-blue-600 text-brand-primary font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all"
             >
               Select Plan
-            </button>
+            </button> -->
+            <div class="table_btn flex justify-center">
+                <!--<a href="https://paytm.me/zK-KxUT" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
+                <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LzmGusFjokMGMi" async> </script> </form>
+              </div>
           </div>
 
           <!--Professional-->
           <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-lg ring-2 ring-blue-600 relative lg:-translate-y-4"
+            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl  ring-2 ring-(--color-brand-1) relative lg:translate-y-0"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
             <div
-              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest"
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-(--color-brand-1) text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest"
             >
               Best Selling
             </div>
             <h3
-              class="text-slate-500 font-bold uppercase text-xs tracking-widest mb-4"
+              class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4"
             >
               Professional
             </h3>
             <div class="mb-6">
-              <span class="text-4xl font-black">₹59,999.00</span
+              <span class="text-4xl font-bold">₹59,999.00</span
               ><span class="text-slate-400 text-sm">/mo</span>
             </div>
 
-            <ul class="space-y-4 my-8 text-md text-slate-600 flex-grow">
+            <ul class="space-y-4 my-8 text-md text-slate-600 grow">
               <li class="flex font-bold">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Social Media Handles
               </li>
               <li class="flex font-bold">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i
                 >Facebook | Instagram | X | Quora
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">WhatsApp</span> Business Catalogue
                 </span>
               </li>
 
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">35 monthly </span>posts </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Lead Generation </span>Campaign
                 </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Google</span> Adwords campaign
                 </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Google</span> Analytics </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Quora</span> QA's </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Sponsered</span> Ad campaign
                 </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Content</span> Creation </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Analytics</span> Research </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Insight</span> Reports </span>
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Local SEO
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Geo Based Social SEO
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i> 5
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i> 5
                 Email NewsLetter
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 24/7 Support Via Phone & EMail
               </li>
             </ul>
-            <button
-              class="w-full py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all"
+            <!-- <button
+              class="w-full py-3 border-2 border-blue-600 text-brand-primary font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all"
             >
               Select Plan
-            </button>
+            </button> -->
+            <div class="table_btn flex justify-center">
+               <!-- <a href="https://paytm.me/H-3TrLf" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
+               <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LzmI4ibfcm36Di" async> </script> </form>
+              </div>
           </div>
 
           <!-- Premium -->
           <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-lg"
+            class="glass p-8 rounded-3xl flex flex-col  hover:shadow-xl border-2 border-gray-300"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
             <h3
-              class="text-slate-500 font-bold uppercase text-xs tracking-widest mb-4"
+              class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4"
             >
               Premium
             </h3>
             <div class="mb-6">
-              <span class="text-4xl font-black">₹89,999.00</span
+              <span class="text-4xl font-bold">₹89,999.00</span
               ><span class="text-slate-400 text-sm">/mo</span>
             </div>
 
-            <ul class="space-y-4 my-8 text-md text-slate-600 flex-grow">
+            <ul class="space-y-4 my-8 text-md text-slate-600 grow">
               <li class="flex font-bold">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Social Media Handles
               </li>
               <li class="flex font-bold">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i
                 >Facebook | Instagram | X | Quora
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">WhatsApp</span> Business Catalogue
                 </span>
               </li>
 
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">45 monthly </span>posts </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Lead Generation </span>Campaign
                 </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Google</span> Adwords campaign
                 </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Youtube</span> Adwords campaign
                 </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Google</span> Analytics</span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Quora </span> QA's </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span>
                   <span class="font-bold">Sponsered</span> Ad campaign
                 </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Content</span> Creation </span>
               </li>
 
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Analytics</span> Research </span>
               </li>
               <li class="flex items-start">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 <span> <span class="font-bold">Insight</span> Reports </span>
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Local SEO
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 Geo Based Social SEO
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i> 7
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i> 7
                 Email NewsLetter
               </li>
               <li class="flex">
-                <i data-lucide="check" class="text-blue-600 mr-2 h-5 w-5"></i>
+                <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
                 24/7 Support Via Phone & EMail
               </li>
             </ul>
-            <button
-              class="w-full py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all"
+            <!-- <button
+              class="w-full py-3 border-2 border-blue-600 text-brand-primary font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all"
             >
               Select Plan
-            </button>
+            </button> -->
+            <div class="table_btn flex justify-center">
+              <!--  <a href="https://paytm.me/hb-TrLf" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
+              <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LzmJ4qoFHJYv5m" async> </script> </form>
+              </div>
           </div>
         </div>
       </section>
@@ -774,7 +867,7 @@
       </div>
 
       <div
-        class="w-full py-8 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent"
+        class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-1/20 to-transparent"
       >
         <div
           class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400"
@@ -787,76 +880,7 @@
     <script>
       lucide.createIcons();
       AOS.init();
-
-      document.addEventListener('DOMContentLoaded', () => {
-      // --- Mobile Menu Hamburger Logic ---
-      const hamburger = document.getElementById('hamburger');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', (e) => {
-          e.stopPropagation();
-          mobileMenu.classList.toggle('active');
-        });
-        mobileMenu.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
-      }
-
-      // --- Desktop Dropdown Logic ---
-      const setupDropdown = (btnId, menuId, arrowId) => {
-        const btn = document.getElementById(btnId);
-        const menu = document.getElementById(menuId);
-        const arrow = document.getElementById(arrowId);
-
-        if (!btn || !menu) return;
-
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const isClosed = menu.classList.contains('invisible');
-          closeAllDesktopMenus();
-
-          if (isClosed) {
-            menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-            if (arrow) arrow.classList.add('rotate-180');
-          }
-        });
-
-        menu.addEventListener('click', (e) => {
-          e.stopPropagation();
-        });
-      };
-
-      const closeAllDesktopMenus = () => {
-        const dropdowns = [
-          { menu: 'services-menu', arrow: 'services-arrow' },
-          { menu: 'offer-menu', arrow: 'offer-arrow' }
-        ];
-
-        dropdowns.forEach(item => {
-          const m = document.getElementById(item.menu);
-          const a = document.getElementById(item.arrow);
-          if (m) {
-            m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-            if (a) a.classList.remove('rotate-180');
-          }
-        });
-      };
-
-      setupDropdown('services-btn', 'services-menu', 'services-arrow');
-      setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
-
-      // --- Global Click: Close Everything ---
-      document.addEventListener('click', () => {
-        closeAllDesktopMenus();
-        if (mobileMenu && mobileMenu.classList.contains('active')) {
-          mobileMenu.classList.remove('active');
-        }
-      });
-    });
-
-
     </script>
-
+    <script src="./js/nav.js"></script>
   </body>
 </html>

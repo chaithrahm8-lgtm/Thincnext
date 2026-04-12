@@ -1,421 +1,711 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
 
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    /* Custom Silver Shimmer Effect for Form Fields */
-    .shimmer-field {
-      background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.4) 25%,
-        rgba(255, 255, 255, 0.9) 50%,
-        rgba(255, 255, 255, 0.4) 75%
-      );
-      background-size: 200% 100%;
-      animation: shimmerMove 4s linear infinite;
-      box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.6), inset 0 -1px 3px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(4px);
-    }
-
-    @keyframes shimmerMove {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    /* Form Autofill fix to keep glass look */
-    .shimmer-field:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.8) inset !important;
-      -webkit-text-fill-color: #334155 !important;
-    }
-  </style>
-  <style type="text/tailwindcss">
-    @theme {
-      --color-brand-1: #1c8cc1;
-      --color-brand-2: #0892d0;
-      --color-brand-3: #2496cd;
-      --color-brand-dark: #0a0a0c;
-
-      /* Fixed Shine - Smooth Sweep */
-      @keyframes shine {
-          0% { transform: translateX(-150%) skewX(-200deg); }
-          100% { transform: translateX(350%) skewX(-400deg); }
-      }
-      --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-  </style>
-  <style>
-    .footer-shimmer {
-      /* Uses your brand-dark (#0a0a0c) as the base, with a sweep of brand-1 (#1c8cc1) */
-      background: linear-gradient(
-        130deg,
-       #0a0a0c 0%,
-        #0a0a0c 20%,
-        /* rgba(28, 140, 193, 0.15) 50%, The glowing blue shine */
-        #02384f 60%,
-        #0a0a0c 100%
-      );
-      background-size: 800% 100%;
-      /* Slower 6s animation so it feels elegant on a large footer */
-      animation: footerShineMove 6s linear infinite; 
-    }
-
-    @keyframes footerShineMove {
-      0% { background-position: 100% 0; }
-      10% { background-position: 200% 100; }
-    }
-
-    /* Mobile Menu Transitions */
-    #mobile-menu {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateY(-20px);
-        opacity: 0;
-        visibility: hidden;
-    }
-    #mobile-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-  </style>
-</head>
-<body class="bg-blue-50 font-sans antialiased text-slate-800 m-0 overflow-x-hidden pt-6 selection:bg-slate-300">
-
-<header class="flex justify-between items-center px-6 lg:px-8 py-2 bg-slate-200/30 backdrop-blur-xl border border-white/20 shadow-md rounded-full w-[95%] max-w-[1200px] left-1/2 -translate-x-1/2 mt-4 z-[1000] fixed top-0">
-    <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-full">
-        <div class="absolute inset-0 w-1/4 h-full bg-gradient-to-r from-transparent via-blue-200/50 to-transparent animate-shine"></div>
-    </div>
-
-    <a href="./index.html" class="relative z-[60] flex items-center p-0">
-        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo" class="h-10 md:h-12 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300" />
-    </a>
-
-    <nav class="hidden lg:block relative z-10">
-        <ul class="flex space-x-6 text-sm font-bold">
-            <li><a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a></li>
-            <li><a href="./about.html" class="hover:text-blue-500 transition-colors">About</a></li>
-            
-            <li class="relative">
-                <button id="services-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
-                    Services
-                    <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <ul id="services-menu" class="absolute left-0 mt-4 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden">
-                    <li><a href="./technology.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a></li>
-                    <li><a href="./digitalmarketing.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing</a></li>
-                    <li><a href="./readymade.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors z-[60]">Readymade</a></li>
-                </ul>
-            </li>
-
-            <li><a href="./career.html" class="hover:text-blue-500 transition-colors">Career</a></li>
-
-            <li class="relative">
-                <button id="offer-btn" class="flex items-center gap-1 hover:text-blue-500 transition-colors focus:outline-none">
-                    Offer
-                    <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <ul id="offer-menu" class="absolute left-0 mt-4 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden">
-                    <li><a href="./digitalmarketingoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital Marketing Offer</a></li>
-                    <li><a href="./startupoffer.html" class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup Offer</a></li>
-                </ul>
-            </li>
-
-            <li><a href="./contact.html" class="text-blue-600 hover:text-blue-500 transition-colors">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <div class="flex items-center gap-3 relative z-10">
-        <button class="hidden md:block px-5 py-2.5 bg-blue-800 hover:bg-blue-700 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30">
-            Book a Domain
-        </button>
-        <button id="hamburger" class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
-    </div>
-
-    <div id="mobile-menu" class="lg:hidden absolute top-[115%] left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-[50]">
-        <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2">Home</a>
-        <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2">About</a>
-        <div class="flex flex-col gap-2">
-            <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Services</span>
-            <a href="./technology.html" class="pl-4 py-1 text-slate-600">Technology</a>
-            <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600">Digital Marketing</a>
-            <a href="./readymade.html" class="pl-4 py-1 text-slate-600">Readymade</a>
-        </div>
-        <a href="./career.html" class="text-lg font-bold border-b border-slate-100 pb-2">Career</a>
-        <div class="flex flex-col gap-2">
-            <span class="text-sm font-extrabold text-blue-500 uppercase tracking-widest">Offer</span>
-            <a href="./digitalmarketingoffer.html" class="pl-4 py-1 text-slate-600">Digital Marketing Offer</a>
-            <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600">Startup Offer</a>
-        </div>
-        <a href="./contact.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-blue-600">Contact Us</a>
-        <button class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl">Book a Domain</button>
-    </div>
-</header>
-
-<section class="mt-32 w-full py-16 px-6 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
-
-    <div class="flex flex-col gap-8 w-full" data-aos="fade-right" data-aos-duration="1000">
-      
-      <div class="w-full h-[250px] md:h-[300px] bg-slate-200 rounded-2xl flex flex-col items-center justify-center text-slate-500 shadow-inner border border-slate-300 relative overflow-hidden">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.0058153!3d40.7127492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Core%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" 
-          class="w-full h-full border-0" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-
-      <div class="flex flex-col gap-4 pl-2">
-        <div class="flex items-center gap-4 text-slate-600">
-          <div class="p-2 bg-slate-200/50 rounded-full text-slate-500"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
-          <p class="text-lg">123 Minimalist Avenue, Design City, 45678</p>
-        </div>
-        <div class="flex items-center gap-4 text-slate-600">
-          <div class="p-2 bg-slate-200/50 rounded-full text-slate-500"><i data-lucide="phone" class="w-5 h-5"></i></div>
-          <p class="text-lg">+1 (555) 123-4567</p>
-        </div>
-        <div class="flex items-center gap-4 text-slate-600">
-          <div class="p-2 bg-slate-200/50 rounded-full text-slate-500"><i data-lucide="mail" class="w-5 h-5"></i></div>
-          <p class="text-lg">hello@thincnext.com</p>
-        </div>
-      </div>
-
-      <img src="assest/images/Imgcontact.png" alt="Support Illustration" class="w-full max-w-[350px] mx-auto hidden md:block mt-4" />
-
-    </div>
-
-    <div class="flex flex-col w-full h-full" data-aos="fade-left" data-aos-duration="1000">
-      
-      <div class="mb-8">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight mb-3">Contact Us</h2>
-        <p class="text-lg text-slate-500 font-light">We Are Available 24/7 For Customers</p>
-      </div>
-
-      <form class="p-8 md:p-10 rounded-3xl bg-slate-300/20 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.05)] flex flex-col gap-6">
-        <input type="text" placeholder="Your Name" required
-               class="shimmer-field w-full px-5 py-4 rounded-xl border border-white/40 text-slate-700 placeholder-slate-500 font-medium focus:ring-2 focus:ring-slate-400 focus:outline-none transition-shadow">
-        
-        <input type="email" placeholder="Your Email" required
-               class="shimmer-field w-full px-5 py-4 rounded-xl border border-white/40 text-slate-700 placeholder-slate-500 font-medium focus:ring-2 focus:ring-slate-400 focus:outline-none transition-shadow">
-        
-        <input type="text" placeholder="Subject" required
-               class="shimmer-field w-full px-5 py-4 rounded-xl border border-white/40 text-slate-700 placeholder-slate-500 font-medium focus:ring-2 focus:ring-slate-400 focus:outline-none transition-shadow">
-        
-        <textarea placeholder="Message" rows="4" required
-                  class="shimmer-field w-full px-5 py-4 rounded-xl border border-white/40 text-slate-700 placeholder-slate-500 font-medium focus:ring-2 focus:ring-slate-400 focus:outline-none transition-shadow resize-none"></textarea>
-
-        <button type="submit" 
-                class="mt-2 px-10 py-4 bg-slate-800 text-white rounded-full font-semibold tracking-wide hover:bg-slate-900 transition-colors self-start shadow-lg hover:shadow-xl active:scale-95 transform duration-200 flex items-center gap-2">
-          Send Msg
-          <i data-lucide="send" class="w-4 h-4 ml-1"></i>
-        </button>
-      </form>
-
-      <img src="assest/images/Imgcontact.png" alt="Support Illustration" class="w-full max-w-[350px] mx-auto block md:hidden mt-12" />
-
-      <div class="flex gap-4 items-center mt-12 md:mt-20 justify-center">
-        <img src="assest/images/instagram.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-blue-500 hover:border-blue-500 hover:bg-white transition-all shadow-sm "/>
-        <img src="assest/images/facebook.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-blue-600 hover:border-blue-600 hover:bg-white transition-all shadow-sm"/>
-        <img src="assest/images/twitter.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-pink-600 hover:border-pink-600 hover:bg-white transition-all shadow-sm"/>
-        <img src="assest/images/linkedin.png" class=" h-10 w-10 border border-slate-300 rounded-full text-slate-500 hover:text-blue-700 hover:border-blue-700 hover:bg-white transition-all shadow-sm"/>
-      </div>
-    </div>
-
-  </section>
-
-<footer class=" footer-shimmer bg-brand-dark text-slate-300 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden mt-10">
-    
-    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
-      
-      <div class="flex flex-col gap-6">
-        <div class="items-center">
-          <img src="/assest/Logo/thincnextlogo1.png" alt="Thincnext Logo" class="h-10 md:h-20 w-auto object-contain">
-        </div>
-        
-        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-          Before we get creative or put a digital solution in place, we take the time to fully understand your brand, project & the people its intended for.
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="relative pt-40 lg:pt-40 overflow-hidden bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <h1
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] text-slate-900 mb-6"
+        >
+          Let's <span class="gradient-text">Talk.</span>
+        </h1>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto mb-10"
+        >
+          We are available 24/7 for our customers. Reach out to discuss your
+          next big idea, request a quote, or simply say hello.
         </p>
       </div>
+    </main>
 
-         <div class="flex flex-col gap-4 mt-2">
+    <header
+      class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
+      id="navbar"
+    >
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
+      >
+        <a href="./index.html" class="relative z-60 flex items-center p-0">
+          <img
+            src="./assest/Logo/thincnextlogo1.png"
+            alt="Logo"
+            class="h-7 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
+          />
+        </a>
+
+        <ul
+          class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold"
+        >
+          <li>
+            <a href="./index.html" class="hover:text-blue-500 transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="./about.html" class="hover:text-blue-500 transition-colors"
+              >About</a
+            >
+          </li>
+
+          <li class="relative group">
+            <button
+              id="services-btn"
+              class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none"
+            >
+              Services
+              <svg
+                id="services-arrow"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <ul
+              id="services-menu"
+              class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+            >
+              <li>
+                <a
+                  href="./technology.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Technology</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./digitalmarketing.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./readymade.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Readymade</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="./portfolio.html"
+              class="hover:text-blue-500 transition-colors"
+              >Portfolio</a
+            >
+          </li>
+
+          <li class="relative group">
+            <button
+              id="offer-btn"
+              class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none"
+            >
+              Offer
+              <svg
+                id="offer-arrow"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <ul
+              id="offer-menu"
+              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-99 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+            >
+              <li>
+                <a
+                  href="./digitalmarketingoffer.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Digital Marketing Offer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./startupoffer.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Startup Offer</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="./contact.html"
+              class="hover:text-blue-500 transition-colors"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-3 relative z-10">
+          <button
+            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer transition-all"
+          >
+            Book a Domain
+          </button>
+          <button
+            id="hamburger"
+            class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50"
+      >
+        <a
+          href="./index.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Home</a
+        >
+        <a
+          href="./about.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >About</a
+        >
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-sm font-extrabold text-blue-500 uppercase tracking-widest"
+            >Services</span
+          >
+          <a href="./technology.html" class="pl-4 py-1 text-slate-600"
+            >Technology</a
+          >
+          <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600"
+            >Digital Marketing</a
+          >
+          <a href="./readymade.html" class="pl-4 py-1 text-slate-600"
+            >Readymade</a
+          >
+        </div>
+        <a
+          href="./career.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Career</a
+        >
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-sm font-extrabold text-blue-500 uppercase tracking-widest"
+            >Offer</span
+          >
+          <a
+            href="./digitalmarketingoffer.html"
+            class="pl-4 py-1 text-slate-600"
+            >Digital Marketing Offer</a
+          >
+          <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600"
+            >Startup Offer</a
+          >
+        </div>
+        <a
+          href="./contact.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2"
+          >Contact Us</a
+        >
+        <button
+          class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl"
+        >
+          Book a Domain
+        </button>
+      </div>
+    </header>
+
+    <section class="py-18 bg-slate-50 border-t border-slate-100 relative z-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
+          <!-- Left: Contact Info -->
+          <div
+            class="lg:col-span-5 flex flex-col justify-center space-y-10"
+            data-aos="fade-right"
+          >
+            <div>
+              <h2
+                class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-4"
+              >
+                Contact Information
+              </h2>
+              <p class="text-slate-500 font-medium leading-relaxed">
+                Fill out the form to the right or reach out to us via the
+                contact details below. We typically respond within 24 hours.
+              </p>
+            </div>
+
+            <div class="space-y-8">
+              <!-- Location -->
+              <div class="flex items-start gap-5 group">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/10 transition-all duration-300"
+                >
+                  <i data-lucide="map-pin" class="w-6 h-6 text-blue-600"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-sm font-bold tracking-widest text-slate-400 uppercase mb-1"
+                  >
+                    Our Location
+                  </h4>
+                  <p class="text-slate-900 font-semibold leading-relaxed">
+                    #563, 1st Floor, Between 12th-13th Cross 2nd Main, Sampige
+                    Road, Malleshwaram, Bengaluru - 560 003
+                  </p>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-center gap-5 group">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/10 transition-all duration-300"
+                >
+                  <i data-lucide="mail" class="w-6 h-6 text-blue-600"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-sm font-bold tracking-widest text-slate-400 uppercase mb-1"
+                  >
+                    Email Us
+                  </h4>
+                  <a
+                    href="mailto:Sales@Thincnext.com"
+                    class="text-slate-900 font-semibold text-lg hover:text-blue-600 transition-colors"
+                  >
+                    Sales@Thincnext.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-center gap-5 group">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/10 transition-all duration-300"
+                >
+                  <i data-lucide="phone-call" class="w-6 h-6 text-blue-600"></i>
+                </div>
+                <div>
+                  <h4
+                    class="text-sm font-bold tracking-widest text-slate-400 uppercase mb-1"
+                  >
+                    Call Us
+                  </h4>
+                  <a
+                    href="tel:+919311504562"
+                    class="text-slate-900 font-semibold text-lg hover:text-blue-600 transition-colors"
+                  >
+                    +91 93115 04562
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="pt-4">
+              <h4
+                class="text-sm font-bold tracking-widest text-slate-400 uppercase mb-4"
+              >
+                Follow Our Networks
+              </h4>
+              <div class="flex gap-4">
+                <a
+                  href="#"
+                  class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/30 transition-all duration-300"
+                >
+                  <img
+                    src="./assets/icons/instagram.png"
+                    alt="instagram"
+                    class="w-5 h-5"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/30 transition-all duration-300"
+                >
+                  <img
+                    src="./assets/icons/facebook.png"
+                    alt="facebook"
+                    class="w-6 h-6"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/30 transition-all duration-300"
+                >
+                  <img
+                    src="./assets/icons/twitter.png"
+                    alt="twitter"
+                    class="w-5 h-5"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/30 transition-all duration-300"
+                >
+                  <img
+                    src="./assets/icons/linkedin.png"
+                    alt="linkedin"
+                    class="w-6 h-6"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="lg:col-span-7" data-aos="fade-left">
+            <div
+              class="bg-white p-8 md:p-12 rounded-[32px] shadow-xl shadow-slate-200/50 border border-slate-100"
+            >
+              <form class="space-y-6">
+                <!-- Name -->
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-bold text-slate-700 mb-2"
+                    >Your Name</label
+                  >
+                  <div class="relative">
+                    <i
+                      data-lucide="user"
+                      class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5"
+                    ></i>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="John Doe"
+                      class="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all bg-slate-50 focus:bg-white font-medium text-slate-900"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-bold text-slate-700 mb-2"
+                    >Your Email</label
+                  >
+                  <div class="relative">
+                    <i
+                      data-lucide="mail"
+                      class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5"
+                    ></i>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="john@example.com"
+                      class="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all bg-slate-50 focus:bg-white font-medium text-slate-900"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Subject -->
+                <div>
+                  <label
+                    for="subject"
+                    class="block text-sm font-bold text-slate-700 mb-2"
+                    >Subject</label
+                  >
+                  <div class="relative">
+                    <i
+                      data-lucide="message-square"
+                      class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5"
+                    ></i>
+                    <input
+                      type="text"
+                      id="subject"
+                      placeholder="How can we help you?"
+                      class="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all bg-slate-50 focus:bg-white font-medium text-slate-900"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-bold text-slate-700 mb-2"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Write your message here..."
+                    class="w-full p-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all bg-slate-50 focus:bg-white font-medium text-slate-900 resize-none"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-2">
+                  <button
+                    type="submit"
+                    class="w-full md:w-auto px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 hover:-translate-y-1 flex items-center justify-center gap-2"
+                  >
+                    Send Message <i data-lucide="send" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.425554407255!2d77.56998855850703!3d13.008550350621494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae162dce147559%3A0x897791340317553b!2sThincnext!5e0!3m2!1sen!2sin!4v1775821477731!5m2!1sen!2sin"
+          class="w-full p-6 md:p-12 mt-8"
+          height="500"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer
+      class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12"
+      >
+        <div class="flex flex-col gap-6">
+          <div class="items-center">
+            <img
+              src="/assest/Logo/thincnextlogo1.png"
+              alt="Thincnext Logo"
+              class="h-10 md:h-20 w-auto object-contain"
+            />
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+            Before we get creative or put a digital solution in place, we take
+            the time to fully understand your brand, project & the people its
+            intended for.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4 mt-2">
           <div class="flex items-start gap-3 group cursor-default">
-            <i data-lucide="map-pin" class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+            <i
+              data-lucide="map-pin"
+              class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
+            ></i>
             <span class="text-sm text-slate-400 leading-relaxed">
-              #285,1st Floor,Between 17th- 18th Cross,
-              2nd Main (Sampige Road),<br>
+              #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige
+              Road),<br />
               Malleshwaram, Bengaluru - 560 003
             </span>
           </div>
-          <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-            <i data-lucide="phone" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
-            <span class="text-sm">+91 96115 04567</span>
+          <div
+            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
+          >
+            <i
+              data-lucide="phone"
+              class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"
+            ></i>
+            <span class="text-sm text-slate-400">+91 96115 04567</span>
           </div>
-          <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
-            <i data-lucide="mail" class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"></i>
-            <span class="text-sm">Sales@Thincnext.Com</span>
+          <div
+            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
+          >
+            <i
+              data-lucide="mail"
+              class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"
+            ></i>
+            <span class="text-sm text-slate-400">Sales@Thincnext.Com</span>
           </div>
-    
         </div>
 
-      <div class="flex flex-col gap-6 md:pl-8">
-        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Company</h3>
-        <ul class="flex flex-col gap-3">
-          <li><a href="about.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">About</a></li>
-          <li><a href="services.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Services</a></li>
-          <li><a href="career.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Career</a></li>
-          <li><a href="offers.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Offers</a></li>
-          <li><a href="portfolio.html" class="text-sm text-slate-400 hover:text-brand-1 transition-all">Portfolio</a></li>
-        </ul>
-      </div>
+        <div class="flex flex-col gap-3 md:pl-8">
+          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
+            Quick links
+          </h3>
+          <ul class="flex flex-col gap-1">
+            <li>
+              <a
+                href="about.html"
+                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="career.html"
+                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                >Career</a
+              >
+            </li>
+            <li>
+              <a
+                href="portfolio.html"
+                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                >Terms & condition</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                >Privacy policy</a
+              >
+            </li>
+          </ul>
+        </div>
 
-      <div class="flex flex-col gap-6">
-        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">Social</h3>
-        
-        <ul class="flex flex-col gap-3">
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/fbfoot.png" alt="Facebook" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/twitfoot.png" alt="Twitter" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/instafoot.png" alt="Instagram" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/linkedfoot.png" alt="LinkedIn" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-brand-1 transition-colors group">
-              <img src="/assest/images/pintrtfoot.png" alt="Pinterest" class="w-5 h-5 group-hover:scale-110 transition-transform">
-              Pinterest
-            </a>
-          </li>
-        </ul>
-
-        <div class="mt-4">
-          <img src="/assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80">
+        <div class="flex flex-col gap-6">
+          <h3
+            class="text-lg font-semibold text-white tracking-wide pl-4 uppercase"
+          >
+            Connect us
+          </h3>
+          <ul class="flex flex-row items-center gap-5">
+            <li>
+              <a
+                href="#"
+                class="block transition-colors group"
+                title="Facebook"
+              >
+                <img
+                  src="/assest/images/fbfoot.png"
+                  alt="Facebook"
+                  class="w-6 h-6 group-hover:scale-110 transition-transform"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#" class="block transition-colors group" title="Twitter">
+                <img
+                  src="/assest/images/twitfoot.png"
+                  alt="Twitter"
+                  class="w-6 h-6 group-hover:scale-110 transition-transform"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block transition-colors group"
+                title="Instagram"
+              >
+                <img
+                  src="/assest/images/instafoot.png"
+                  alt="Instagram"
+                  class="w-6 h-6 group-hover:scale-110 transition-transform"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block transition-colors group"
+                title="LinkedIn"
+              >
+                <img
+                  src="/assest/images/linkedfoot.png"
+                  alt="LinkedIn"
+                  class="w-6 h-6 group-hover:scale-110 transition-transform"
+                />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      
-    </div>
 
-    <div class="w-full py-6 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent">
-      <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
-        <p>© Copyrights thincnext. All rights reserved.</p>
-        <span class="hidden md:inline-block text-slate-600">|</span>
-        <p>Designed by <span class="text-brand-1 font-semibold">Thincnext</span></p>
+      <div class="flex justify-center pb-6">
+        <img
+          src="/assest/images/dmca_protected_12_120.png"
+          alt="DMCA Protected"
+          class="h-8 opacity-80"
+        />
       </div>
-    </div>
 
-  </footer>
+      <div
+        class="w-full py-8 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-1/20 to-transparent"
+      >
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400"
+        >
+          <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
-  <script>
-    // Initialize Animations
-    AOS.init({
-      once: true, 
-      offset: 50,
-      easing: 'ease-out-cubic'
-    });
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    <script>
+      // Initialize Animations
+      AOS.init({
+        once: true,
+        offset: 50,
+        easing: "ease-out-cubic",
+      });
 
-    // Unified Menu Logic
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- Mobile Menu Hamburger Logic ---
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
+      // Initialize Lucide Icons
+      lucide.createIcons();
+    </script>
 
-        if (hamburger && mobileMenu) {
-            hamburger.addEventListener('click', (e) => {
-                e.stopPropagation(); 
-                mobileMenu.classList.toggle('active');
-            });
-            mobileMenu.addEventListener('click', (e) => {
-                e.stopPropagation(); 
-            });
-        }
-
-        // --- Desktop Dropdown Logic ---
-        const setupDropdown = (btnId, menuId, arrowId) => {
-            const btn = document.getElementById(btnId);
-            const menu = document.getElementById(menuId);
-            const arrow = document.getElementById(arrowId);
-
-            if (!btn || !menu) return;
-
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isClosed = menu.classList.contains('invisible');
-                closeAllDesktopMenus(); 
-
-                if (isClosed) {
-                    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-                    if (arrow) arrow.classList.add('rotate-180');
-                }
-            });
-            
-            menu.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-        };
-
-        const closeAllDesktopMenus = () => {
-            const dropdowns = [
-                { menu: 'services-menu', arrow: 'services-arrow' },
-                { menu: 'offer-menu', arrow: 'offer-arrow' }
-            ];
-            
-            dropdowns.forEach(item => {
-                const m = document.getElementById(item.menu);
-                const a = document.getElementById(item.arrow);
-                if (m) {
-                    m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-                    if (a) a.classList.remove('rotate-180');
-                }
-            });
-        };
-
-        setupDropdown('services-btn', 'services-menu', 'services-arrow');
-        setupDropdown('offer-btn', 'offer-menu', 'offer-arrow');
-
-        // --- Global Click: Close Everything ---
-        document.addEventListener('click', () => {
-            closeAllDesktopMenus();
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-            }
-        });
-    });
-  </script>
-
-</body>
+    <script src="./js/nav.js"></script>
+  </body>
 </html>
