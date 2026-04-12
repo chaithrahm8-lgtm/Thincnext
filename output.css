@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-600: oklch(62.7% 0.194 149.214);
     --color-cyan-500: oklch(71.5% 0.143 215.221);
@@ -644,12 +645,6 @@
   .h-\[250px\] {
     height: 250px;
   }
-  .h-\[500px\] {
-    height: 500px;
-  }
-  .h-\[600px\] {
-    height: 600px;
-  }
   .h-auto {
     height: auto;
   }
@@ -751,12 +746,6 @@
   }
   .w-\[95\%\] {
     width: 95%;
-  }
-  .w-\[500px\] {
-    width: 500px;
-  }
-  .w-\[600px\] {
-    width: 600px;
   }
   .w-auto {
     width: auto;
@@ -1221,12 +1210,6 @@
       background-color: color-mix(in oklab, var(--color-blue-100) 30%, transparent);
     }
   }
-  .bg-blue-100\/40 {
-    background-color: color-mix(in srgb, oklch(93.2% 0.032 255.585) 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-blue-100) 40%, transparent);
-    }
-  }
   .bg-blue-100\/50 {
     background-color: color-mix(in srgb, oklch(93.2% 0.032 255.585) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1314,14 +1297,11 @@
   .bg-purple-100 {
     background-color: var(--color-purple-100);
   }
-  .bg-purple-100\/40 {
-    background-color: color-mix(in srgb, oklch(94.6% 0.033 307.174) 40%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-purple-100) 40%, transparent);
-    }
-  }
   .bg-purple-300 {
     background-color: var(--color-purple-300);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
   }
   .bg-slate-50 {
     background-color: var(--color-slate-50);
@@ -2741,9 +2721,19 @@
       margin-top: calc(var(--spacing) * 4);
     }
   }
+  .md\:mt-6 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 6);
+    }
+  }
   .md\:mt-8 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:mt-9 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 9);
     }
   }
   .md\:mt-10 {
@@ -2764,6 +2754,11 @@
   .md\:mt-42 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 42);
+    }
+  }
+  .md\:mt-112 {
+    @media (width >= 48rem) {
+      margin-top: calc(var(--spacing) * 112);
     }
   }
   .md\:mb-10 {
@@ -3217,11 +3212,6 @@
   .lg\:pt-40 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 40);
-    }
-  }
-  .lg\:pt-48 {
-    @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 48);
     }
   }
   .lg\:pt-52 {
