@@ -8,60 +8,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style type="text/tailwindcss">
-    @theme {
-      --color-brand-1: #1c8cc1;
-      --color-brand-2: #0892d0;
-      --color-brand-3: #2496cd;
-      --color-brand-dark: #0a0a0c;
-
-      /* Fixed Shine - Smooth Sweep for header */
-      @keyframes shine {
-          0% { transform: translateX(-150%) skewX(-200deg); }
-          100% { transform: translateX(350%) skewX(-400deg); }
-      }
-      --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-  </style>
-  <style>
-    .footer-shimmer {
-      /* Uses your brand-dark (#0a0a0c) as the base, with a sweep of brand-1 (#1c8cc1) */
-      background: linear-gradient(130deg,
-          #0a0a0c 0%,
-          #0a0a0c 20%,
-          /* rgba(28, 140, 193, 0.15) 50%, The glowing blue shine */
-          #02384f 60%,
-          #0a0a0c 100%);
-      background-size: 800% 100%;
-      /* Slower 6s animation so it feels elegant on a large footer */
-      animation: footerShineMove 6s linear infinite;
-    }
-
-    @keyframes footerShineMove {
-      0% {
-        background-position: 100% 0;
-      }
-
-      10% {
-        background-position: 200% 100;
-      }
-    }
-
-    /* Mobile Menu Transitions */
-    #mobile-menu {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      transform: translateY(-20px);
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    #mobile-menu.active {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-    }
-  </style>
+   <link href="./output.css" rel="stylesheet">
+  
 </head>
 
 <body class="bg-blue-50/20 font-sans antialiased text-slate-800 m-0 overflow-x-hidden pt-6 selection:bg-slate-300">
@@ -119,7 +67,7 @@
 
             <ul
               id="services-menu"
-              class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+              class="absolute top-8 left-0 mt-0 w-55 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[60] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
             >
               <li>
                 <a
@@ -139,7 +87,7 @@
                 <a
                   href="./readymade.html"
                   class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Readymade</a
+                  >Readymade Software</a
                 >
               </li>
             </ul>
@@ -206,11 +154,13 @@
         </ul>
 
         <div class="flex items-center gap-3 relative z-10">
+           <a href="https://thincnext.in/" target="_blank" rel="noopener noreferrer">
           <button
-            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
           >
           Buy a Domain
           </button>
+        </a>
           <button
             id="hamburger"
             class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
@@ -262,9 +212,9 @@
           >
         </div>
         <a
-          href="./career.html"
+          href="./portfolio.html"
           class="text-lg font-bold border-b border-slate-100 pb-2"
-          >Career</a
+          >Portfolio</a
         >
         <div class="flex flex-col gap-2">
           <span
@@ -285,11 +235,13 @@
           class="text-lg font-bold border-b border-slate-100 pb-2"
           >Contact Us</a
         >
+        <a href="https://thincnext.in/" target="_blank" rel="noopener noreferrer">
         <button
-          class="w-full mt-4 px-5 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl"
+          class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl"
         >
           Buy a Domain
         </button>
+      </a>
       </div>
     </header>
 
