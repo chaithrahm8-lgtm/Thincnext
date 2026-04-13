@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thincnext | Digital Marketing</title>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link
@@ -16,31 +15,7 @@
     <link rel="stylesheet" href="./output.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style type="text/tailwindcss"></style>
 
-    <style>
-      /* Footer Shimmer */
-      .footer-shimmer {
-        background: linear-gradient(
-          130deg,
-          #0a0a0c 0%,
-          #0a0a0c 20%,
-          #02384f 60%,
-          #0a0a0c 100%
-        );
-        background-size: 800% 100%;
-        animation: footerShineMove 6s linear infinite;
-      }
-
-      @keyframes footerShineMove {
-        0% {
-          background-position: 100% 0;
-        }
-        10% {
-          background-position: 200% 100;
-        }
-      }
-    </style>
   </head>
 
   <body class="overflow-x-hidden">
@@ -185,7 +160,7 @@
 
         <div class="flex items-center gap-3 relative z-10">
           <a href="https://thincnext.in/" target="_blank"><button
-            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
           >
             Buy a Domain
           </button>
@@ -241,9 +216,9 @@
           >
         </div>
         <a
-          href="./career.html"
+          href="./portfolio.html"
           class="text-lg font-bold border-b border-slate-100 pb-2"
-          >Career</a
+          >Portfolio</a
         >
         <div class="flex flex-col gap-2">
           <span
@@ -578,6 +553,7 @@
                 href="#"
                 class="block transition-colors group"
                 title="Facebook"
+                target="_blank"
               >
                 <img
                   src="/assest/images/fbfoot.png"
@@ -587,7 +563,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="block transition-colors group" title="Twitter">
+              <a href="#" class="block transition-colors group" title="Twitter" target="_blank">
                 <img
                   src="/assest/images/twitfoot.png"
                   alt="Twitter"
@@ -600,6 +576,7 @@
                 href="#"
                 class="block transition-colors group"
                 title="Instagram"
+                target="_blank"
               >
                 <img
                   src="/assest/images/instafoot.png"
@@ -613,6 +590,7 @@
                 href="#"
                 class="block transition-colors group"
                 title="LinkedIn"
+                target="_blank"
               >
                 <img
                   src="/assest/images/linkedfoot.png"
@@ -649,6 +627,7 @@
     <script>
       AOS.init({ duration: 1000, once: true });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
     <script>
       lucide.createIcons();
     </script>
