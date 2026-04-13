@@ -19,12 +19,17 @@
 
     <style>
       /* Premium Card Effects */
+      .mySwiper{
+        width: 100%;
+      }
+
       .premium-card {
         background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(226, 232, 240, 0.8);
         transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+
       }
 
       .premium-card:hover {
@@ -289,7 +294,7 @@
         <h3 class="text-center text-slate-500 text-lg">Our Esteemed Clients</h3>
       </div>
 
-      <div class="space-y-16 w-full">
+      <div class="space-y-4 md:space-y-16 w-full">
         <div data-aos="fade-up">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -305,7 +310,7 @@
               </div>
               <div class="swiper-slide p-4">
                 <div
-                  class="premium-card rounded-2xl overflow-hidden h-[180px] md:h-[180px] group border border-gray-100"
+                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
                 >
                   <img
                     src="./assest/client/Aditya Birla.png"
@@ -1420,11 +1425,11 @@
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 4, // Tablet
+            slidesPerView: 3, // Tablet
             spaceBetween: 20,
           },
-          1024: {
-            slidesPerView: 5, // Desktop (Updated from 5 to 6)
+          1344: {
+            slidesPerView: 6, // Desktop (Updated from 5 to 6)
             spaceBetween: 30,
           },
         },
