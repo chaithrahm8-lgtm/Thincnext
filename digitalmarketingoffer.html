@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -12,31 +10,6 @@
     <link rel="stylesheet" href="./output.css">
     <title>Digital Marketing Offers</title>
 
-    <style type="text/tailwindcss">
-     
-      /* Footer Shimmer */
-      .footer-shimmer {
-        background: linear-gradient(
-          130deg,
-          #0a0a0c 0%,
-          #0a0a0c 20%,
-          #02384f 60%,
-          #0a0a0c 100%
-        );
-        background-size: 800% 100%;
-        animation: footerShineMove 6s linear infinite;
-      }
-
-      @keyframes footerShineMove {
-        0% {
-          background-position: 100% 0;
-        }
-        10% {
-          background-position: 200% 100;
-        }
-      }
-
-    </style>
   </head>
   <body>
     <header
@@ -180,7 +153,7 @@
 
         <div class="flex items-center gap-3 relative z-10">
           <a href="https://thincnext.in/" target="_blank" ><button
-            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
           >
             Buy a Domain
           </button>
@@ -236,9 +209,9 @@
           >
         </div>
         <a
-          href="./career.html"
+          href="./portfolio.html"
           class="text-lg font-bold border-b border-slate-100 pb-2"
-          >Career</a
+          >Portfolio</a
         >
         <div class="flex flex-col gap-2">
           <span
@@ -261,7 +234,7 @@
         >
         <a href="https://thincnext.in/" target="_blank">
         <button
-          class="w-full mt-4 px-5 py-4 bg-(--color-brand-1) text-white font-bold rounded-2xl shadow-xl"
+          class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl"
         >
           Buy a Domain
         </button>
@@ -481,12 +454,12 @@
 
           <!--Professional-->
           <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl  ring-2 ring-(--color-brand-1) relative lg:translate-y-0"
+            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl  ring-2 ring-brand-primary relative lg:translate-y-0"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
             <div
-              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-(--color-brand-1) text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest"
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest"
             >
               Best Selling
             </div>
@@ -797,6 +770,7 @@
                 href="#"
                 class="block transition-colors group"
                 title="Facebook"
+                target="_blank"
               >
                 <img
                   src="/assest/images/fbfoot.png"
@@ -806,7 +780,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="block transition-colors group" title="Twitter">
+              <a href="#" class="block transition-colors group" title="Twitter" target="_blank">
                 <img
                   src="/assest/images/twitfoot.png"
                   alt="Twitter"
@@ -819,6 +793,7 @@
                 href="#"
                 class="block transition-colors group"
                 title="Instagram"
+                target="_blank"
               >
                 <img
                   src="/assest/images/instafoot.png"
@@ -832,6 +807,7 @@
                 href="#"
                 class="block transition-colors group"
                 title="LinkedIn"
+                target="_blank"
               >
                 <img
                   src="/assest/images/linkedfoot.png"
@@ -867,6 +843,7 @@
       lucide.createIcons();
       AOS.init();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
     <script src="./js/nav.js"></script>
   </body>
 </html>
