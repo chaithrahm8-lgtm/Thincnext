@@ -1,149 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ThincNext | Ready-to-Launch Software Portfolio</title>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-   
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; overflow-x: hidden; }
-        
-        .mesh-gradient {
-            background: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-                        radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
-                        radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
-                        radial-gradient(at 0% 100%, rgba(147, 197, 253, 0.15) 0px, transparent 50%);
-            background-attachment: fixed;
-        }
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./output.css" />
+  </head>
 
-
-        .gradient-text {
-            background-image: linear-gradient(to right, #9333ea, #715edc, #a94aa3, #9333ea);
-            background-size: 300% auto;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        
-
-        .premium-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .premium-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: #1c8cc1;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
-        }
-
-        .tag-badge {
-            background: rgba(59, 130, 246, 0.05);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            color: #1c8cc1;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .blue-glow { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.3)); }
-
-        @keyframes colorFlow {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-            .animate-color-flow{ animation: colorFlow 6s ease infinite;}
-
-
-        @keyframes shine {
-            0% { transform: translateX(-150%) skewX(-30deg); }
-            100% { transform: translateX(350%) skewX(-30deg); }
-        }
-        .animate-shine { animation: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-
-        /* Mobile Menu Transitions */
-        #mobile-menu {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateY(-20px);
-            opacity: 0;
-            pointer-events: none;
-        }
-        #mobile-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-    </style>
-    <style type="text/tailwindcss">
-    @theme {
-      --color-brand-1: #1c8cc1;
-      --color-brand-2: #0892d0;
-      --color-brand-3: #2496cd;
-      --color-brand-dark: #0a0a0c;
-    }
-  </style>
-  <style>
-    .footer-shimmer {
-      /* Uses your brand-dark (#0a0a0c) as the base, with a sweep of brand-1 (#1c8cc1) */
-      background: linear-gradient(130deg,
-          #0a0a0c 0%,
-          #0a0a0c 20%,
-          /* rgba(28, 140, 193, 0.15) 50%, The glowing blue shine */
-          #02384f 60%,
-          #0a0a0c 100%);
-      background-size: 800% 100%;
-      /* Slower 6s animation so it feels elegant on a large footer */
-      animation: footerShineMove 6s linear infinite;
-    }
-
-    @keyframes footerShineMove {
-      0% {
-        background-position: 100% 0;
-      }
-
-      10% {
-        background-position: 200% 100;
-      }
-    }
-
-    /* Mobile Menu Transitions */
-    #mobile-menu {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      transform: translateY(-20px);
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    #mobile-menu.active {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-    }
-  </style>
- 
-</head>
-
-<body class="text-slate-900 mesh-gradient">
-
-<header
+  <body class="text-slate-900 mesh-gradient">
+    <header
       class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
       id="navbar"
     >
@@ -196,7 +68,7 @@
 
             <ul
               id="services-menu"
-              class="absolute top-8 left-0 mt-0 w-44 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+              class="absolute top-8 left-0 mt-0 w-55 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
             >
               <li>
                 <a
@@ -216,7 +88,7 @@
                 <a
                   href="./readymade.html"
                   class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Readymade</a
+                  >Readymade Software</a
                 >
               </li>
             </ul>
@@ -337,7 +209,7 @@
             >Digital Marketing</a
           >
           <a href="./readymade.html" class="pl-4 py-1 text-slate-600"
-            >Readymade</a
+            >Readymade Software</a
           >
         </div>
         <a
@@ -374,162 +246,312 @@
       </div>
     </header>
 
-    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-[80%] md:w-[40%] h-[40%] bg-blue-100/30 rounded-full blur-[80px] md:blur-[120px] animate-float"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[80%] md:w-[40%] h-[40%] bg-indigo-100/30 rounded-full blur-[80px] md:blur-[120px] animate-float" style="animation-delay: -3s;"></div>
+    <div
+      class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none"
+    >
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[80%] md:w-[40%] h-[40%] bg-blue-100/30 rounded-full blur-[80px] md:blur-[120px] animate-float"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[80%] md:w-[40%] h-[40%] bg-indigo-100/30 rounded-full blur-[80px] md:blur-[120px] animate-float"
+        style="animation-delay: -3s"
+      ></div>
     </div>
 
     <section class="pt-40 pb-20 lg:pt-52 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-brand-1 uppercase bg-blue-50 rounded-full border border-blue-100">
-                        Deployment Ready
-                    </span>
-                    <h1 class="text-4xl md:text-7xl gradient-text  font-bold animate-color-flow tracking-tight mb-8 leading-[1.1] text-slate-700">
-                        Ready to Launch <br>
-                        <span class="gradient-text animate-color-flow bg-clip-text text-transparent">Softwares</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-500 max-w-xl leading-relaxed mb-10">
-                        Skip the development cycle. We offer a robust library of pre-built, white-label apps and enterprise systems ready for immediate market entry.
-                    </p>
-                </div>
-                
-                <div class="relative animate-float" data-aos="fade-left">
-                    <div class="absolute -inset-4 bg-blue-400/10 rounded-[2.5rem] md:rounded-[3rem] blur-2xl"></div>
-                    <img src="./assest/images/readytolaunch1.png" alt="Software Interface" class="relative rounded-[2rem] md:rounded-[2.5rem] shadow-2xl border border-white/50 w-full h-auto">
-                </div>
-            </div>
+      <div class="grid grid-cols-1 lg:grid-cols-1 gap-12 justify-items-center">
+        <div data-aos="fade-up" class="text-center">
+          <h1
+            class="text-4xl md:text-7xl gradient-text font-bold animate-color-flow tracking-tight mb-8 leading-[1.1] text-slate-700"
+          >
+            Ready to Launch <br />
+            <span
+              class="gradient-text animate-color-flow bg-clip-text text-transparent"
+              >Softwares</span
+            >
+          </h1>
+          <p
+            class="text-lg md:text-xl text-slate-500 max-w-xl mx-auto leading-relaxed mb-10"
+          >
+            Skip the development cycle. We offer a robust library of pre-built,
+            white-label apps and enterprise systems ready for immediate market
+            entry.
+          </p>
         </div>
+      </div>
     </section>
 
     <main class="max-w-7xl mx-auto px-6">
-        <div class="mb-24">
-            <h2 class="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-4" data-aos="fade-right">
-                <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span> Media & Entertainment
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6 blue-glow">📱</div>
-                    <h3 class="font-bold text-xl tracking-tight">TikTok Clone</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Short-video sharing with viral discovery algorithms.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl mb-6 blue-glow">🎬</div>
-                    <h3 class="font-bold text-xl tracking-tight">Netflix Clone</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Premium OTT streaming (Web + App) with subscription tiering.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl mb-6 blue-glow">🏏</div>
-                    <h3 class="font-bold text-xl tracking-tight">Dream 11 Clone</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Fantasy sports ecosystem with real-time analytics.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl mb-6 blue-glow">📰</div>
-                    <h3 class="font-bold text-xl tracking-tight">News Portal Apps</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Multi-category news publishing with push notifications.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl mb-6 blue-glow">❤️</div>
-                    <h3 class="font-bold text-xl tracking-tight">Dating (Web + App)</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Smart matchmaking with secure chat & profile verification.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6 blue-glow">⚡</div>
-                    <h3 class="font-bold text-xl tracking-tight">Xendor/ShareIT</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">High-speed file transfer and utility architecture.</p>
-                </div>
-            </div>
+      <div class="mb-24">
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-4"
+          data-aos="fade-right"
+        >
+          <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span>
+          Media & Entertainment
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6 blue-glow">📱</div>
+            <h3 class="font-bold text-xl tracking-tight">TikTok Clone</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Short-video sharing with viral discovery algorithms.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="text-4xl mb-6 blue-glow">🎬</div>
+            <h3 class="font-bold text-xl tracking-tight">Netflix Clone</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Premium OTT streaming (Web + App) with subscription tiering.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="text-4xl mb-6 blue-glow">🏏</div>
+            <h3 class="font-bold text-xl tracking-tight">Dream 11 Clone</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Fantasy sports ecosystem with real-time analytics.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="text-4xl mb-6 blue-glow">📰</div>
+            <h3 class="font-bold text-xl tracking-tight">News Portal Apps</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Multi-category news publishing with push notifications.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="text-4xl mb-6 blue-glow">❤️</div>
+            <h3 class="font-bold text-xl tracking-tight">Dating (Web + App)</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Smart matchmaking with secure chat & profile verification.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6 blue-glow">⚡</div>
+            <h3 class="font-bold text-xl tracking-tight">Xendor/ShareIT</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              High-speed file transfer and utility architecture.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="mb-24">
-            <h2 class="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-4" data-aos="fade-right">
-                <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span> E-Commerce & Delivery
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="premium-card p-8 md:p-10 border-2 border-gray-300 rounded-[2.5rem]" data-aos="zoom-in">
-                    <span class="tag-badge px-4 py-1.5 rounded-full text-[10px] font-extrabold mb-6 inline-block">Multi-Vendor</span>
-                    <h3 class="text-2xl font-bold tracking-tight">Global Marketplace</h3>
-                    <p class="text-slate-500 text-base mt-4 leading-relaxed">Full eCommerce ecosystem with seller dashboards and integrated logistics.</p>
-                    <div class="mt-8 flex flex-wrap gap-2">
-                        
-                    </div>
-                </div>
-                <div class="premium-card p-8 md:p-10 border-2 border-gray-300 rounded-[2.5rem]" data-aos="zoom-in" data-aos-delay="100">
-                    <span class="tag-badge px-4 py-1.5 rounded-full text-[10px] font-extrabold mb-6 inline-block">Food & Grocery</span>
-                    <h3 class="text-2xl font-bold tracking-tight">Hyper-Local Delivery</h3>
-                    <p class="text-slate-500 text-base mt-4 leading-relaxed">Ready-made apps for Grocery, Food, and Pharmacy delivery with live tracking.</p>
-                </div>
-                <div class="premium-card p-8 md:p-10 border-2 border-gray-300 rounded-[2.5rem]" data-aos="zoom-in" data-aos-delay="200">
-                    <span class="tag-badge px-4 py-1.5 rounded-full text-[10px] font-extrabold mb-6 inline-block">Marketplace</span>
-                    <h3 class="text-2xl font-bold tracking-tight">Market place Clone</h3>
-                    <p class="text-slate-500 text-base mt-4 leading-relaxed">C2C classifieds platform with location-based discovery and in-app chat.</p>
-                </div>
-            </div>
+      <div class="mb-24">
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-4"
+          data-aos="fade-right"
+        >
+          <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span>
+          E-Commerce & Delivery
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="premium-card p-8 md:p-10 border-2 border-gray-300 rounded-[2.5rem]"
+            data-aos="zoom-in"
+          >
+            <span
+              class="tag-badge px-4 py-1.5 rounded-full text-[10px] font-extrabold mb-6 inline-block"
+              >Multi-Vendor</span
+            >
+            <h3 class="text-2xl font-bold tracking-tight">
+              Global Marketplace
+            </h3>
+            <p class="text-slate-500 text-base mt-4 leading-relaxed">
+              Full eCommerce ecosystem with seller dashboards and integrated
+              logistics.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-2"></div>
+          </div>
+          <div
+            class="premium-card p-8 md:p-10 border-2 border-gray-300 rounded-[2.5rem]"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <span
+              class="tag-badge px-4 py-1.5 rounded-full text-[10px] font-extrabold mb-6 inline-block"
+              >Food & Grocery</span
+            >
+            <h3 class="text-2xl font-bold tracking-tight">
+              Hyper-Local Delivery
+            </h3>
+            <p class="text-slate-500 text-base mt-4 leading-relaxed">
+              Ready-made apps for Grocery, Food, and Pharmacy delivery with live
+              tracking.
+            </p>
+          </div>
+          <div
+            class="premium-card p-8 md:p-10 border-2 border-gray-300 rounded-[2.5rem]"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <span
+              class="tag-badge px-4 py-1.5 rounded-full text-[10px] font-extrabold mb-6 inline-block"
+              >Marketplace</span
+            >
+            <h3 class="text-2xl font-bold tracking-tight">
+              Market place Clone
+            </h3>
+            <p class="text-slate-500 text-base mt-4 leading-relaxed">
+              C2C classifieds platform with location-based discovery and in-app
+              chat.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="mb-24">
-            <h2 class="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-4" data-aos="fade-right">
-                <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span> Service & Enterprise SaaS
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6">🚕</div>
-                    <h3 class="font-bold text-lg">Taxi App Clone</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Uber-style ride-hailing with driver & user apps.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6">🛠️</div>
-                    <h3 class="font-bold text-lg">Urban Clap Clone</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Home services and expert booking ecosystem.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6">🩺</div>
-                    <h3 class="font-bold text-lg">Doctor Booking</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Patient management and appointment scheduling.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6">🏢</div>
-                    <h3 class="font-bold text-lg">Real Estate</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Property listing, virtual tours, and CRM tools.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6">🎓</div>
-                    <h3 class="font-bold text-lg">LMS & Live Classes</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">E-learning platform with coaching and live systems.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6">💼</div>
-                    <h3 class="font-bold text-lg">Job Portal</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Candidate matching and employer dashboards.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6">🏫</div>
-                    <h3 class="font-bold text-lg">School ERP</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Comprehensive management for educational institutions.</p>
-                </div>
-                <div class="premium-card p-7 border-2 border-gray-300 rounded-3xl" data-aos="fade-up">
-                    <div class="text-4xl mb-6">🧾</div>
-                    <h3 class="font-bold text-lg">Advance Billing</h3>
-                    <p class="text-sm text-slate-500 mt-3 leading-relaxed">Inventory tracking and professional invoicing SaaS.</p>
-                </div>
-            </div>
+      <div class="mb-24">
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-4"
+          data-aos="fade-right"
+        >
+          <span class="w-2.5 h-10 bg-brand-1 rounded-full shadow-lg"></span>
+          Service & Enterprise SaaS
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6">🚕</div>
+            <h3 class="font-bold text-lg">Taxi App Clone</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Uber-style ride-hailing with driver & user apps.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6">🛠️</div>
+            <h3 class="font-bold text-lg">Urban Clap Clone</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Home services and expert booking ecosystem.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6">🩺</div>
+            <h3 class="font-bold text-lg">Doctor Booking</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Patient management and appointment scheduling.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6">🏢</div>
+            <h3 class="font-bold text-lg">Real Estate</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Property listing, virtual tours, and CRM tools.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6">🎓</div>
+            <h3 class="font-bold text-lg">LMS & Live Classes</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              E-learning platform with coaching and live systems.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6">💼</div>
+            <h3 class="font-bold text-lg">Job Portal</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Candidate matching and employer dashboards.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6">🏫</div>
+            <h3 class="font-bold text-lg">School ERP</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Comprehensive management for educational institutions.
+            </p>
+          </div>
+          <div
+            class="premium-card p-7 border-2 border-gray-300 rounded-3xl"
+            data-aos="fade-up"
+          >
+            <div class="text-4xl mb-6">🧾</div>
+            <h3 class="font-bold text-lg">Advance Billing</h3>
+            <p class="text-sm text-slate-500 mt-3 leading-relaxed">
+              Inventory tracking and professional invoicing SaaS.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="bg-white/50 backdrop-blur-xl p-8 md:p-12 border-2 border-brand-1 rounded-[2.5rem] md:rounded-[4rem] text-center mb-20" data-aos="zoom-out">
-            <h3 class="text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.3em] mb-10">Niche Industry Solutions</h3>
-            <div class="flex flex-wrap gap-3 max-w-6xl justify-center mx-auto">
-                <span class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm">Lead Management</span>
-                <span class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm">Business Directory</span>
-                <span class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm">MLM Software</span>
-                <span class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm">Hotel Booking</span>
-                <span class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm">Pharmacy Software</span>
-                <span class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm">Multi-Restaurant ERP</span>
-            </div>
+      <div
+        class="bg-white/50 backdrop-blur-xl p-8 md:p-12 border-2 border-brand-1 rounded-[2.5rem] md:rounded-[4rem] text-center mb-20"
+        data-aos="zoom-out"
+      >
+        <h3
+          class="text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.3em] mb-10"
+        >
+          Niche Industry Solutions
+        </h3>
+        <div class="flex flex-wrap gap-3 max-w-6xl justify-center mx-auto">
+          <span
+            class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm"
+            >Lead Management</span
+          >
+          <span
+            class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm"
+            >Business Directory</span
+          >
+          <span
+            class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm"
+            >MLM Software</span
+          >
+          <span
+            class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm"
+            >Hotel Booking</span
+          >
+          <span
+            class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm"
+            >Pharmacy Software</span
+          >
+          <span
+            class="px-5 py-2.5 bg-white rounded-full text-xs md:text-sm font-semibold border border-slate-100 shadow-sm"
+            >Multi-Restaurant ERP</span
+          >
         </div>
+      </div>
     </main>
 
-   <footer
+    <footer
       class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden"
     >
       <div
@@ -693,7 +715,7 @@
       </div>
 
       <div
-        class="w-full py-8 text-center border-t border-slate-800/50 bg-gradient-to-t from-brand-primatext-brand-primary/20 to-transparent"
+        class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-primatext-brand-primary/20 to-transparent"
       >
         <div
           class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400"
@@ -703,57 +725,12 @@
       </div>
     </footer>
 
-    
-
     <!-- script readymade -->
-
-
     <script>
-        AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
-
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Desktop Dropdowns
-        const triggers = document.querySelectorAll('.menu-trigger');
-        triggers.forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const targetId = trigger.getAttribute('data-target');
-                const targetMenu = document.getElementById(targetId);
-                const arrow = trigger.querySelector('svg');
-                
-                // Toggle current
-                const isOpen = !targetMenu.classList.contains('invisible');
-                
-                // Close all
-                document.querySelectorAll('.dropdown-menu').forEach(m => {
-                    m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-                });
-                document.querySelectorAll('.menu-trigger svg').forEach(s => s.classList.remove('rotate-180'));
-
-                if (!isOpen) {
-                    targetMenu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-                    arrow.classList.add('rotate-180');
-                }
-            });
-        });
-
-        // Close everything on document click
-        document.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            document.querySelectorAll('.dropdown-menu').forEach(m => {
-                m.classList.add('opacity-0', 'invisible', 'translate-y-2');
-            });
-            document.querySelectorAll('.menu-trigger svg').forEach(s => s.classList.remove('rotate-180'));
-        });
+        AOS.init({ duration: 1000, once: true, easing: "ease-out-cubic" });
+      lucide.createIcons();
     </script>
-<script> lucide.createIcons();</script>
-</body>
+
+    <script src="./js/nav.js"></script>
+  </body>
 </html>
