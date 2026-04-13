@@ -1914,6 +1914,9 @@
   .ring-\(--color-brand-1\) {
     --tw-ring-color: var(--color-brand-1);
   }
+  .ring-brand-primary {
+    --tw-ring-color: var(--color-brand-primary);
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
