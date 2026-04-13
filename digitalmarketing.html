@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thincnext | Digital Marketing</title>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link
@@ -16,31 +15,7 @@
     <link rel="stylesheet" href="./output.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style type="text/tailwindcss"></style>
 
-    <style>
-      /* Footer Shimmer */
-      .footer-shimmer {
-        background: linear-gradient(
-          130deg,
-          #0a0a0c 0%,
-          #0a0a0c 20%,
-          #02384f 60%,
-          #0a0a0c 100%
-        );
-        background-size: 800% 100%;
-        animation: footerShineMove 6s linear infinite;
-      }
-
-      @keyframes footerShineMove {
-        0% {
-          background-position: 100% 0;
-        }
-        10% {
-          background-position: 200% 100;
-        }
-      }
-    </style>
   </head>
 
   <body class="overflow-x-hidden">
@@ -155,7 +130,7 @@
 
             <ul
               id="offer-menu"
-              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-[100] overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-100 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
             >
               <li>
                 <a
@@ -184,11 +159,13 @@
         </ul>
 
         <div class="flex items-center gap-3 relative z-10">
+           <a href="https://thincnext.in/" target="_blank" rel="noopener noreferrer">
           <button
-            class="hidden lg:block px-5 py-2.5 bg-brand-2 hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
           >
             Buy a Domain
           </button>
+        </a>
           <button
             id="hamburger"
             class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
@@ -241,8 +218,10 @@
         </div>
         <a
           href="./portfolio.html"
+          
           class="text-lg font-bold border-b border-slate-100 pb-2"
           >Portfolio</a
+          
         >
         <div class="flex flex-col gap-2">
           <span
@@ -263,18 +242,21 @@
           class="text-lg font-bold border-b border-slate-100 pb-2"
           >Contact Us</a
         >
+         <a href="https://thincnext.in/" target="_blank" rel="noopener noreferrer">
         <button
           class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl"
         >
           Buy a Domain
         </button>
+        </a>
+        </a>
       </div>
     </header>
 
-    <section class="relative flex ustify-center px-8 md:px-20 z-10 py-48">
+    <section class="relative flex justify-center px-8 md:px-20 z-10 py-48">
       <div class="container mx-auto flex justify-center">
         <div class="text-center max-w-3xl">
-          <h1 class="text-4xl md:text-6xl font-bold mb-8 lg:mt-2 leading-tight">
+          <h1 class="text-4xl md:text-6xl font-bold mb-2 lg:mt-2 leading-tight">
             <span class="gradient-text animate-color-flow">
               We Create Solutions for Your Business</span
             >
@@ -494,7 +476,7 @@
           <div class="flex items-start gap-3 group cursor-default">
             <i
               data-lucide="map-pin"
-              class="w-5 h-5 text-brand-1 shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
+              class="w-5 h-5 text-brand-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
             ></i>
             <span class="text-sm text-slate-400 leading-relaxed">
               #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige
@@ -507,7 +489,7 @@
           >
             <i
               data-lucide="phone"
-              class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"
+              class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"
             ></i>
             <span class="text-sm text-slate-400">+91 96115 04567</span>
           </div>
@@ -516,7 +498,7 @@
           >
             <i
               data-lucide="mail"
-              class="w-5 h-5 text-brand-1 shrink-0 group-hover:scale-110 transition-transform"
+              class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"
             ></i>
             <span class="text-sm text-slate-400">Sales@Thincnext.Com</span>
           </div>
@@ -530,35 +512,35 @@
             <li>
               <a
                 href="about.html"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
                 >About</a
               >
             </li>
             <li>
               <a
                 href="career.html"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
                 >Career</a
               >
             </li>
             <li>
               <a
                 href="portfolio.html"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
                 >Portfolio</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
                 >Terms & condition</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="text-sm text-slate-400 hover:text-brand-1 transition-all"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
                 >Privacy policy</a
               >
             </li>
@@ -572,9 +554,10 @@
           <ul class="flex flex-row items-center gap-5">
             <li>
               <a
-                href="#"
+                href="https://www.facebook.com/Thincnext/"
                 class="block transition-colors group"
                 title="Facebook"
+                target="_blank"
               >
                 <img
                   src="/assest/images/fbfoot.png"
@@ -584,7 +567,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="block transition-colors group" title="Twitter">
+              <a href="https://x.com/thincnext" class="block transition-colors group" title="Twitter" target="_blank">
                 <img
                   src="/assest/images/twitfoot.png"
                   alt="Twitter"
@@ -594,9 +577,10 @@
             </li>
             <li>
               <a
-                href="#"
+                href="https://www.instagram.com/thincnext"
                 class="block transition-colors group"
                 title="Instagram"
+                target="_blank"
               >
                 <img
                   src="/assest/images/instafoot.png"
@@ -607,9 +591,10 @@
             </li>
             <li>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/thincnext/posts/?feedView=all"
                 class="block transition-colors group"
                 title="LinkedIn"
+                target="_blank"
               >
                 <img
                   src="/assest/images/linkedfoot.png"
@@ -631,7 +616,7 @@
       </div>
 
       <div
-        class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-1/20 to-transparent"
+        class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-primary/20 to-transparent"
       >
         <div
           class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400"
@@ -646,6 +631,7 @@
     <script>
       AOS.init({ duration: 1000, once: true });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
     <script>
       lucide.createIcons();
     </script>

@@ -338,3 +338,43 @@
             }
         }
   
+
+
+                .premium-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .premium-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #1c8cc1;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
+        }
+
+         @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .blue-glow { filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.3)); }
+
+        @keyframes colorFlow {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            .animate-color-flow{ animation: colorFlow 6s ease infinite;}
+
+
+        @keyframes shine {
+            0% { transform: translateX(-150%) skewX(-30deg); }
+            100% { transform: translateX(350%) skewX(-30deg); }
+        }
+        .animate-shine { animation: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
