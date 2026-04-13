@@ -614,6 +614,12 @@
   .h-\[150px\] {
     height: 150px;
   }
+  .h-\[180px\] {
+    height: 180px;
+  }
+  .h-\[250px\] {
+    height: 250px;
+  }
   .h-fit {
     height: fit-content;
   }
@@ -707,6 +713,9 @@
   .w-\[80\%\] {
     width: 80%;
   }
+  .w-\[150px\] {
+    width: 150px;
+  }
   .w-auto {
     width: auto;
   }
@@ -718,6 +727,9 @@
   }
   .w-px {
     width: 1px;
+  }
+  .w-screen {
+    width: 100vw;
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
