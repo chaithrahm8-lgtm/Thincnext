@@ -6,12 +6,7 @@
 @theme {
   --color-brand-primary: #2993c5;
   --color-brand-dark: #0a0a0c;
-
-  --color-brand-blue: #1c8cc1;
-  --color-brand-1: #1c8cc1;
-  --color-brand-2: #0892d0;
-  --color-brand-3: #2496cd;
-
+  
   --animate-shine: shine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   --animate-color-flow: colorFlow 6s ease infinite;
 }
