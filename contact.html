@@ -11,30 +11,11 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
-
+      <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./output.css" />
-    <link rel="stylesheet" href="./style.css" />
+
   </head>
-  <body>
-    <main class="relative pt-40 lg:pt-40 overflow-hidden bg-slate-50">
-      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <h1
-          data-aos="fade-up"
-          data-aos-delay="100"
-          class="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] gradient-text animate-color-flow mb-6"
-        >
-          Let's Talk</span>
-        </h1>
-        <p
-          data-aos="fade-up"
-          data-aos-delay="200"
-          class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto mb-10"
-        >
-          We are available 24/7 for our customers. Reach out to discuss your
-          next big idea, request a quote, or simply say hello.
-        </p>
-      </div>
-    </main>
+  <body class="text-slate-900 bg-white overflow-x-hidden">
 
     <header
       class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
@@ -147,7 +128,7 @@
 
             <ul
               id="offer-menu"
-              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-99 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-100 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
             >
               <li>
                 <a
@@ -176,13 +157,17 @@
         </ul>
 
         <div class="flex items-center gap-3 relative z-10">
-           <a href="https://thincnext.in/" target="_blank" rel="noopener noreferrer">
-          <button
-            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer transition-all"
+          <a
+            href="https://thincnext.in/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Buy a Domain
-          </button>
-        </a>
+            <button
+              class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+            >
+              Buy a Domain
+            </button>
+          </a>
           <button
             id="hamburger"
             class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
@@ -204,7 +189,7 @@
         </div>
       </nav>
 
-       <div
+      <div
         id="mobile-menu"
         class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50"
       >
@@ -306,10 +291,30 @@
       </div>
     </header>
 
-    <section class="py-18 bg-slate-50 border-t border-slate-100 relative z-20">
+    <main class="relative pt-40 lg:pt-40 overflow-hidden bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <h1
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] gradient-text animate-color-flow mb-6"
+        >
+          Let's Talk
+        </h1>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto mb-10"
+        >
+          We are available 24/7 for our customers. Reach out to discuss your
+          next big idea, request a quote, or simply say hello.
+        </p>
+      </div>
+    </main>
+
+
+    <section class="py-18 bg-slate-50 border-t border-slate-100 relative z-20 overflow-hidden">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
-          <!-- Left: Contact Info -->
           <div
             class="lg:col-span-5 flex flex-col space-y-10"
             data-aos="fade-right"
@@ -326,7 +331,6 @@
             </div>
 
             <div class="space-y-8">
-              <!-- Location -->
               <div class="flex items-start gap-5 group">
                 <div
                   class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/10 transition-all duration-300"
@@ -346,7 +350,6 @@
                 </div>
               </div>
 
-              <!-- Email -->
               <div class="flex items-center gap-5 group">
                 <div
                   class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/10 transition-all duration-300"
@@ -368,7 +371,6 @@
                 </div>
               </div>
 
-              <!-- Phone -->
               <div class="flex items-center gap-5 group">
                 <div
                   class="w-14 h-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/10 transition-all duration-300"
@@ -391,7 +393,6 @@
               </div>
             </div>
 
-            <!-- Social Icons -->
             <div class="pt-4">
               <h4
                 class="text-sm font-bold tracking-widest text-slate-400 uppercase mb-4"
@@ -427,13 +428,11 @@
             </div>
           </div>
 
-          <!-- Right: Contact Form -->
           <div class="lg:col-span-7" data-aos="fade-left">
             <div
               class="bg-white p-8 md:p-12 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100"
             >
               <form class="space-y-6">
-                <!-- Name -->
                 <div>
                   <label
                     for="name"
@@ -455,7 +454,6 @@
                   </div>
                 </div>
 
-                <!-- Email -->
                 <div>
                   <label
                     for="email"
@@ -477,7 +475,6 @@
                   </div>
                 </div>
 
-                <!-- Subject -->
                 <div>
                   <label
                     for="subject"
@@ -499,7 +496,6 @@
                   </div>
                 </div>
 
-                <!-- Message -->
                 <div>
                   <label
                     for="message"
@@ -515,7 +511,6 @@
                   ></textarea>
                 </div>
 
-                <!-- Submit Button -->
                 <div class="pt-2">
                   <button
                     type="submit"
@@ -645,7 +640,7 @@
       class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-primary/20 to-transparent">
       <div
         class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
-        <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
+        <p>2026 © Copyrights thincnext. All rights reserved.</p>
       </div>
     </div>
   </footer>
