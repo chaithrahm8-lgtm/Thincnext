@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thincnext - readymade softwares</title>
-  
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js" defer></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
 
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./output.css" />
@@ -765,11 +764,15 @@
     </footer>
 
     <!-- script readymade -->
+     
+    <script src="./js/nav.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       AOS.init({ duration: 1000, once: true, easing: "ease-out-cubic" });
       lucide.createIcons();
+       const locomotiveScroll = new LocomotiveScroll();
     </script>
 
-    <script src="./js/nav.js"></script>
   </body>
 </html>

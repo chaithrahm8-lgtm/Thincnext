@@ -5,10 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thincnext - About Us</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js" defer></script>
   
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link href="./output.css" rel="stylesheet" />
 </head>
@@ -163,7 +164,7 @@
     class="unified-section pt-28 lg:pt-24 md:pt-20 md:pb-12 sm:pt-12 sm:pb-16 mt-4 sm:mt-10 md:mt-10 lg:mt-0 px-4 border-b border-slate-200">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row gap-16 items-center mb-24">
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/2" >
           <div class="mb-6">
             <span class="text-brand-primary text-sm font-bold uppercase tracking-widest">Our Strategy</span>
             <h2 class="text-5xl --font-sans: 'Inter', sans-serif; text-slate-900 mt-2 mb-6">
@@ -206,7 +207,9 @@
         </div>
 
         <div class="w-full md:w-2/3 relative">
-          <div class="bg-brand-primary text-white p-4 sm:p-4 rounded-xl shadow-2xl relative overflow-hidden">
+          <div
+            data-aos="fade-left"
+           class="bg-brand-primary text-white p-4 sm:p-4 rounded-xl shadow-2xl relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
             <div class="relative z-10 h-90 flex flex-col justify-between">
               <p class="text-white text-xs font-bold uppercase tracking-[0.3em] mb-8">
@@ -278,7 +281,7 @@
           <p class="text-brand-primary font-black text-xs uppercase tracking-[0.3em] mb-4">
             The Impact
           </p>
-          <h2 class="text-5xl md:text-7xl font-light tracking-tight text-slate-900 leading-[1.1]">
+          <h2 data-aos="fade-right" class="text-5xl md:text-7xl font-light tracking-tight text-slate-900 leading-[1.1]">
             Turning
             <span
               class="bg-linear-to-r from-brand-primary to-blue-600 bg-clip-text text-transparent font-bold italic">Visions</span>
@@ -290,8 +293,8 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-        <div class="md:col-span-7 relative">
+      <div data-aos="zoom-in-up" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div  class="md:col-span-7 relative">
           <div
             class="relative z-10 rounded-2xl bg-brand-primary p-10 md:p-16 shadow-2xl transition-transform duration-500">
             <div class="flex items-center gap-4 mb-10">
@@ -498,11 +501,16 @@
       </div>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+  
+  <!-- scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     lucide.createIcons();
-    AOS.init();
+    AOS.init({
+        duration: 800, // Animation speed
+        once: true, // Whether animation should happen only once - while scrolling down
+      });
     const locomotiveScroll = new LocomotiveScroll();
   </script>
   <script src="./js/nav.js"></script>

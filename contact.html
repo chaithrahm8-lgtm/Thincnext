@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thincnext - Contact Us</title>
-
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js" defer></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest"></script>
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+   
       <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./output.css" />
+      <link rel="stylesheet" href="./output.css" />
 
   </head>
   <body class="text-slate-900 bg-white overflow-x-hidden">
@@ -644,21 +643,22 @@
       </div>
     </div>
   </footer>
-
+  <!-- scripts -->
+    <script src="./js/nav.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+        // Initialize Lucide Icons
+      lucide.createIcons();
       // Initialize Animations
       AOS.init({
         once: true,
         offset: 50,
         easing: "ease-out-cubic",
       });
-
-      // Initialize Lucide Icons
-      lucide.createIcons();
+      const locomotiveScroll = new LocomotiveScroll();
+   
     </script>
-
-    <script src="./js/nav.js"></script>
   </body>
 </html>

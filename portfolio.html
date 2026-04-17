@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thincnext - Portfolio</title>
-
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js" defer></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
 
     <link href="./style.css" rel="stylesheet" />
@@ -1436,7 +1436,8 @@
         </div>
       </div>
     </footer>
-
+<!-- scripts -->
+    <script src="./js/nav.js"></script>
     <script>
       var swiper = new Swiper(".mySwiper", {
         loop: true,
@@ -1461,12 +1462,13 @@
         },
       });
     </script>
-
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       lucide.createIcons();
       AOS.init();
+       const locomotiveScroll = new LocomotiveScroll();
     </script>
-    <script src="./js/nav.js"></script>
+    
   </body>
 </html>
