@@ -1816,6 +1816,12 @@
       color: color-mix(in oklab, var(--color-gray-900) 10%, transparent);
     }
   }
+  .text-slate-200 {
+    color: var(--color-slate-200);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
   .text-slate-400 {
     color: var(--color-slate-400);
   }
