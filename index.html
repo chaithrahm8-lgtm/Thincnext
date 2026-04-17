@@ -53,14 +53,8 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap"
-      rel="stylesheet"
-    />
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" defer></script>
     <link
       rel="stylesheet"
@@ -414,7 +408,7 @@
         class="container mx-auto px-4 flex flex-col items-center justify-center md:block md:mt-28 relative z-10"
       >
         <div class="text-center w-full">
-          <div data-aos="fade-left" data-aos-duration="1000">
+          <div data-aos="fade-down">
             <h1
               class="text-3xl md:text-6xl font-bold leading-tight tracking-tight"
             >
@@ -1240,15 +1234,18 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script>
-      // Initialize Locomtive
-      const locomotiveScroll = new LocomotiveScroll();
-
-      // Initialize Icons
+       // Initialize Icons
       lucide.createIcons();
 
       // Initialize AOS
       AOS.init({ once: true, duration: 1000 });
+      // Initialize Locomtive
+      const locomotiveScroll = new LocomotiveScroll();
+
+     
     </script>
 
     <script src="./js/script.js"></script>
