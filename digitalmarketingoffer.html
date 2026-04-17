@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
 
     <link href="./style.css" rel="stylesheet" />
     <link rel="stylesheet" href="./output.css" />
@@ -45,1041 +46,650 @@
           />
         </a>
 
-        <ul
-          class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold"
-        >
-          <li>
-            <a href="./index.html" class="hover:text-blue-500 transition-colors"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="./about.html" class="hover:text-blue-500 transition-colors"
-              >About</a
-            >
-          </li>
+      <ul class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold">
+        <li>
+          <a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a>
+        </li>
+        <li>
+          <a href="./about.html" class="hover:text-blue-500 transition-colors">About</a>
+        </li>
 
-          <li class="relative group">
-            <button
-              id="services-btn"
-              class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none"
-            >
-              Services
-              <svg
-                id="services-arrow"
-                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-
-            <ul
-              id="services-menu"
-              class="absolute top-8 left-0 mt-0 w-55 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
-            >
-              <li>
-                <a
-                  href="./technology.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Technology</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./digitalmarketing.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Digital Marketing</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./readymade.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Readymade Softwares</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a
-              href="./portfolio.html"
-              class="hover:text-blue-500 transition-colors"
-              >Portfolio</a
-            >
-          </li>
-
-          <li class="relative group">
-            <button
-              id="offer-btn"
-              class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none"
-            >
-              Offer
-              <svg
-                id="offer-arrow"
-                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-
-            <ul
-              id="offer-menu"
-              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-100 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
-            >
-              <li>
-                <a
-                  href="./digitalmarketingoffer.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Digital Marketing Offer</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./startupoffer.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Startup Offer</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a
-              href="./contact.html"
-              class="hover:text-blue-500 transition-colors"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
-
-        <div class="flex items-center gap-3 relative z-10">
-          <a
-            href="https://thincnext.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button
-              class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
-            >
-              Buy a Domain
-            </button>
-          </a>
-          <button
-            id="hamburger"
-            class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
-          >
-            <svg
-              class="w-7 h-7"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
+        <li class="relative group">
+          <button id="services-btn"
+            class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none">
+            Services
+            <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-        </div>
-      </nav>
 
-      <div
-        id="mobile-menu"
-        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50"
-      >
-        <a
-          href="./index.html"
-          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
-          >Home</a
-        >
-        <a
-          href="./about.html"
-          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
-          >About</a
-        >
+          <ul id="services-menu"
+            class="absolute top-8 left-0 mt-0 w-55 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+            <li>
+              <a href="./technology.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a>
+            </li>
+            <li>
+              <a href="./digitalmarketing.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
+                Marketing</a>
+            </li>
+            <li>
+              <a href="./readymade.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Readymade
+                Softwares</a>
+            </li>
+          </ul>
+        </li>
 
-        <details class="group">
-          <summary
-            class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden"
-          >
-            <span>Services</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="text-slate-400 transition-transform duration-300 group-open:-rotate-180"
-            >
-              <path d="m6 9 6 6 6-6" />
+        <li>
+          <a href="./portfolio.html" class="hover:text-blue-500 transition-colors">Portfolio</a>
+        </li>
+
+        <li class="relative group">
+          <button id="offer-btn"
+            class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+            Offer
+            <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
-          </summary>
-          <div class="flex flex-col gap-2 mt-3">
-            <a href="./technology.html" class="pl-4 py-1 text-slate-600"
-              >Technology</a
-            >
-            <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600"
-              >Digital Marketing</a
-            >
-            <a href="./readymade.html" class="pl-4 py-1 text-slate-600"
-              >Readymade softwares</a
-            >
-          </div>
-        </details>
+          </button>
 
-        <a
-          href="./portfolio.html"
-          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
-          >Portfolio</a
-        >
+          <ul id="offer-menu"
+            class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-100 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+            <li>
+              <a href="./digitalmarketingoffer.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
+                Marketing Offer</a>
+            </li>
+            <li>
+              <a href="./startupoffer.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup
+                Offer</a>
+            </li>
+          </ul>
+        </li>
 
-        <details class="group">
-          <summary
-            class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden"
-          >
-            <span>Offer</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="text-slate-400 transition-transform duration-300 group-open:-rotate-180"
-            >
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </summary>
-          <div class="flex flex-col gap-2 mt-3">
-            <a
-              href="./digitalmarketingoffer.html"
-              class="pl-4 py-1 text-slate-600"
-              >Digital Marketing Offer</a
-            >
-            <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600"
-              >Startup Offer</a
-            >
-          </div>
-        </details>
+        <li>
+          <a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a>
+        </li>
+      </ul>
 
-        <a
-          href="./contact.html"
-          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
-          >Contact Us</a
-        >
-
-        <a href="https://thincnext.in/">
+      <div class="flex items-center gap-3 relative z-10">
+        <a href="https://thincnext.in/" target="_blank" rel="noopener noreferrer">
           <button
-            class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl"
-          >
+            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer">
             Buy a Domain
           </button>
         </a>
+        <button id="hamburger"
+          class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
-    </header>
+    </nav>
 
-    <main class="">
-      <!--header section-->
-      <section
-        class="mx-auto px-4 min-h-screen sm:min-h-screen flex items-center sm:items-center justify-center sm:pt-32 lg:pb-20 lg:justify-start"
-      >
-        <div class="text-center w-full max-w-4xl mx-auto">
-          <!-- Heading -->
-          <div>
-            <h1 class="font-bold tracking-tight leading-snug md:leading-tight">
-              <span
-                class="gradient-text animate-color-flow block text-4xl sm:text-6xl md:text-7xl pb-2"
-              >
-                Digital Marketing Package
-              </span>
+    <div id="mobile-menu"
+      class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50">
+      <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800">Home</a>
+      <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800">About</a>
 
-              <span
-                class="font-light block mt-2 text-xl sm:text-lg md:text-2xl text-gray-500 px-2 sm:px-6 md:px-0"
-              >
-                Brand your Business online which reach maximum audience to gain
-                potential customers.
-              </span>
-            </h1>
-          </div>
-
-          <!-- Button -->
-          <div class="mt-6 sm:mt-8 md:mt-12">
-            <a
-              href="#offers"
-              class="inline-block relative group border-2 border-brand-primary text-brand-primary hover:text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base rounded-full font-semibold shadow-md hover:shadow-xl hover:bg-brand-primary transform hover:scale-105 transition-all duration-300 overflow-hidden"
-            >
-              <span class="relative z-10">Claim Offer</span>
-
-              <div
-                class="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
-              ></div>
-            </a>
-          </div>
+      <details class="group">
+        <summary
+          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden">
+          <span>Services</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-slate-400 transition-transform duration-300 group-open:-rotate-180">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <div class="flex flex-col gap-2 mt-3">
+          <a href="./technology.html" class="pl-4 py-1 text-slate-600">Technology</a>
+          <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600">Digital Marketing</a>
+          <a href="./readymade.html" class="pl-4 py-1 text-slate-600">Readymade softwares</a>
         </div>
-      </section>
+      </details>
 
-      <!-- offers section -->
-      <section
-        id="offers"
-        class="max-w-7xl mx-auto flex flex-col lg:gap-20 sm:gap-15 lg:mt-4 md:mt-4 mb-4"
-      >
-        <div data-aos="fade-up" data-aos-duration="2000">
-          <p
-            class="text-center font-bold text-4xl sm:text-4xl md:text-5xl pt-4 pb-2"
-          >
-            Packages
-          </p>
+      <a href="./portfolio.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800">Portfolio</a>
 
-          <p
-            class="text-center text-gray-600 text-base sm:text-4xl md:text-lg px-4 md:px-0"
-          >
-            Reach Your Business To Targeted & Potential Online Customers.
-          </p>
+      <details class="group">
+        <summary
+          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden">
+          <span>Offer</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-slate-400 transition-transform duration-300 group-open:-rotate-180">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <div class="flex flex-col gap-2 mt-3">
+          <a href="./digitalmarketingoffer.html" class="pl-4 py-1 text-slate-600">Digital Marketing Offer</a>
+          <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600">Startup Offer</a>
         </div>
+      </details>
 
-        <!-- offers card section -->
+      <a href="./contact.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800">Contact Us</a>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
-          <!-- Basic -->
-          <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl border-2 border-gray-300"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            <h3
-              class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4"
-            >
-              Basic
-            </h3>
-            <div class="mb-6">
-              <span class="text-4xl font-bold">₹14,999.00</span
-              ><span class="text-slate-400 text-sm">/mo</span>
-            </div>
+      <a href="https://thincnext.in/">
+        <button class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl">
+          Buy a Domain
+        </button>
+      </a>
+    </div>
+  </header>
 
-            <ul class="space-y-4 my-8 text-md text-slate-600 grow">
-              <li class="flex font-bold">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Social Media Handles
-              </li>
-              <li class="flex font-bold">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i
-                >Facebook | Instagram | X
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">20 Monthly</span> Posts </span>
-              </li>
-
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Content </span>Creation </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Analytics</span> Research </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Insight</span> Reports </span>
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Geo Based Social SEO
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                1 Email NewsLetter
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                24/7 Support Via Phone & EMail
-              </li>
-            </ul>
-            <div class="flex justify-center">
-              <!--  <a href="https://paytm.me/wbyK-bJ" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
-              <form>
-                <script
-                  src="https://checkout.razorpay.com/v1/payment-button.js"
-                  data-payment_button_id="pl_LzmFmzaOyUjf2m"
-                  async
-                ></script>
-              </form>
-            </div>
-          </div>
-
-          <!-- Standard -->
-          <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl border-2 border-gray-300"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            <h3
-              class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4"
-            >
-              Standard
-            </h3>
-            <div class="mb-6">
-              <span class="text-4xl font-bold">₹24,999.00</span
-              ><span class="text-slate-400 text-sm">/mo</span>
-            </div>
-
-            <ul class="space-y-4 my-8 text-md text-slate-600 grow">
-              <li class="flex font-bold">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Social Media Handles
-              </li>
-              <li class="flex font-bold">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i
-                >Facebook | Instagram | X
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">WhatsApp</span> Business Catalogue
-                </span>
-              </li>
-
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">25 monthly </span>posts </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Google</span> Adwords campaign
-                </span>
-              </li>
-
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Sponsered </span>Ad Campaign
-                </span>
-              </li>
-
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Content </span>creation </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Analytics</span> Research </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Insight</span> Reports </span>
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Local SEO
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Geo Based Social SEO
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                3 Email NewsLetter
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                24/7 Support Via Phone & EMail
-              </li>
-            </ul>
-
-            <div class="flex justify-center">
-              <!--<a href="https://paytm.me/zK-KxUT" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
-              <form>
-                <script
-                  src="https://checkout.razorpay.com/v1/payment-button.js"
-                  data-payment_button_id="pl_LzmGusFjokMGMi"
-                  async
-                ></script>
-              </form>
-            </div>
-          </div>
-
-          <!--Professional-->
-          <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl ring-2 ring-brand-primary relative lg:translate-y-0"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            <div
-              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest"
-            >
-              Best Selling
-            </div>
-            <h3
-              class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4"
-            >
-              Professional
-            </h3>
-            <div class="mb-6">
-              <span class="text-4xl font-bold">₹59,999.00</span
-              ><span class="text-slate-400 text-sm">/mo</span>
-            </div>
-
-            <ul class="space-y-4 my-8 text-md text-slate-600 grow">
-              <li class="flex font-bold">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Social Media Handles
-              </li>
-              <li class="flex font-bold">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i
-                >Facebook | Instagram | X | Quora
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">WhatsApp</span> Business Catalogue
-                </span>
-              </li>
-
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">35 monthly </span>posts </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Lead Generation </span>Campaign
-                </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Google</span> Adwords campaign
-                </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Google</span> Analytics </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Quora</span> QA's </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Sponsered</span> Ad campaign
-                </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Content</span> Creation </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Analytics</span> Research </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Insight</span> Reports </span>
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Local SEO
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Geo Based Social SEO
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                5 Email NewsLetter
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                24/7 Support Via Phone & EMail
-              </li>
-            </ul>
-
-            <div class="flex justify-center">
-              <!-- <a href="https://paytm.me/H-3TrLf" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
-              <form>
-                <script
-                  src="https://checkout.razorpay.com/v1/payment-button.js"
-                  data-payment_button_id="pl_LzmI4ibfcm36Di"
-                  async
-                ></script>
-              </form>
-            </div>
-          </div>
-
-          <!-- Premium -->
-          <div
-            class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl border-2 border-gray-300"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            <h3
-              class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4"
-            >
-              Premium
-            </h3>
-            <div class="mb-6">
-              <span class="text-4xl font-bold">₹89,999.00</span
-              ><span class="text-slate-400 text-sm">/mo</span>
-            </div>
-
-            <ul class="space-y-4 my-8 text-md text-slate-600 grow">
-              <li class="flex font-bold">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Social Media Handles
-              </li>
-              <li class="flex font-bold">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i
-                >Facebook | Instagram | X | Quora
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">WhatsApp</span> Business Catalogue
-                </span>
-              </li>
-
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">45 monthly </span>posts </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Lead Generation </span>Campaign
-                </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Google</span> Adwords campaign
-                </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Youtube</span> Adwords campaign
-                </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Google</span> Analytics</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Quora </span> QA's </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span>
-                  <span class="font-bold">Sponsered</span> Ad campaign
-                </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Content</span> Creation </span>
-              </li>
-
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Analytics</span> Research </span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                <span> <span class="font-bold">Insight</span> Reports </span>
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Local SEO
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                Geo Based Social SEO
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                7 Email NewsLetter
-              </li>
-              <li class="flex">
-                <i
-                  data-lucide="check"
-                  class="text-brand-primary mr-2 h-5 w-5"
-                ></i>
-                24/7 Support Via Phone & EMail
-              </li>
-            </ul>
-
-            <div class="flex justify-center">
-              <!--  <a href="https://paytm.me/hb-TrLf" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
-              <form>
-                <script
-                  src="https://checkout.razorpay.com/v1/payment-button.js"
-                  data-payment_button_id="pl_LzmJ4qoFHJYv5m"
-                  async
-                ></script>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer
-      class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12"
-      >
-        <div class="flex flex-col gap-6">
-          <div class="flex justify-center items-center">
-            <img
-              src="./assest/Logo/Thincnext_white.png"
-              alt="Thincnext Logo"
-              class="h-10 md:h-12 w-auto object-contain"
-            />
-          </div>
-          <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-            Before we get creative or put a digital solution in place, we take
-            the time to fully understand your brand, project & the people its
-            intended for.
-          </p>
-        </div>
-
-        <div class="flex flex-col gap-4 mt-2">
-          <div class="flex items-start gap-3 group cursor-default">
-            <i
-              data-lucide="map-pin"
-              class="w-5 h-5 text-brand-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm text-slate-400 leading-relaxed">
-              #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige
-              Road),<br />
-              Malleshwaram, Bengaluru - 560003
+  <main class="">
+    <!--header section-->
+    <section
+      class="mx-auto px-4 min-h-screen sm:min-h-screen flex items-center sm:items-center justify-center sm:pt-32 lg:pb-20 lg:justify-start">
+      <div class="text-center w-full max-w-4xl mx-auto">
+        <!-- Heading -->
+        <div>
+          <h1 class="font-bold tracking-tight leading-snug md:leading-tight">
+            <span class="gradient-text animate-color-flow block text-4xl sm:text-6xl md:text-7xl pb-2">
+              Digital Marketing Package
             </span>
-          </div>
-          <div
-            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
-          >
-            <i
-              data-lucide="phone"
-              class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm text-slate-400">+91 96115 04567</span>
-          </div>
-          <div
-            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
-          >
-            <i
-              data-lucide="mail"
-              class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm text-slate-400">sales@thincnext.com</span>
-          </div>
+
+            <span class="font-light block mt-2 text-xl sm:text-lg md:text-2xl text-gray-500 px-2 sm:px-6 md:px-0">
+              Brand your Business online which reach maximum audience to gain
+              potential customers.
+            </span>
+          </h1>
         </div>
 
-        <div class="flex flex-col gap-3 md:pl-8">
-          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
-            Quick links
-          </h3>
-          <ul class="flex flex-col gap-1">
-            <li>
-              <a
-                href="./about.html"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="./career.html"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >Career</a
-              >
-            </li>
-            <li>
-              <a
-                href="./portfolio.html"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >Portfolio</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >Terms & condition</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >Privacy policy</a
-              >
-            </li>
-          </ul>
-        </div>
+        <!-- Button -->
+        <div class="mt-6 sm:mt-8 md:mt-12">
+          <a href="#offers"
+            class="inline-block relative group border-2 border-brand-primary text-brand-primary hover:text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base rounded-full font-semibold shadow-md hover:shadow-xl hover:bg-brand-primary transform hover:scale-105 transition-all duration-300 overflow-hidden">
+            <span class="relative z-10">Claim Offer</span>
 
-        <div class="flex flex-col gap-6">
-          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
-            Connect us
-          </h3>
-          <ul class="flex flex-row items-center gap-5">
-            <li>
-              <a
-                href="https://www.facebook.com/Thincnext/"
-                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
-              >
-                <i class="fa-brands fa-facebook text-3xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://x.com/thincnext"
-                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
-              >
-                <i class="fa-brands fa-x-twitter text-3xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/thincnext"
-                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
-              >
-                <i class="fa-brands fa-instagram text-3xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/thincnext/posts/?feedView=all"
-                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
-              >
-                <i class="fa-brands fa-linkedin text-3xl"></i>
-              </a>
-            </li>
-          </ul>
+            <div
+              class="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out">
+            </div>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="flex justify-center pb-6">
-        <a
-          href="https://www.dmca.com/Protection/Status.aspx?ID=54630ed5-cab2-434a-85ab-4c77b43da9bf&refurl=https://www.thincnext.com/"
-        >
-          <img
-            src="./assest/images/dmca_protected_12_120.png"
-            alt="DMCA Protected"
-            class="h-8 opacity-80"
-          />
-        </a>
+    <!-- offers section -->
+    <section id="offers" class="max-w-7xl mx-auto flex flex-col lg:gap-20 sm:gap-15 lg:mt-4 md:mt-4 mb-4">
+      <div data-aos="fade-up" data-aos-duration="2000">
+        <p class="text-center font-bold text-4xl sm:text-4xl md:text-5xl pt-4 pb-2">
+          Packages
+        </p>
+
+        <p class="text-center text-gray-600 text-base sm:text-4xl md:text-lg px-4 md:px-0">
+          Reach Your Business To Targeted & Potential Online Customers.
+        </p>
       </div>
 
-      <div
-        class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-primary/20 to-transparent"
-      >
+      <!-- offers card section -->
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+        <!-- Basic -->
+        <div class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl border-2 border-gray-300" data-aos="fade-up"
+          data-aos-duration="2000">
+          <h3 class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4">
+            Basic
+          </h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">₹14,999.00</span><span class="text-slate-400 text-sm">/mo</span>
+          </div>
+
+          <ul class="space-y-4 my-8 text-md text-slate-600 grow">
+            <li class="flex font-bold">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Social Media Handles
+            </li>
+            <li class="flex font-bold">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>Facebook | Instagram | X
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">20 Monthly</span> Posts </span>
+            </li>
+
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Content </span>Creation </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Analytics</span> Research </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Insight</span> Reports </span>
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Geo Based Social SEO
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              1 Email NewsLetter
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              24/7 Support Via Phone & EMail
+            </li>
+          </ul>
+          <div class="flex justify-center">
+            <!--  <a href="https://paytm.me/wbyK-bJ" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
+            <form>
+              <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_LzmFmzaOyUjf2m" async></script>
+            </form>
+          </div>
+        </div>
+
+        <!-- Standard -->
+        <div class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl border-2 border-gray-300" data-aos="fade-up"
+          data-aos-duration="2000">
+          <h3 class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4">
+            Standard
+          </h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">₹24,999.00</span><span class="text-slate-400 text-sm">/mo</span>
+          </div>
+
+          <ul class="space-y-4 my-8 text-md text-slate-600 grow">
+            <li class="flex font-bold">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Social Media Handles
+            </li>
+            <li class="flex font-bold">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>Facebook | Instagram | X
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">WhatsApp</span> Business Catalogue
+              </span>
+            </li>
+
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">25 monthly </span>posts </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Google</span> Adwords campaign
+              </span>
+            </li>
+
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Sponsered </span>Ad Campaign
+              </span>
+            </li>
+
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Content </span>creation </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Analytics</span> Research </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Insight</span> Reports </span>
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Local SEO
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Geo Based Social SEO
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              3 Email NewsLetter
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              24/7 Support Via Phone & EMail
+            </li>
+          </ul>
+
+          <div class="flex justify-center">
+            <!--<a href="https://paytm.me/zK-KxUT" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
+            <form>
+              <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_LzmGusFjokMGMi" async></script>
+            </form>
+          </div>
+        </div>
+
+        <!--Professional-->
         <div
-          class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400"
-        >
-          <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
+          class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl ring-2 ring-brand-primary relative lg:translate-y-0"
+          data-aos="fade-up" data-aos-duration="2000">
+          <div
+            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
+            Best Selling
+          </div>
+          <h3 class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4">
+            Professional
+          </h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">₹59,999.00</span><span class="text-slate-400 text-sm">/mo</span>
+          </div>
+
+          <ul class="space-y-4 my-8 text-md text-slate-600 grow">
+            <li class="flex font-bold">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Social Media Handles
+            </li>
+            <li class="flex font-bold">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>Facebook | Instagram | X | Quora
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">WhatsApp</span> Business Catalogue
+              </span>
+            </li>
+
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">35 monthly </span>posts </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Lead Generation </span>Campaign
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Google</span> Adwords campaign
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Google</span> Analytics </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Quora</span> QA's </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Sponsered</span> Ad campaign
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Content</span> Creation </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Analytics</span> Research </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Insight</span> Reports </span>
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Local SEO
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Geo Based Social SEO
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              5 Email NewsLetter
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              24/7 Support Via Phone & EMail
+            </li>
+          </ul>
+
+          <div class="flex justify-center">
+            <!-- <a href="https://paytm.me/H-3TrLf" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
+            <form>
+              <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_LzmI4ibfcm36Di" async></script>
+            </form>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="glass p-8 rounded-3xl flex flex-col hover:shadow-xl border-2 border-gray-300" data-aos="fade-up"
+          data-aos-duration="2000">
+          <h3 class="text-brand-primary font-bold uppercase text-xs tracking-widest mb-4">
+            Premium
+          </h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">₹89,999.00</span><span class="text-slate-400 text-sm">/mo</span>
+          </div>
+
+          <ul class="space-y-4 my-8 text-md text-slate-600 grow">
+            <li class="flex font-bold">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Social Media Handles
+            </li>
+            <li class="flex font-bold">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>Facebook | Instagram | X | Quora
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">WhatsApp</span> Business Catalogue
+              </span>
+            </li>
+
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">45 monthly </span>posts </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Lead Generation </span>Campaign
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Google</span> Adwords campaign
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Youtube</span> Adwords campaign
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Google</span> Analytics</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Quora </span> QA's </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span>
+                <span class="font-bold">Sponsered</span> Ad campaign
+              </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Content</span> Creation </span>
+            </li>
+
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Analytics</span> Research </span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              <span> <span class="font-bold">Insight</span> Reports </span>
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Local SEO
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              Geo Based Social SEO
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              7 Email NewsLetter
+            </li>
+            <li class="flex">
+              <i data-lucide="check" class="text-brand-primary mr-2 h-5 w-5"></i>
+              24/7 Support Via Phone & EMail
+            </li>
+          </ul>
+
+          <div class="flex justify-center">
+            <!--  <a href="https://paytm.me/hb-TrLf" class="btn"><i class="fa fa-shopping-cart"></i> Buy Now</a>-->
+            <form>
+              <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_LzmJ4qoFHJYv5m" async></script>
+            </form>
+          </div>
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+  <footer
+    class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
+      <div class="flex flex-col gap-6">
+        <div class="flex justify-center items-center">
+          <img src="./assest/Logo/Thincnext_white.png" alt="Thincnext Logo"
+            class="h-10 md:h-12 w-auto object-contain" />
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+          Before we get creative or put a digital solution in place, we take
+          the time to fully understand your brand, project & the people its
+          intended for.
+        </p>
+      </div>
 
-    <script>
-      lucide.createIcons();
-      AOS.init();
-      const locomotiveScroll = new LocomotiveScroll();
-    </script>
-    <script src="./js/nav.js"></script>
-  </body>
+      <div class="flex flex-col gap-4 mt-2">
+        <div class="flex items-start gap-3 group cursor-default">
+          <i data-lucide="map-pin"
+            class="w-5 h-5 text-brand-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400 leading-relaxed">
+            #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige
+            Road),<br />
+            Malleshwaram, Bengaluru - 560003
+          </span>
+        </div>
+        <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+          <i data-lucide="phone"
+            class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400">+91 96115 04567</span>
+        </div>
+        <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+          <i data-lucide="mail"
+            class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400">sales@thincnext.com</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3 md:pl-8">
+        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
+          Quick links
+        </h3>
+        <ul class="flex flex-col gap-1">
+          <li>
+            <a href="./about.html" class="text-sm text-slate-400 hover:text-brand-primary transition-all">About</a>
+          </li>
+          <li>
+            <a href="./career.html" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Career</a>
+          </li>
+          <li>
+            <a href="./portfolio.html"
+              class="text-sm text-slate-400 hover:text-brand-primary transition-all">Portfolio</a>
+          </li>
+          <li>
+            <a href="#" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Terms & condition</a>
+          </li>
+          <li>
+            <a href="#" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Privacy policy</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
+          Connect us
+        </h3>
+        <ul class="flex flex-row items-center gap-5">
+          <li>
+            <a href="https://www.facebook.com/Thincnext/"
+              class="text-white hover:text-[#1c8cc1] transition-colors duration-300">
+              <i class="fa-brands fa-facebook text-3xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/thincnext" class="text-white hover:text-[#1c8cc1] transition-colors duration-300">
+              <i class="fa-brands fa-x-twitter text-3xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/thincnext"
+              class="text-white hover:text-[#1c8cc1] transition-colors duration-300">
+              <i class="fa-brands fa-instagram text-3xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/thincnext/posts/?feedView=all"
+              class="text-white hover:text-[#1c8cc1] transition-colors duration-300">
+              <i class="fa-brands fa-linkedin text-3xl"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex justify-center pb-6">
+      <a
+        href="https://www.dmca.com/Protection/Status.aspx?ID=54630ed5-cab2-434a-85ab-4c77b43da9bf&refurl=https://www.thincnext.com/">
+        <img src="./assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80" />
+      </a>
+    </div>
+
+    <div
+      class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-primary/20 to-transparent">
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
+        <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+
+  <script>
+    lucide.createIcons();
+    AOS.init();
+    const locomotiveScroll = new LocomotiveScroll();
+  </script>
+  <script src="./js/nav.js"></script>
+</body>
+
 </html>
