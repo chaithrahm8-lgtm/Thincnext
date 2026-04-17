@@ -1,940 +1,250 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thincnext - Portfolio</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thincnext - Portfolio</title>
+  <meta name="description" content="thincnext - Clients">
+  <meta name="keywords"
+    content="digital company, thincnext, bangalore website company, thinknext, website companies, web, digital companies in karnataka, web companies in bangalore, bengaluru, website development companies in bengaluru, bengaluru digital companies, digital technology companies, software companies, software companies in bengaluru, software company in bangalore, software companies in bengaluru, website development companies in bengaluru, website development companies in bangalore, digital marketing, digital marketing companies, digital marketing company in bangalore, digital marketing companies in bengaluru, digital marketing course, thincnext, tstudios, the escape plan, widlcraft, bounce, bcp, bangalore city police, mobile app development company, mobile app companies in bangalore">
 
-    <link href="./style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
 
-    <style>
-      /* Premium Card Effects */
-      .mySwiper {
-        width: 100%;
-      }
+  <link href="./style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./output.css" />
 
-      .premium-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(226, 232, 240, 0.8);
-        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      }
+  <style>
+    /* Premium Card Effects */
+    .mySwiper {
+      width: 100%;
+    }
 
-      .premium-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        border-color: #1c8cc1;
-        background: rgba(255, 255, 255, 1);
-        box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
-      }
+    .premium-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
-      /* Logo Glow */
-      .logo-glow {
-        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.2));
-        transition: all 0.4s ease;
-      }
+    .premium-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: #1c8cc1;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
+    }
 
-      .premium-card:hover .logo-glow {
-        filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4));
-        filter: grayscale(0);
-      }
-    </style>
-  </head>
+    /* Logo Glow */
+    .logo-glow {
+      filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.2));
+      transition: all 0.4s ease;
+    }
 
-  <body class="bg-gray-100">
-    <header
-      class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
-      id="navbar"
-    >
-      <nav
-        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
-      >
-        <a href="./index.html" class="relative z-60 flex items-center p-0">
-          <img
-            src="./assest/Logo/thincnextlogo1.png"
-            alt="Logo"
-            class="h-8 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
-          />
-        </a>
+    .premium-card:hover .logo-glow {
+      filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4));
+      filter: grayscale(0);
+    }
+  </style>
+</head>
 
-        <ul
-          class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold"
-        >
-          <li>
-            <a href="./index.html" class="hover:text-blue-500 transition-colors"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a href="./about.html" class="hover:text-blue-500 transition-colors"
-              >About</a
-            >
-          </li>
+<body class="bg-gray-100">
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300" id="navbar">
+    <nav
+      class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl">
+      <a href="./index.html" class="relative z-60 flex items-center p-0">
+        <img src="./assest/Logo/thincnextlogo1.png" alt="Logo"
+          class="h-8 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300" />
+      </a>
 
-          <li class="relative group">
-            <button
-              id="services-btn"
-              class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none"
-            >
-              Services
-              <svg
-                id="services-arrow"
-                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
+      <ul class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold">
+        <li>
+          <a href="./index.html" class="hover:text-blue-500 transition-colors">Home</a>
+        </li>
+        <li>
+          <a href="./about.html" class="hover:text-blue-500 transition-colors">About</a>
+        </li>
 
-            <ul
-              id="services-menu"
-              class="absolute top-8 left-0 mt-0 w-55 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
-            >
-              <li>
-                <a
-                  href="./technology.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Technology</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./digitalmarketing.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Digital Marketing</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./readymade.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Readymade Softwares</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a
-              href="./portfolio.html"
-              class="hover:text-blue-500 transition-colors"
-              >Portfolio</a
-            >
-          </li>
-
-          <li class="relative group">
-            <button
-              id="offer-btn"
-              class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none"
-            >
-              Offer
-              <svg
-                id="offer-arrow"
-                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </button>
-
-            <ul
-              id="offer-menu"
-              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-99 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
-            >
-              <li>
-                <a
-                  href="./digitalmarketingoffer.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Digital Marketing Offer</a
-                >
-              </li>
-              <li>
-                <a
-                  href="./startupoffer.html"
-                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
-                  >Startup Offer</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a
-              href="./contact.html"
-              class="hover:text-blue-500 transition-colors"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
-
-        <div class="flex items-center gap-3 relative z-10">
-          <a
-            href="https://thincnext.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button
-              class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
-            >
-              Buy a Domain
-            </button>
-          </a>
-          <button
-            id="hamburger"
-            class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
-          >
-            <svg
-              class="w-7 h-7"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
+        <li class="relative group">
+          <button id="services-btn"
+            class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none">
+            Services
+            <svg id="services-arrow" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-        </div>
-      </nav>
 
-      <div
-        id="mobile-menu"
-        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50"
-      >
-        <a
-          href="./index.html"
-          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
-          >Home</a
-        >
-        <a
-          href="./about.html"
-          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
-          >About</a
-        >
+          <ul id="services-menu"
+            class="absolute top-8 left-0 mt-0 w-55 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+            <li>
+              <a href="./technology.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Technology</a>
+            </li>
+            <li>
+              <a href="./digitalmarketing.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
+                Marketing</a>
+            </li>
+            <li>
+              <a href="./readymade.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Readymade
+                Softwares</a>
+            </li>
+          </ul>
+        </li>
 
-        <details class="group">
-          <summary
-            class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden"
-          >
-            <span>Services</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="text-slate-400 transition-transform duration-300 group-open:-rotate-180"
-            >
-              <path d="m6 9 6 6 6-6" />
+        <li>
+          <a href="./portfolio.html" class="hover:text-blue-500 transition-colors">Portfolio</a>
+        </li>
+
+        <li class="relative group">
+          <button id="offer-btn"
+            class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none">
+            Offer
+            <svg id="offer-arrow" class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
-          </summary>
-          <div class="flex flex-col gap-2 mt-3">
-            <a href="./technology.html" class="pl-4 py-1 text-slate-600"
-              >Technology</a
-            >
-            <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600"
-              >Digital Marketing</a
-            >
-            <a href="./readymade.html" class="pl-4 py-1 text-slate-600"
-              >Readymade softwares</a
-            >
-          </div>
-        </details>
+          </button>
 
-        <a
-          href="./portfolio.html"
-          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
-          >Portfolio</a
-        >
+          <ul id="offer-menu"
+            class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-99 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+            <li>
+              <a href="./digitalmarketingoffer.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Digital
+                Marketing Offer</a>
+            </li>
+            <li>
+              <a href="./startupoffer.html"
+                class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors">Startup
+                Offer</a>
+            </li>
+          </ul>
+        </li>
 
-        <details class="group">
-          <summary
-            class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden"
-          >
-            <span>Offer</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="text-slate-400 transition-transform duration-300 group-open:-rotate-180"
-            >
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </summary>
-          <div class="flex flex-col gap-2 mt-3">
-            <a
-              href="./digitalmarketingoffer.html"
-              class="pl-4 py-1 text-slate-600"
-              >Digital Marketing Offer</a
-            >
-            <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600"
-              >Startup Offer</a
-            >
-          </div>
-        </details>
+        <li>
+          <a href="./contact.html" class="hover:text-blue-500 transition-colors">Contact Us</a>
+        </li>
+      </ul>
 
-        <a
-          href="./contact.html"
-          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
-          >Contact Us</a
-        >
-
-        <a href="https://thincnext.in/">
+      <div class="flex items-center gap-3 relative z-10">
+        <a href="https://thincnext.in/" target="_blank" rel="noopener noreferrer">
           <button
-            class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl"
-          >
+            class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer">
             Buy a Domain
           </button>
         </a>
+        <button id="hamburger"
+          class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
-    </header>
+    </nav>
 
-    <section class="p-6 md:p-10 mt-24 overflow-hidden">
-      <div class="mb-12">
-        <h1
-          class="text-4xl md:text-6xl font-bold gradient-text animate-color-flow text-center mb-4"
-        >
-          Clientele
-        </h1>
-        <h3 class="text-center text-slate-500 text-lg">Our Esteemed Clients</h3>
-      </div>
+    <div id="mobile-menu"
+      class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50">
+      <a href="./index.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800">Home</a>
+      <a href="./about.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800">About</a>
 
-      <div class="space-y-4 md:space-y-16 w-full">
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100 flex items-center justify-center"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/RCB.png" alt="Rcb"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/Aditya Birla.png" alt="Aditya Birla"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/Asianpaints.png" alt="Asianpaints"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/star.png" alt="star"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/kawasaki.png" alt="kawasaki"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/Jaguar.png" alt="Jaguar"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
+      <details class="group">
+        <summary
+          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden">
+          <span>Services</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-slate-400 transition-transform duration-300 group-open:-rotate-180">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <div class="flex flex-col gap-2 mt-3">
+          <a href="./technology.html" class="pl-4 py-1 text-slate-600">Technology</a>
+          <a href="./digitalmarketing.html" class="pl-4 py-1 text-slate-600">Digital Marketing</a>
+          <a href="./readymade.html" class="pl-4 py-1 text-slate-600">Readymade softwares</a>
+        </div>
+      </details>
+
+      <a href="./portfolio.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800">Portfolio</a>
+
+      <details class="group">
+        <summary
+          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden">
+          <span>Offer</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="text-slate-400 transition-transform duration-300 group-open:-rotate-180">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </summary>
+        <div class="flex flex-col gap-2 mt-3">
+          <a href="./digitalmarketingoffer.html" class="pl-4 py-1 text-slate-600">Digital Marketing Offer</a>
+          <a href="./startupoffer.html" class="pl-4 py-1 text-slate-600">Startup Offer</a>
+        </div>
+      </details>
+
+      <a href="./contact.html" class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800">Contact Us</a>
+
+      <a href="https://thincnext.in/">
+        <button class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl">
+          Buy a Domain
+        </button>
+      </a>
+    </div>
+  </header>
+
+  <section class="p-6 md:p-10 mt-24 overflow-hidden">
+    <div class="mb-12">
+      <h1 class="text-4xl md:text-6xl font-bold gradient-text animate-color-flow text-center mb-4">
+        Clientele
+      </h1>
+      <h3 class="text-center text-slate-500 text-lg">Our Esteemed Clients</h3>
+    </div>
+
+    <div class="space-y-4 md:space-y-16 w-full">
+      <div data-aos="fade-up">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-4">
+              <div
+                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100 flex items-center justify-center">
+                <img loading="lazy" src="./assest/client/RCB.png" alt="Rcb"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/t20 times.png" alt="times"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/royal enfieled.png" alt="royal enfield"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/wildcraft.png" alt="wildcraft"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/mediawork.png" alt="mediawork"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/banglore city clg.png" alt="banglore city"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/LPG.png" alt="LPG"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/Aditya Birla.png" alt="Aditya Birla"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/reva.png" alt="reva"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/fox.png" alt="fox"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/palmont.png" alt="palmont"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/organic eraa.png" alt="organic eraa"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/RK Group.png" alt="RK Group"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/bjp.png" alt="bjp"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/Asianpaints.png" alt="Asianpaints"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/congress.png" alt="congress"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/jds.png" alt="jds"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/MCBL.png" alt="MCBL"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/music.png" alt="music"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/bhoomee.png" alt="bhoomee"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/bounce.png" alt="bounce"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/star.png" alt="star"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/Waves.png" alt="Waves"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/palladium.png" alt="palladium"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/feedneedy.png" alt="feedneedy"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/oasi capital.png" alt="capital"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/amazing holidays.png" alt="amazing holidays"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/inmarc.png" alt="inmarc"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/kawasaki.png" alt="kawasaki"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/strings.png" alt="strings"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/higher.png" alt="higher"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/mathrutva.png" alt="mathrutva"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/wisepuppet.png" alt="wisepuppet"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/karnataka football.png" alt="karnataka football"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/jai hindu.png" alt="jai hindu"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/koskii.png" alt="koskii"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/escapePlan.png" alt="escape plan"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/vibrantMysore.png" alt="vibrantMysore"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/Dr. vijaya.png" alt="dr.vijaya"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/Jai savidhana.png" alt="jai savidhana"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/karnataka Lingayat.png" alt="karnataka Lingayat"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/rjf.png" alt="rjf"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/rohit.png" alt="rohit"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/reride.png" alt="reride"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/natures.png" alt="natures"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/AV STUDIO.png" al="av STUDIO"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/alma news24.png" alt="alma news24"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy" 
-                    src="./assest/client/manjari.png" alt=" manjari"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/proz.png" alt="proz"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/MKW.png" alt="MKW"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/janata media.png" alt="janata media"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/86.png" alt="winner trust"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
-              </div>
-              <div class="swiper-slide p-4">
-                <div
-                  class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-                >
-                  <img  loading="lazy"
-                    src="./assest/client/leade cinemas.png" alt="leade cinemas"
-                    class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                  />
-                </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/Jaguar.png" alt="Jaguar"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
           </div>
@@ -945,63 +255,39 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/sage.png" alt="sage"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/t20 times.png" alt="times"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/sankalpa.png" alt="sankalpa"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/royal enfieled.png" alt="royal enfield"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/seva sankar.png" alt="seva sankar"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/wildcraft.png" alt="wildcraft"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/skyvik.png" alt="skyvik"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/mediawork.png" alt="mediawork"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/sridharkrupa.png" alt="sridharkrupa"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/banglore city clg.png" alt="banglore city"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/Shree Krishna.png" alt="Shree Krishna"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/LPG.png" alt="LPG"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
           </div>
@@ -1012,63 +298,39 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/summer hill spa.png" alt="summer hill spa"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/reva.png" alt="reva"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/the social dugout.png" alt="the social dugout"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/fox.png" alt="fox"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/kcc.png" alt="kcc"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/palmont.png" alt="palmont"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/kannika bangles.png" alt="kannika bangalore"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/organic eraa.png" alt="organic eraa"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/karnataka janapada.png" alt="karnataka janapada
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/RK Group.png" alt="RK Group"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/bescom.png" alt=" bescom"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/bjp.png" alt="bjp"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
           </div>
@@ -1079,63 +341,39 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/Bounce2.png" alt="Bounce2"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/congress.png" alt="congress"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/damro.png" alt="damro"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/jds.png" alt="jds"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/davanam.png" alt="davanam"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/MCBL.png" alt="MCBL"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/dice360.png" alt="dice360"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/music.png" alt="music"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/divas.png" alt="divas"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/bhoomee.png" alt="bhoomee"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/estd.png" alt="estd"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/bounce.png" alt="bounce"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
           </div>
@@ -1146,63 +384,39 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/vojf.png" alt="vojf"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/Waves.png" alt="Waves"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/iskcon.png" alt="iskcon"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/palladium.png" alt="palladium"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/only chicken.png" alt="only chicken"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/feedneedy.png" alt="feedneedy"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/organic world.png" alt="organic world"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/oasi capital.png" alt="capital"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/OTLA.png" alt="OTLA"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/amazing holidays.png" alt="amazing holidays"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/oshee.png" alt="oshee"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/inmarc.png" alt="inmarc"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
           </div>
@@ -1213,260 +427,532 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/KFCC.png" alt="KFCC"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/strings.png" alt="strings"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/KFPA.png" al="KFPA"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/higher.png" alt="higher"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/WS.png" al="WS"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/mathrutva.png" alt="mathrutva"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/vijaya clg mulki.png" al="vijaya clg mulki"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/wisepuppet.png" alt="wisepuppet"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/vanilla.png" alt="vanilla"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/karnataka football.png" alt="karnataka football"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
             <div class="swiper-slide p-4">
-              <div
-                class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100"
-              >
-                <img  loading="lazy"
-                  src="./assest/client/news kannada24.png" alt="news kannada24"
-                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow"
-                />
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/jai hindu.png" alt="jai hindu"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <footer
-      class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden"
-    >
+      <div data-aos="fade-up">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/koskii.png" alt="koskii"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/escapePlan.png" alt="escape plan"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/vibrantMysore.png" alt="vibrantMysore"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/Dr. vijaya.png" alt="dr.vijaya"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/Jai savidhana.png" alt="jai savidhana"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/karnataka Lingayat.png" alt="karnataka Lingayat"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-up">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/rjf.png" alt="rjf"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/rohit.png" alt="rohit"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/reride.png" alt="reride"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/natures.png" alt="natures"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/AV STUDIO.png" al="av STUDIO"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/alma news24.png" alt="alma news24"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-up">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/manjari.png" alt=" manjari"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/proz.png" alt="proz"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/MKW.png" alt="MKW"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/janata media.png" alt="janata media"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/86.png" alt="winner trust"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+            <div class="swiper-slide p-4">
+              <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+                <img loading="lazy" src="./assest/client/leade cinemas.png" alt="leade cinemas"
+                  class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/sage.png" alt="sage"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/sankalpa.png" alt="sankalpa"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/seva sankar.png" alt="seva sankar"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/skyvik.png" alt="skyvik"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/sridharkrupa.png" alt="sridharkrupa"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/Shree Krishna.png" alt="Shree Krishna"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/summer hill spa.png" alt="summer hill spa"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/the social dugout.png" alt="the social dugout"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/kcc.png" alt="kcc"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/kannika bangles.png" alt="kannika bangalore"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/karnataka janapada.png" alt="karnataka janapada
+                  class=" h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500
+                logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/bescom.png" alt=" bescom"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/Bounce2.png" alt="Bounce2"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/damro.png" alt="damro"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/davanam.png" alt="davanam"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/dice360.png" alt="dice360"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/divas.png" alt="divas"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/estd.png" alt="estd"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/vojf.png" alt="vojf"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/iskcon.png" alt="iskcon"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/only chicken.png" alt="only chicken"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/organic world.png" alt="organic world"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/OTLA.png" alt="OTLA"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/oshee.png" alt="oshee"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-up">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/KFCC.png" alt="KFCC"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/KFPA.png" al="KFPA"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/WS.png" al="WS"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/vijaya clg mulki.png" al="vijaya clg mulki"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/vanilla.png" alt="vanilla"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+          <div class="swiper-slide p-4">
+            <div class="premium-card rounded-2xl overflow-hidden h-[150px] md:h-[180px] group border border-gray-100">
+              <img loading="lazy" src="./assest/client/news kannada24.png" alt="news kannada24"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition duration-500 logo-glow" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer
+    class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12">
+      <div class="flex flex-col gap-6">
+        <div class="flex justify-center items-center">
+          <img loading="lazy" src="./assest/Logo/Thincnext_white.png" alt="Thincnext Logo"
+            class="h-10 md:h-12 w-auto object-contain" />
+        </div>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+          Before we get creative or put a digital solution in place, we take
+          the time to fully understand your brand, project & the people its
+          intended for.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4 mt-2">
+        <div class="flex items-start gap-3 group cursor-default">
+          <i data-lucide="map-pin"
+            class="w-5 h-5 text-brand-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400 leading-relaxed">
+            #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige
+            Road),<br />
+            Malleshwaram, Bengaluru - 560003
+          </span>
+        </div>
+        <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+          <i data-lucide="phone"
+            class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400">+91 96115 04567</span>
+        </div>
+        <div class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors">
+          <i data-lucide="mail"
+            class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"></i>
+          <span class="text-sm text-slate-400">sales@thincnext.com</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3 md:pl-8">
+        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
+          Quick links
+        </h3>
+        <ul class="flex flex-col gap-1">
+          <li>
+            <a href="./about.html" class="text-sm text-slate-400 hover:text-brand-primary transition-all">About</a>
+          </li>
+          <li>
+            <a href="./career.html" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Career</a>
+          </li>
+          <li>
+            <a href="./portfolio.html"
+              class="text-sm text-slate-400 hover:text-brand-primary transition-all">Portfolio</a>
+          </li>
+          <li>
+            <a href="#" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Terms & condition</a>
+          </li>
+          <li>
+            <a href="#" class="text-sm text-slate-400 hover:text-brand-primary transition-all">Privacy policy</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
+          Connect us
+        </h3>
+        <ul class="flex flex-row items-center gap-5">
+          <li>
+            <a href="https://www.facebook.com/Thincnext/"
+              class="text-white hover:text-[#1c8cc1] transition-colors duration-300">
+              <i class="fa-brands fa-facebook text-3xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/thincnext" class="text-white hover:text-[#1c8cc1] transition-colors duration-300">
+              <i class="fa-brands fa-x-twitter text-3xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/thincnext"
+              class="text-white hover:text-[#1c8cc1] transition-colors duration-300">
+              <i class="fa-brands fa-instagram text-3xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/thincnext/posts/?feedView=all"
+              class="text-white hover:text-[#1c8cc1] transition-colors duration-300">
+              <i class="fa-brands fa-linkedin text-3xl"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex justify-center pb-6">
+      <a
+        href="https://www.dmca.com/Protection/Status.aspx?ID=54630ed5-cab2-434a-85ab-4c77b43da9bf&refurl=https://www.thincnext.com/">
+        <img src="./assest/images/dmca_protected_12_120.png" alt="DMCA Protected" class="h-8 opacity-80" />
+      </a>
+    </div>
+
+    <div
+      class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-primary/20 to-transparent">
       <div
-        class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12"
-      >
-        <div class="flex flex-col gap-6">
-          <div class="flex justify-center items-center">
-            <img  loading="lazy"
-              src="./assest/Logo/Thincnext_white.png"
-              alt="Thincnext Logo"
-              class="h-10 md:h-12 w-auto object-contain"
-            />
-          </div>
-          <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-            Before we get creative or put a digital solution in place, we take
-            the time to fully understand your brand, project & the people its
-            intended for.
-          </p>
-        </div>
-
-        <div class="flex flex-col gap-4 mt-2">
-          <div class="flex items-start gap-3 group cursor-default">
-            <i
-              data-lucide="map-pin"
-              class="w-5 h-5 text-brand-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm text-slate-400 leading-relaxed">
-              #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige
-              Road),<br />
-              Malleshwaram, Bengaluru - 560003
-            </span>
-          </div>
-          <div
-            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
-          >
-            <i
-              data-lucide="phone"
-              class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm text-slate-400">+91 96115 04567</span>
-          </div>
-          <div
-            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
-          >
-            <i
-              data-lucide="mail"
-              class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="text-sm text-slate-400">sales@thincnext.com</span>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-3 md:pl-8">
-          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
-            Quick links
-          </h3>
-          <ul class="flex flex-col gap-1">
-            <li>
-              <a
-                href="./about.html"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >About</a
-              >
-            </li>
-            <li>
-              <a
-                href="./career.html"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >Career</a
-              >
-            </li>
-            <li>
-              <a
-                href="./portfolio.html"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >Portfolio</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >Terms & condition</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
-                >Privacy policy</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="flex flex-col gap-6">
-          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
-            Connect us
-          </h3>
-          <ul class="flex flex-row items-center gap-5">
-            <li>
-              <a
-                href="https://www.facebook.com/Thincnext/"
-                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
-              >
-                <i class="fa-brands fa-facebook text-3xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://x.com/thincnext"
-                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
-              >
-                <i class="fa-brands fa-x-twitter text-3xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/thincnext"
-                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
-              >
-                <i class="fa-brands fa-instagram text-3xl"></i>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/company/thincnext/posts/?feedView=all"
-                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
-              >
-                <i class="fa-brands fa-linkedin text-3xl"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+        class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400">
+        <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
       </div>
+    </div>
+  </footer>
 
-      <div class="flex justify-center pb-6">
-        <a
-          href="https://www.dmca.com/Protection/Status.aspx?ID=54630ed5-cab2-434a-85ab-4c77b43da9bf&refurl=https://www.thincnext.com/"
-        >
-          <img
-            src="./assest/images/dmca_protected_12_120.png"
-            alt="DMCA Protected"
-            class="h-8 opacity-80"
-          />
-        </a>
-      </div>
-
-      <div
-        class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-primary/20 to-transparent"
-      >
-        <div
-          class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400"
-        >
-          <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: true,
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: true,
+      },
+      // ... other settings (loop, autoplay, etc.)
+      breakpoints: {
+        320: {
+          slidesPerView: 2, // Mobile
+          spaceBetween: 10,
         },
-        // ... other settings (loop, autoplay, etc.)
-        breakpoints: {
-          320: {
-            slidesPerView: 2, // Mobile
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 3, // Tablet
-            spaceBetween: 20,
-          },
-          1344: {
-            slidesPerView: 6, // Desktop (Updated from 5 to 6)
-            spaceBetween: 30,
-          },
+        768: {
+          slidesPerView: 3, // Tablet
+          spaceBetween: 20,
         },
-      });
-    </script>
+        1344: {
+          slidesPerView: 6, // Desktop (Updated from 5 to 6)
+          spaceBetween: 30,
+        },
+      },
+    });
+  </script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      lucide.createIcons();
-      AOS.init();
-    </script>
-    <script src="./js/nav.js"></script>
-  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    lucide.createIcons();
+    AOS.init();
+  </script>
+  <script src="./js/nav.js"></script>
+</body>
+
 </html>
