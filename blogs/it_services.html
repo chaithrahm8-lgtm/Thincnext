@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14+ Years of Trusted IT Services</title>
+
+    <link href="../style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../output.css" />
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+
+    <style></style>
+  </head>
+  <body class="text-slate-900 bg-slate-50 antialiased overflow-x-hidden">
+    <!-- nav -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300"
+      id="navbar"
+    >
+      <nav
+        class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3 bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm rounded-2xl"
+      >
+        <a href="../index.html" class="relative z-60 flex items-center p-0">
+          <img
+            src="../assest/Logo/thincnextlogo1.png"
+            alt="Logo"
+            class="h-8 w-auto object-contain transform lg:scale-125 origin-left transition-transform duration-300"
+          />
+        </a>
+
+        <ul
+          class="hidden lg:flex space-x-8 text-slate-600 text-md font-semibold"
+        >
+          <li>
+            <a
+              href="../index.html"
+              class="hover:text-blue-500 transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="../about.html"
+              class="hover:text-blue-500 transition-colors"
+              >About</a
+            >
+          </li>
+
+          <li class="relative group">
+            <button
+              id="services-btn"
+              class="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer focus:outline-none"
+            >
+              Services
+              <svg
+                id="services-arrow"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <ul
+              id="services-menu"
+              class="absolute top-8 left-0 mt-0 w-55 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-60 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+            >
+              <li>
+                <a
+                  href="../technology.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Technology</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../digitalmarketing.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../readymade.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Readymade Softwares</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="../portfolio.html"
+              class="hover:text-blue-500 transition-colors"
+              >Portfolio</a
+            >
+          </li>
+
+          <li class="relative group">
+            <button
+              id="offer-btn"
+              class="flex items-center cursor-pointer gap-1 hover:text-blue-500 transition-colors focus:outline-none"
+            >
+              Offer
+              <svg
+                id="offer-arrow"
+                class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+
+            <ul
+              id="offer-menu"
+              class="absolute top-8 left-0 pt-2 w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible translate-y-2 transition-all duration-300 z-99 overflow-hidden group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+            >
+              <li>
+                <a
+                  href="../digitalmarketingoffer.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Digital Marketing Offer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../startupoffer.html"
+                  class="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-500 transition-colors"
+                  >Startup Offer</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="../contact.html"
+              class="hover:text-blue-500 transition-colors"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-3 relative z-10">
+          <a
+            href="https://thincnext.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button
+              class="hidden lg:block px-5 py-2.5 bg-brand-primary hover:bg-sky-400 text-white text-xs md:text-sm font-bold rounded-full shadow-lg shadow-blue-500/30 cursor-pointer"
+            >
+              Buy a Domain
+            </button>
+          </a>
+          <button
+            id="hamburger"
+            class="lg:hidden p-2 text-slate-800 hover:text-blue-600 focus:outline-none cursor-pointer"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="lg:hidden top-0 left-0 w-full bg-white/95 backdrop-blur-2xl border border-slate-200 rounded-3xl shadow-2xl p-6 flex flex-col gap-4 z-50"
+      >
+        <a
+          href=".../index.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
+          >Home</a
+        >
+        <a
+          href="../about.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
+          >About</a
+        >
+
+        <details class="group">
+          <summary
+            class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden"
+          >
+            <span>Services</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-slate-400 transition-transform duration-300 group-open:-rotate-180"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div class="flex flex-col gap-2 mt-3">
+            <a href="../technology.html" class="pl-4 py-1 text-slate-600"
+              >Technology</a
+            >
+            <a href="../digitalmarketing.html" class="pl-4 py-1 text-slate-600"
+              >Digital Marketing</a
+            >
+            <a href="../readymade.html" class="pl-4 py-1 text-slate-600"
+              >Readymade softwares</a
+            >
+          </div>
+        </details>
+
+        <a
+          href="../portfolio.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
+          >Portfolio</a
+        >
+
+        <details class="group">
+          <summary
+            class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800 cursor-pointer list-none flex items-center justify-between [&::-webkit-details-marker]:hidden"
+          >
+            <span>Offer</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-slate-400 transition-transform duration-300 group-open:-rotate-180"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div class="flex flex-col gap-2 mt-3">
+            <a
+              href="../digitalmarketingoffer.html"
+              class="pl-4 py-1 text-slate-600"
+              >Digital Marketing Offer</a
+            >
+            <a href="../startupoffer.html" class="pl-4 py-1 text-slate-600"
+              >Startup Offer</a
+            >
+          </div>
+        </details>
+
+        <a
+          href="../contact.html"
+          class="text-lg font-bold border-b border-slate-100 pb-2 text-slate-800"
+          >Contact Us</a
+        >
+
+        <a href="https://thincnext.in/">
+          <button
+            class="w-full mt-4 px-5 py-4 bg-brand-primary text-white font-bold rounded-2xl shadow-xl"
+          >
+            Buy a Domain
+          </button>
+        </a>
+      </div>
+    </header>
+
+    <!-- Article Header Section -->
+    <main class="relative pt-14 pb-12 overflow-hidden bg-white">
+      <div
+        class="max-w-4xl mx-auto px-6 relative z-10 text-center mt-16 lg:mt-20"
+      >
+        <div data-aos="fade-up" class="mb-6">
+          <span
+            class="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full uppercase tracking-widest text-xs font-bold border border-blue-100 shadow-sm"
+            >Technology</span
+          >
+        </div>
+
+        <h1
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-slate-900 mb-8"
+        >
+          <span class="font-bold"> 14+ Years</span>
+          of Trusted IT Services
+        </h1>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="flex flex-wrap items-center justify-center gap-4 text-slate-500 font-semibold text-sm"
+        >
+          <span class="flex items-center gap-1"
+            ><i data-lucide="calendar" class="w-4 h-4 text-blue-400"></i> Mar
+            06, 2026</span
+          >
+        </div>
+      </div>
+    </main>
+
+    <!-- Featured Hero Image -->
+    <div
+      class="max-w-7xl mx-auto px-6 mb-16 relative z-20"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <div
+        class="relative w-full aspect-[21/9] rounded-[40px] overflow-hidden shadow-2xl shadow-blue-900/10 border border-slate-100 group"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop"
+          alt="AI in Enterprise"
+          class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
+        />
+      </div>
+    </div>
+
+    <!-- Article Body & Sidebar Layout -->
+    <section class="pb-12 md:pb-24 bg-white relative z-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <!-- Left: Main Article Content -->
+
+          <article class="lg:col-span-8 article-content text-lg font-medium">
+            <p  id="digitalgrowth">
+              Today marks a major milestone the launch of our new all-in-one
+              digital services portal, designed to help businesses establish and
+              grow their online presence with ease.
+            </p>
+
+            <p>
+              For over 14 years, Thincnext has been delivering reliable IT
+              services and digital solutions to businesses across India. With a
+              strong foundation built on trust, innovation, and customer
+              success, Thincnext continues to evolve with the changing digital
+              landscape.
+            </p>
+
+            <h2 >Your One-Stop Platform for Digital Growth</h2>
+            <p>
+              Going digital is no longer optional — it’s essential. Whether
+              you’re a startup, entrepreneur, or established business, having
+              the right online tools can make all the difference.
+            </p>
+            <p>
+              Thincnext’s new platform offers everything you need in one place:
+            </p>
+
+            <ul>
+              <li>
+                <strong>1. Buy Domain Names Online:</strong> Secure your brand
+                identity with the perfect domain name. Choose from a wide range
+                of domain extensions at competitive prices.
+              </li>
+              <li>
+                <strong>2. Affordable Web Hosting in India:</strong> Experience
+                fast, secure, and scalable hosting solutions tailored for
+                businesses of all sizes. Our hosting ensures high uptime and
+                performance.
+              </li>
+              <li>
+                <strong>3. Professional Email IDs for Business:</strong> Build
+                credibility with branded email addresses (e.g.,
+                yourname@yourcompany.com). Enhance trust and communication with
+                clients.
+              </li>
+              <li id="whyUs">
+                <strong>4. SSL Certificates for Website Security:</strong>
+                Protect your website and customer data with trusted SSL
+                certificates. Improve security, SEO rankings, and user
+                confidence.
+              </li>
+            </ul>
+
+            <h2 >Why Choose Thincnext for Domain and Hosting Services?</h2>
+            <ul>
+              <li>
+                <strong>Competitive Pricing:</strong> Get the best value with
+                transparent pricing and no hidden charges.
+              </li>
+              <li>
+                <strong> Reliable Infrastructure:</strong> Our services are
+                built for speed, security, and performance.
+              </li>
+              <li>
+                <strong> All-in-One Convenience:</strong> No need to manage
+                multiple vendors — everything is available in one place.
+              </li>
+              <li id="importance">
+                <strong> Trusted Experience:</strong> With 14+ years in the IT
+                industry, we understand what businesses need to succeed online.
+              </li>
+            </ul>
+
+            <h2>Importance of Going Digital for Businesses</h2>
+            <p>
+              In today’s digital-first world, your online presence is your
+              business identity. From your website to your email communication,
+              every touchpoint builds trust with your customers.
+            </p>
+            <p>
+              Having a secure domain, fast hosting, and professional email setup
+              not only improves your brand image but also helps in better search
+              engine rankings and customer engagement.
+            </p>
+
+            <h2>Start Your Online Journey with Thincnext</h2>
+            <p id="conclusion">
+              If you’re planning to launch your website or upgrade your existing
+              digital presence, now is the right time. Thincnext makes it
+              simple, affordable, and efficient to take your business online.
+            </p>
+
+            <h2>Conclusion</h2>
+            <p>
+              Thincnext’s new digital services portal is designed to empower
+              businesses with the tools they need to succeed online. With
+              domains, hosting, professional emails, and SSL certificates — all
+              in one place — you can focus on what matters most: growing your
+              business.
+            </p>
+
+            <blockquote>
+              Build trust. Go digital. Grow faster.
+              <br /><span
+                class="text-sm font-bold text-slate-400 mt-3 block uppercase tracking-widest"
+                >Visit Now:
+                <a
+                  href="https://thincnext.in/"
+                  target="_blank"
+                  class="text-blue-500 hover:text-blue-700 transition-colors"
+                  >www.thincnext.in</a
+                ></span
+              >
+            </blockquote>
+
+            <!-- Article Tags & Social Actions -->
+            <div
+              class="mt-16 pt-8 border-t border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6"
+            >
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-500 rounded-xl text-sm font-bold hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer"
+                  >#DigitalTransformation</span
+                >
+                <span
+                  class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-500 rounded-xl text-sm font-bold hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer"
+                  >#WebHosting</span
+                >
+                <span
+                  class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-500 rounded-xl text-sm font-bold hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer"
+                  >#Domains</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Right: Sticky Sidebar -->
+          <aside class="lg:col-span-4 space-y-8">
+            <div class="sticky top-24 space-y-4">
+              <!-- Table of Contents Widget -->
+              <div
+                class="bg-slate-50 rounded-4xl p-8 border border-slate-100 shadow-sm"
+              >
+                <h4
+                  class="text-lg font-black text-slate-900 mb-6 flex items-center gap-2"
+                >
+                  <i data-lucide="list" class="w-5 h-5 text-blue-500"></i> In
+                  this article
+                </h4>
+                <ul
+                  class="space-y-4 text-sm font-semibold text-slate-500 relative before:absolute before:inset-y-0 before:left-0.75 before:w-0.5 before:bg-slate-200 pl-4"
+                >
+                  <li class="relative">
+                    <span
+                      class="absolute -left-4.25 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-slate-50"
+                    ></span>
+                    <a href="#digitalgrowth" class="text-slate-800 transition-colors block"
+                      >One-Stop Platform for Growth</a
+                    >
+                  </li>
+                  <li class="relative">
+                    <span
+                      class="absolute -left-4.25 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-slate-50"
+                    ></span>
+                    <a
+                      href="#whyUs"
+                      class="hover:text-blue-600 transition-colors block"
+                      >Why Choose Thincnext?</a
+                    >
+                  </li>
+                  <li class="relative">
+                    <span
+                      class="absolute -left-4.25 top-1.5 w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-slate-50"
+                    ></span>
+                    <a
+                      href="#importance"
+                      class="hover:text-blue-600 transition-colors block"
+                      >Importance of Going Digital</a
+                    >
+                  </li>
+                  <li class="relative">
+                    <span
+                      class="absolute -left-4.25  top-1.5 w-2.5 h-2.5 rounded-full bg-slate-300 border-2 border-slate-50"
+                    ></span>
+                    <a
+                      href="#conclusion"
+                      class="hover:text-blue-600 transition-colors block"
+                      >Conclusion</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <a href="https://thincnext.in/" target="_blank" rel="noopener noreferrer">
+                  <img src="../assest/images/blogs/domain.jpeg" alt="thincnext" class="rounded-3xl">
+                </a>
+              </div>
+
+              <!-- CTA Widget -->
+              <div
+                class="bg-linear-to-br from-blue-600 to-purple-600 rounded-4xl p-8 text-center relative overflow-hidden shadow-xl shadow-blue-600/20 group"
+              >
+                <!-- Decorative elements -->
+                <div
+                  class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"
+                ></div>
+
+                <div class="relative z-10">
+                  <div
+                    class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-5 backdrop-blur-md border border-white/30"
+                  >
+                    <i data-lucide="rocket" class="w-6 h-6 text-white"></i>
+                  </div>
+                  <h4 class="text-2xl font-black text-white mb-3">
+                    Ready to elevate your online presence?
+                  </h4>
+                  <p
+                    class="text-blue-100 text-sm font-medium mb-8 leading-relaxed"
+                  >
+                    Let's discuss how customized AI solutions can transform your
+                    business operations.
+                  </p>
+                  <a
+                    href="../technology.html"
+                    class="block w-full py-4 bg-white text-blue-600 font-bold rounded-2xl hover:bg-slate-50  shadow-lg hover:shadow-xl hover:-translate-y-1 transform transition-all"
+                  >
+                    Explore Our Services
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="footer-shimmer bg-brand-dark text-slate-500 font-sans antialiased m-0 pt-16 pb-0 border-t border-slate-800/50 relative overflow-hidden"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12"
+      >
+        <div class="flex flex-col gap-6">
+          <div class="flex justify-center items-center">
+            <img
+              src="../assest/Logo/Thincnext_white.png"
+              alt="Thincnext Logo"
+              class="h-10 md:h-12 w-auto object-contain"
+            />
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+            Before we get creative or put a digital solution in place, we take
+            the time to fully understand your brand, project & the people its
+            intended for.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4 mt-2">
+          <div class="flex items-start gap-3 group cursor-default">
+            <i
+              data-lucide="map-pin"
+              class="w-5 h-5 text-brand-primary shrink-0 mt-0.5 group-hover:scale-110 transition-transform"
+            ></i>
+            <span class="text-sm text-slate-400 leading-relaxed">
+              #285,1st Floor,Between 17th- 18th Cross, 2nd Main (Sampige
+              Road),<br />
+              Malleshwaram, Bengaluru - 560003
+            </span>
+          </div>
+          <div
+            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
+          >
+            <i
+              data-lucide="phone"
+              class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"
+            ></i>
+            <span class="text-sm text-slate-400">+91 96115 04567</span>
+          </div>
+          <div
+            class="flex items-center gap-3 group cursor-pointer hover:text-white transition-colors"
+          >
+            <i
+              data-lucide="mail"
+              class="w-5 h-5 text-brand-primary shrink-0 group-hover:scale-110 transition-transform"
+            ></i>
+            <span class="text-sm text-slate-400">sales@thincnext.Com</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 md:pl-8">
+          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
+            Quick links
+          </h3>
+          <ul class="flex flex-col gap-1">
+            <li>
+              <a
+                href="../about.html"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="../career.html"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
+                >Career</a
+              >
+            </li>
+            <li>
+              <a
+                href="../portfolio.html"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="../terms.html"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
+                >Terms & condition</a
+              >
+            </li>
+            <li>
+              <a
+                href="../privacy.html"
+                class="text-sm text-slate-400 hover:text-brand-primary transition-all"
+                >Privacy policy</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-6">
+          <h3 class="text-lg font-semibold text-white tracking-wide uppercase">
+            Connect us
+          </h3>
+          <ul class="flex flex-row items-center gap-5">
+            <li>
+              <a
+                href="https://www.facebook.com/Thincnext/"
+                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
+              >
+                <i class="fa-brands fa-facebook text-3xl"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/thincnext"
+                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
+              >
+                <i class="fa-brands fa-x-twitter text-3xl"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/thincnext"
+                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
+              >
+                <i class="fa-brands fa-instagram text-3xl"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/thincnext/posts/?feedView=all"
+                class="text-white hover:text-[#1c8cc1] transition-colors duration-300"
+              >
+                <i class="fa-brands fa-linkedin text-3xl"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex justify-center pb-6">
+        <a
+          href="https://www.dmca.com/Protection/Status.aspx?ID=54630ed5-cab2-434a-85ab-4c77b43da9bf&refurl=https://www.thincnext.com/"
+        >
+          <img
+            src="../assest/images/dmca_protected_12_120.webp"
+            alt="DMCA Protected"
+            class="h-8 opacity-80"
+          />
+        </a>
+      </div>
+
+      <div
+        class="w-full py-8 text-center border-t border-slate-800/50 bg-linear-to-t from-brand-primary/20 to-transparent"
+      >
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-slate-400"
+        >
+          <p>2026 &copy; Copyrights thincnext. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
+
+    <script>
+      // Initialize Locomtive
+      const locomotiveScroll = new LocomotiveScroll();
+
+      // Initialize Icons
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
